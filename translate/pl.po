@@ -1,0 +1,364 @@
+# Translation of KDE Connect SMS
+# Copyright (C) 2026 David DIVERRES
+# This file is distributed under the same license as the kdeconnectsms package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeconnectsms\n"
+"Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
+"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"PO-Revision-Date: 2026-03-11 00:24+0000\n"
+"Last-Translator: David DIVERRES <david@comexpertise.com>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: contents/config/config.qml
+msgid "General"
+msgstr "Ogólne"
+
+#: contents/ui/CountryPicker.qml
+msgid "Search country..."
+msgstr "Szukaj kraju…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message:"
+msgstr "Wiadomość:"
+
+#: contents/ui/MessageInput.qml
+msgid "Type your message here..."
+msgstr "Wpisz swoją wiadomość tutaj…"
+
+#: contents/ui/MessageInput.qml
+msgid "Clear message"
+msgstr "Wyczyść wiadomość"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 character"
+msgid_plural "%1 characters"
+msgstr[0] "%1 znak"
+msgstr[1] "%1 znaki"
+msgstr[2] "%1 znaków"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 segment"
+msgid_plural "%1 segments"
+msgstr[0] "%1 segment"
+msgstr[1] "%1 segmenty"
+msgstr[2] "%1 segmentów"
+
+#: contents/ui/MessageInput.qml
+msgid "Unicode"
+msgstr "Unicode"
+
+#: contents/ui/MessageInput.qml
+msgid "Spell check"
+msgstr "Sprawdzanie pisowni"
+
+#: contents/ui/MessageInput.qml
+msgid "Disable spell check"
+msgstr "Wyłącz sprawdzanie pisowni"
+
+#: contents/ui/MessageInput.qml
+msgid "Enable spell check"
+msgstr "Włącz sprawdzanie pisowni"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number:"
+msgstr "Numer telefonu:"
+
+#: contents/ui/PhoneInput.qml
+msgid "To: %1"
+msgstr "Do: %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Clear contact"
+msgstr "Wyczyść kontakt"
+
+#: contents/ui/PhoneInput.qml
+msgid "Country"
+msgstr "Kraj"
+
+#: contents/ui/PhoneInput.qml
+msgid "Enter phone number"
+msgstr "Wprowadź numer telefonu"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number — %1"
+msgstr "Prawidłowy numer — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number"
+msgstr "Prawidłowy numer"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number — %1"
+msgstr "Możliwy numer — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number"
+msgstr "Możliwy numer"
+
+#: contents/ui/PhoneInput.qml
+msgid "Incomplete number"
+msgstr "Niekompletny numer"
+
+#: contents/ui/PhoneInput.qml
+msgid "Mobile"
+msgstr "Komórkowy"
+
+#: contents/ui/PhoneInput.qml
+msgid "Work"
+msgstr "Służbowy"
+
+#: contents/ui/PhoneInput.qml
+msgid "Home"
+msgstr "Domowy"
+
+#: contents/ui/PhoneInput.qml
+msgid "Fax"
+msgstr "Faks"
+
+#: contents/ui/SmsHistory.qml
+msgid "Recent"
+msgstr "Ostatnie"
+
+#: contents/ui/SmsHistory.qml
+msgid "Clear history"
+msgstr "Wyczyść historię"
+
+#: contents/ui/SmsHistory.qml contents/ui/main.qml
+msgid "Dismiss"
+msgstr "Odrzuć"
+
+#: contents/ui/SmsHistory.qml
+msgid "Just now"
+msgstr "Właśnie teraz"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 min ago"
+msgid_plural "%1 min ago"
+msgstr[0] "1 min temu"
+msgstr[1] "%1 min temu"
+msgstr[2] "%1 min temu"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 h ago"
+msgid_plural "%1 h ago"
+msgstr[0] "1 godz. temu"
+msgstr[1] "%1 godz. temu"
+msgstr[2] "%1 godz. temu"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 d ago"
+msgid_plural "%1 d ago"
+msgstr[0] "1 d temu"
+msgstr[1] "%1 d temu"
+msgstr[2] "%1 d temu"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a device --"
+msgstr "-- Wybierz urządzenie --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- No devices found --"
+msgstr "-- Nie znaleziono urządzeń --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a country --"
+msgstr "-- Wybierz kraj --"
+
+#: contents/ui/configGeneral.qml
+msgid "Device:"
+msgstr "Urządzenie:"
+
+#: contents/ui/configGeneral.qml
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: contents/ui/configGeneral.qml
+msgid "Country:"
+msgstr "Kraj:"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep after sending:"
+msgstr "Sygnał dźwiękowy po wysłaniu:"
+
+#: contents/ui/configGeneral.qml
+msgid "Play a beep sound after SMS is sent"
+msgstr "Odtwórz sygnał dźwiękowy po wysłaniu SMS-a"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep repetitions:"
+msgstr "Powtórzenia sygnału:"
+
+#: contents/ui/main.qml
+msgid "No device available"
+msgstr "Brak dostępnego urządzenia"
+
+#: contents/ui/main.qml
+msgid "No device configured"
+msgstr "Nie skonfigurowano urządzenia"
+
+#: contents/ui/main.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "Sparuj i połącz telefon z KDE Connect, aby zacząć wysyłać SMS-y."
+
+#: contents/ui/main.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "Wybierz urządzenie w ustawieniach widżetu, aby zacząć wysyłać SMS-y."
+
+#: contents/ui/main.qml
+msgid "Open Settings"
+msgstr "Otwórz ustawienia"
+
+#: contents/ui/main.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"Wtyczka SMS nie jest dostępna na tym urządzeniu. Upewnij się, że urządzenie "
+"jest osiągalne i że wtyczka SMS jest włączona w ustawieniach KDE Connect."
+
+#: contents/ui/main.qml
+msgid "Open KDE Connect"
+msgstr "Otwórz KDE Connect"
+
+#: contents/ui/main.qml
+msgid "Drop files to share with %1"
+msgstr "Upuść pliki, aby udostępnić dla %1"
+
+#: contents/ui/main.qml
+msgid "Drop files here to share them via KDE Connect"
+msgstr "Upuść pliki tutaj, aby udostępnić je przez KDE Connect"
+
+#: contents/ui/main.qml
+msgid "Sending..."
+msgstr "Wysyłanie…"
+
+#: contents/ui/main.qml
+msgid "SMS sent successfully"
+msgstr "SMS wysłany pomyślnie"
+
+#: contents/ui/main.qml
+msgid "Failed to send SMS"
+msgstr "Nie udało się wysłać SMS-a"
+
+#: contents/ui/main.qml
+msgid "SMS History"
+msgstr "Historia SMS"
+
+#: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Synchronizuj kontakty z telefonu"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Otwórz rozmowy"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Brak urządzenia"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Przełącz urządzenie"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Nowy SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "Wyślij SMS"
+
+#: contents/ui/main.qml
+msgid "Sharing file..."
+msgstr "Udostępnianie pliku…"
+
+#: contents/ui/main.qml
+msgid "File shared successfully"
+msgstr "Plik udostępniony pomyślnie"
+
+#: contents/ui/main.qml
+msgid "Failed to share file"
+msgstr "Nie udało się udostępnić pliku"
+
+#: contents/ui/main.qml
+msgid "Notification"
+msgstr "Powiadomienie"
+
+#: contents/ui/main.qml
+msgid "Reply"
+msgstr "Odpowiedz"
+
+#: contents/ui/main.qml
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: contents/ui/main.qml
+msgid "Reply to %1..."
+msgstr "Odpowiedz na %1…"
+
+#: contents/ui/main.qml
+msgid "Send"
+msgstr "Wyślij"
+
+#~ msgid "Type your reply..."
+#~ msgstr "Wpisz odpowiedź…"
+
+#~ msgid "%1 min ago"
+#~ msgstr "%1 min temu"
+
+#~ msgid "%1 h ago"
+#~ msgstr "%1 godz. temu"
+
+#~ msgid "%1 d ago"
+#~ msgstr "%1 dn. temu"
+
+#~ msgid "Scanning for devices..."
+#~ msgstr "Wyszukiwanie urządzeń…"
+
+#~ msgid ""
+#~ "Connect your phone with KDE Connect and select it in the widget settings "
+#~ "to start sending SMS."
+#~ msgstr ""
+#~ "Połącz telefon z KDE Connect i wybierz go w ustawieniach widżetu, aby "
+#~ "zacząć wysyłać SMS-y."
+
+#~ msgid "Send failed with exit code %1"
+#~ msgstr "Wysyłanie nie powiodło się z kodem wyjścia %1"
+
+#~ msgid "Configure a device in widget settings"
+#~ msgstr "Skonfiguruj urządzenie w ustawieniach widżetu"
+
+#~ msgid "kdeconnect-cli exited with code %1"
+#~ msgstr "kdeconnect-cli zakończył się z kodem %1"
+
+#~ msgid "Device name:"
+#~ msgstr "Nazwa urządzenia:"
+
+#~ msgid "KDE Connect paired device name"
+#~ msgstr "Nazwa urządzenia sparowanego z KDE Connect"
+
+#~ msgid "Country calling code:"
+#~ msgstr "Numer kierunkowy kraju:"
+
+#~ msgid "+33"
+#~ msgstr "+48"
+
+#~ msgid "Valid number (%1)"
+#~ msgstr "Prawidłowy numer (%1)"
+
+#~ msgid "Configure a device name in widget settings"
+#~ msgstr "Skonfiguruj nazwę urządzenia w ustawieniach widżetu"
+
+#~ msgid "%1 characters"
+#~ msgstr "%1 znaków"
+
+#~ msgid "KDE Connect SMS — Coming soon"
+#~ msgstr "KDE Connect SMS — Wkrótce"

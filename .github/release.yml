@@ -1,0 +1,14 @@
+changelog:
+  categories:
+    - title: "🚀 Features"
+      labels: ["feat", "feature", "enhancement"]
+    - title: "🐛 Bug Fixes"
+      labels: ["bug", "fix"]
+    - title: "🌍 Translations"
+      labels: ["i18n", "translation"]
+    - title: "🔧 Maintenance"
+      labels: ["chore", "ci", "refactor"]
+    - title: "📝 Documentation"
+      labels: ["docs", "documentation"]
+    - title: "Other Changes"
+      labels: ["*"]

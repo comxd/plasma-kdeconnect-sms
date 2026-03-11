@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Validate package structure
+        run: bash scripts/validate-structure.sh
+
+      - name: Extract and verify version
+        env:
+          TAG_VERSION: ${{ github.ref_name }}
+        run: |
+          VERSION="${TAG_VERSION#v}"
+          META_VERSION=$(python3 -c "import json; print(json.load(open('metadata.json'))['KPlugin']['Version'])")
+          if [ "$META_VERSION" != "$VERSION" ]; then
+            echo "ERROR: Tag version ($VERSION) does not match metadata.json ($META_VERSION)"
+            exit 1
+          fi
+          echo "Version verified: $VERSION"
+
+      - name: Install gettext (for msgfmt)
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Build .plasmoid archive
+        run: bash scripts/build-plasmoid.sh
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
+        with:
+          files: build/*.plasmoid
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}

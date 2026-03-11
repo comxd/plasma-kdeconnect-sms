@@ -1,0 +1,301 @@
+# Translation of KDE Connect SMS
+# Copyright (C) 2026 David DIVERRES
+# This file is distributed under the same license as the kdeconnectsms package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeconnectsms\n"
+"Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
+"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: contents/config/config.qml
+msgid "General"
+msgstr ""
+
+#: contents/ui/CountryPicker.qml
+msgid "Search country..."
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Message:"
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Type your message here..."
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Clear message"
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "%1 character"
+msgid_plural "%1 characters"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/MessageInput.qml
+msgid "%1 segment"
+msgid_plural "%1 segments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/MessageInput.qml
+msgid "Unicode"
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Spell check"
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Disable spell check"
+msgstr ""
+
+#: contents/ui/MessageInput.qml
+msgid "Enable spell check"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number:"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "To: %1"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Clear contact"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Country"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Enter phone number"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number — %1"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number — %1"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Incomplete number"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Mobile"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Work"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Home"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Fax"
+msgstr ""
+
+#: contents/ui/SmsHistory.qml
+msgid "Recent"
+msgstr ""
+
+#: contents/ui/SmsHistory.qml
+msgid "Clear history"
+msgstr ""
+
+#: contents/ui/SmsHistory.qml contents/ui/main.qml
+msgid "Dismiss"
+msgstr ""
+
+#: contents/ui/SmsHistory.qml
+msgid "Just now"
+msgstr ""
+
+#: contents/ui/SmsHistory.qml
+msgid "1 min ago"
+msgid_plural "%1 min ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/SmsHistory.qml
+msgid "1 h ago"
+msgid_plural "%1 h ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/SmsHistory.qml
+msgid "1 d ago"
+msgid_plural "%1 d ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a device --"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "-- No devices found --"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a country --"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Device:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Refresh"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Beep after sending:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Play a beep sound after SMS is sent"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Beep repetitions:"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "No device available"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "No device configured"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Open Settings"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "SMS plugin is not available on this device. Make sure the device is reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Open KDE Connect"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Drop files to share with %1"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Drop files here to share them via KDE Connect"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Sending..."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "SMS sent successfully"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Failed to send SMS"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "SMS History"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Sharing file..."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "File shared successfully"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Failed to share file"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Notification"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Reply"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Cancel"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Reply to %1..."
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Send"
+msgstr ""

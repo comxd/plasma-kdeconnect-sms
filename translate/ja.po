@@ -1,0 +1,356 @@
+# Translation of KDE Connect SMS
+# Copyright (C) 2026 David DIVERRES
+# This file is distributed under the same license as the kdeconnectsms package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeconnectsms\n"
+"Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
+"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"PO-Revision-Date: 2026-03-11 00:24+0000\n"
+"Last-Translator: David DIVERRES <david@comexpertise.com>\n"
+"Language-Team: Japanese <ja@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/config/config.qml
+msgid "General"
+msgstr "一般"
+
+#: contents/ui/CountryPicker.qml
+msgid "Search country..."
+msgstr "国を検索…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message:"
+msgstr "メッセージ："
+
+#: contents/ui/MessageInput.qml
+msgid "Type your message here..."
+msgstr "ここにメッセージを入力…"
+
+#: contents/ui/MessageInput.qml
+msgid "Clear message"
+msgstr "メッセージを消去"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 character"
+msgid_plural "%1 characters"
+msgstr[0] "%1 文字"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 segment"
+msgid_plural "%1 segments"
+msgstr[0] "%1 セグメント"
+
+#: contents/ui/MessageInput.qml
+msgid "Unicode"
+msgstr "Unicode"
+
+#: contents/ui/MessageInput.qml
+msgid "Spell check"
+msgstr "スペルチェック"
+
+#: contents/ui/MessageInput.qml
+msgid "Disable spell check"
+msgstr "スペルチェックを無効にする"
+
+#: contents/ui/MessageInput.qml
+msgid "Enable spell check"
+msgstr "スペルチェックを有効にする"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number:"
+msgstr "電話番号："
+
+#: contents/ui/PhoneInput.qml
+msgid "To: %1"
+msgstr "宛先: %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Clear contact"
+msgstr "連絡先を消去"
+
+#: contents/ui/PhoneInput.qml
+msgid "Country"
+msgstr "国"
+
+#: contents/ui/PhoneInput.qml
+msgid "Enter phone number"
+msgstr "電話番号を入力"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number — %1"
+msgstr "有効な番号 — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number"
+msgstr "有効な番号"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number — %1"
+msgstr "有効な可能性のある番号 — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number"
+msgstr "有効な可能性のある番号"
+
+#: contents/ui/PhoneInput.qml
+msgid "Incomplete number"
+msgstr "不完全な番号"
+
+#: contents/ui/PhoneInput.qml
+msgid "Mobile"
+msgstr "携帯"
+
+#: contents/ui/PhoneInput.qml
+msgid "Work"
+msgstr "勤務先"
+
+#: contents/ui/PhoneInput.qml
+msgid "Home"
+msgstr "自宅"
+
+#: contents/ui/PhoneInput.qml
+msgid "Fax"
+msgstr "FAX"
+
+#: contents/ui/SmsHistory.qml
+msgid "Recent"
+msgstr "最近"
+
+#: contents/ui/SmsHistory.qml
+msgid "Clear history"
+msgstr "履歴を消去"
+
+#: contents/ui/SmsHistory.qml contents/ui/main.qml
+msgid "Dismiss"
+msgstr "閉じる"
+
+#: contents/ui/SmsHistory.qml
+msgid "Just now"
+msgstr "たった今"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 min ago"
+msgid_plural "%1 min ago"
+msgstr[0] "%1 分前"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 h ago"
+msgid_plural "%1 h ago"
+msgstr[0] "%1 時間前"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 d ago"
+msgid_plural "%1 d ago"
+msgstr[0] "%1 日前"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a device --"
+msgstr "-- デバイスを選択 --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- No devices found --"
+msgstr "-- デバイスが見つかりません --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a country --"
+msgstr "-- 国を選択 --"
+
+#: contents/ui/configGeneral.qml
+msgid "Device:"
+msgstr "デバイス："
+
+#: contents/ui/configGeneral.qml
+msgid "Refresh"
+msgstr "更新"
+
+#: contents/ui/configGeneral.qml
+msgid "Country:"
+msgstr "国："
+
+#: contents/ui/configGeneral.qml
+msgid "Beep after sending:"
+msgstr "送信後のビープ音："
+
+#: contents/ui/configGeneral.qml
+msgid "Play a beep sound after SMS is sent"
+msgstr "SMS送信後にビープ音を再生"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep repetitions:"
+msgstr "ビープ音の繰り返し回数："
+
+#: contents/ui/main.qml
+msgid "No device available"
+msgstr "利用可能なデバイスがありません"
+
+#: contents/ui/main.qml
+msgid "No device configured"
+msgstr "デバイスが未設定です"
+
+#: contents/ui/main.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "KDE Connectで携帯電話をペアリングして接続し、SMSの送信を開始してください。"
+"KDE Connect でスマートフォンをペアリングして接続し、SMS の送信を開始してくだ"
+"さい。"
+
+#: contents/ui/main.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "ウィジェットの設定でデバイスを選択して、SMS の送信を開始してください。"
+
+#: contents/ui/main.qml
+msgid "Open Settings"
+msgstr "設定を開く"
+
+#: contents/ui/main.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"このデバイスでは SMS プラグインを利用できません。デバイスに到達可能であるこ"
+"と、および KDE Connect の設定で SMS プラグインが有効になっていることを確認し"
+"てください。"
+
+#: contents/ui/main.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect を開く"
+
+#: contents/ui/main.qml
+msgid "Drop files to share with %1"
+msgstr "%1 と共有するファイルをドロップ"
+
+#: contents/ui/main.qml
+msgid "Drop files here to share them via KDE Connect"
+msgstr "ファイルをここにドロップして KDE Connect 経由で共有"
+
+#: contents/ui/main.qml
+msgid "Sending..."
+msgstr "送信中…"
+
+#: contents/ui/main.qml
+msgid "SMS sent successfully"
+msgstr "SMSの送信に成功しました"
+
+#: contents/ui/main.qml
+msgid "Failed to send SMS"
+msgstr "SMSの送信に失敗しました"
+
+#: contents/ui/main.qml
+msgid "SMS History"
+msgstr "SMS履歴"
+
+#: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "スマートフォンから連絡先を同期"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "会話を開く"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "デバイスなし"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "デバイスを切り替え"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "新規 SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMSを送信"
+
+#: contents/ui/main.qml
+msgid "Sharing file..."
+msgstr "ファイルを共有中…"
+
+#: contents/ui/main.qml
+msgid "File shared successfully"
+msgstr "ファイルの共有に成功しました"
+
+#: contents/ui/main.qml
+msgid "Failed to share file"
+msgstr "ファイルの共有に失敗しました"
+
+#: contents/ui/main.qml
+msgid "Notification"
+msgstr "通知"
+
+#: contents/ui/main.qml
+msgid "Reply"
+msgstr "返信"
+
+#: contents/ui/main.qml
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: contents/ui/main.qml
+msgid "Reply to %1..."
+msgstr "%1 に返信…"
+
+#: contents/ui/main.qml
+msgid "Send"
+msgstr "送信"
+
+#~ msgid "Type your reply..."
+#~ msgstr "返信を入力…"
+
+#~ msgid "%1 min ago"
+#~ msgstr "%1 分前"
+
+#~ msgid "%1 h ago"
+#~ msgstr "%1 時間前"
+
+#~ msgid "%1 d ago"
+#~ msgstr "%1 日前"
+
+#~ msgid "Scanning for devices..."
+#~ msgstr "デバイスを検索中…"
+
+#~ msgid ""
+#~ "Connect your phone with KDE Connect and select it in the widget settings "
+#~ "to start sending SMS."
+#~ msgstr ""
+#~ "KDE Connect でスマートフォンを接続し、ウィジェットの設定で選択すると SMS "
+#~ "を送信できます。"
+
+#~ msgid "Send failed with exit code %1"
+#~ msgstr "送信失敗（終了コード %1）"
+
+#~ msgid "Configure a device in widget settings"
+#~ msgstr "ウィジェットの設定でデバイスを設定してください"
+
+#~ msgid "kdeconnect-cli exited with code %1"
+#~ msgstr "kdeconnect-cli がコード %1 で終了しました"
+
+#~ msgid "Device name:"
+#~ msgstr "デバイス名："
+
+#~ msgid "KDE Connect paired device name"
+#~ msgstr "KDE Connect でペアリングされたデバイス名"
+
+#~ msgid "Country calling code:"
+#~ msgstr "国番号："
+
+#~ msgid "+33"
+#~ msgstr "+81"
+
+#~ msgid "Valid number (%1)"
+#~ msgstr "有効な番号（%1）"
+
+#~ msgid "Configure a device name in widget settings"
+#~ msgstr "ウィジェットの設定でデバイス名を設定してください"
+
+#~ msgid "%1 characters"
+#~ msgstr "%1 文字"
+
+#~ msgid "KDE Connect SMS — Coming soon"
+#~ msgstr "KDE Connect SMS — 近日公開"

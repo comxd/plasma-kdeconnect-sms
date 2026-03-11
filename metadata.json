@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "david@comexpertise.com",
+                "Name": "David DIVERRES"
+            }
+        ],
+        "Version": "2.0.0",
+        "Category": "Utilities",
+        "Description": "Send SMS from your desktop via KDE Connect",
+        "Icon": "kdeconnect",
+        "Id": "com.comexpertise.plasma.kdeconnectsms",
+        "License": "GPL-2.0-or-later",
+        "Name": "KDE Connect SMS",
+        "Website": "https://www.comexpertise.com"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

@@ -1,0 +1,360 @@
+# Translation of KDE Connect SMS
+# Copyright (C) 2026 David DIVERRES
+# This file is distributed under the same license as the kdeconnectsms package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeconnectsms\n"
+"Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
+"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"PO-Revision-Date: 2026-03-11 00:24+0000\n"
+"Last-Translator: David DIVERRES <david@comexpertise.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contents/config/config.qml
+msgid "General"
+msgstr "Genel"
+
+#: contents/ui/CountryPicker.qml
+msgid "Search country..."
+msgstr "Ülke ara…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message:"
+msgstr "Mesaj:"
+
+#: contents/ui/MessageInput.qml
+msgid "Type your message here..."
+msgstr "Mesajınızı buraya yazın…"
+
+#: contents/ui/MessageInput.qml
+msgid "Clear message"
+msgstr "Mesajı temizle"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 character"
+msgid_plural "%1 characters"
+msgstr[0] "%1 karakter"
+msgstr[1] "%1 karakter"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 segment"
+msgid_plural "%1 segments"
+msgstr[0] "%1 bölüm"
+msgstr[1] "%1 bölüm"
+
+#: contents/ui/MessageInput.qml
+msgid "Unicode"
+msgstr "Unicode"
+
+#: contents/ui/MessageInput.qml
+msgid "Spell check"
+msgstr "Yazım denetimi"
+
+#: contents/ui/MessageInput.qml
+msgid "Disable spell check"
+msgstr "Yazım denetimini kapat"
+
+#: contents/ui/MessageInput.qml
+msgid "Enable spell check"
+msgstr "Yazım denetimini aç"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number:"
+msgstr "Telefon numarası:"
+
+#: contents/ui/PhoneInput.qml
+msgid "To: %1"
+msgstr "Kime: %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Clear contact"
+msgstr "Kişiyi temizle"
+
+#: contents/ui/PhoneInput.qml
+msgid "Country"
+msgstr "Ülke"
+
+#: contents/ui/PhoneInput.qml
+msgid "Enter phone number"
+msgstr "Telefon numarasını girin"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number — %1"
+msgstr "Geçerli numara — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number"
+msgstr "Geçerli numara"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number — %1"
+msgstr "Olası numara — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number"
+msgstr "Olası numara"
+
+#: contents/ui/PhoneInput.qml
+msgid "Incomplete number"
+msgstr "Eksik numara"
+
+#: contents/ui/PhoneInput.qml
+msgid "Mobile"
+msgstr "Cep"
+
+#: contents/ui/PhoneInput.qml
+msgid "Work"
+msgstr "İş"
+
+#: contents/ui/PhoneInput.qml
+msgid "Home"
+msgstr "Ev"
+
+#: contents/ui/PhoneInput.qml
+msgid "Fax"
+msgstr "Faks"
+
+#: contents/ui/SmsHistory.qml
+msgid "Recent"
+msgstr "Son"
+
+#: contents/ui/SmsHistory.qml
+msgid "Clear history"
+msgstr "Geçmişi temizle"
+
+#: contents/ui/SmsHistory.qml contents/ui/main.qml
+msgid "Dismiss"
+msgstr "Kapat"
+
+#: contents/ui/SmsHistory.qml
+msgid "Just now"
+msgstr "Az önce"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 min ago"
+msgid_plural "%1 min ago"
+msgstr[0] "1 dk önce"
+msgstr[1] "%1 dk önce"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 h ago"
+msgid_plural "%1 h ago"
+msgstr[0] "1 sa önce"
+msgstr[1] "%1 sa önce"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 d ago"
+msgid_plural "%1 d ago"
+msgstr[0] "1 g önce"
+msgstr[1] "%1 g önce"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a device --"
+msgstr "-- Bir aygıt seçin --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- No devices found --"
+msgstr "-- Aygıt bulunamadı --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a country --"
+msgstr "-- Bir ülke seçin --"
+
+#: contents/ui/configGeneral.qml
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: contents/ui/configGeneral.qml
+msgid "Refresh"
+msgstr "Yenile"
+
+#: contents/ui/configGeneral.qml
+msgid "Country:"
+msgstr "Ülke:"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep after sending:"
+msgstr "Gönderdikten sonra bip sesi:"
+
+#: contents/ui/configGeneral.qml
+msgid "Play a beep sound after SMS is sent"
+msgstr "SMS gönderildikten sonra bip sesi çal"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep repetitions:"
+msgstr "Bip sesi tekrarı:"
+
+#: contents/ui/main.qml
+msgid "No device available"
+msgstr "Kullanılabilir aygıt yok"
+
+#: contents/ui/main.qml
+msgid "No device configured"
+msgstr "Yapılandırılmış aygıt yok"
+
+#: contents/ui/main.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirin ve bağlayın."
+"SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirip "
+"bağlayın."
+
+#: contents/ui/main.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "SMS göndermeye başlamak için widget ayarlarından bir aygıt seçin."
+
+#: contents/ui/main.qml
+msgid "Open Settings"
+msgstr "Ayarları aç"
+
+#: contents/ui/main.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"Bu aygıtta SMS eklentisi kullanılamıyor. Aygıtın erişilebilir olduğundan ve "
+"KDE Connect ayarlarında SMS eklentisinin etkinleştirildiğinden emin olun."
+
+#: contents/ui/main.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect'i Aç"
+
+#: contents/ui/main.qml
+msgid "Drop files to share with %1"
+msgstr "%1 ile paylaşmak için dosyaları bırakın"
+
+#: contents/ui/main.qml
+msgid "Drop files here to share them via KDE Connect"
+msgstr "KDE Connect üzerinden paylaşmak için dosyaları buraya bırakın"
+
+#: contents/ui/main.qml
+msgid "Sending..."
+msgstr "Gönderiliyor…"
+
+#: contents/ui/main.qml
+msgid "SMS sent successfully"
+msgstr "SMS başarıyla gönderildi"
+
+#: contents/ui/main.qml
+msgid "Failed to send SMS"
+msgstr "SMS gönderilemedi"
+
+#: contents/ui/main.qml
+msgid "SMS History"
+msgstr "SMS Geçmişi"
+
+#: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Kişileri telefondan eşitle"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Konuşmaları aç"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Cihaz yok"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Cihaz değiştir"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Yeni SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMS Gönder"
+
+#: contents/ui/main.qml
+msgid "Sharing file..."
+msgstr "Dosya paylaşılıyor…"
+
+#: contents/ui/main.qml
+msgid "File shared successfully"
+msgstr "Dosya başarıyla paylaşıldı"
+
+#: contents/ui/main.qml
+msgid "Failed to share file"
+msgstr "Dosya paylaşılamadı"
+
+#: contents/ui/main.qml
+msgid "Notification"
+msgstr "Bildirim"
+
+#: contents/ui/main.qml
+msgid "Reply"
+msgstr "Yanıtla"
+
+#: contents/ui/main.qml
+msgid "Cancel"
+msgstr "İptal"
+
+#: contents/ui/main.qml
+msgid "Reply to %1..."
+msgstr "%1 için yanıt yazın…"
+
+#: contents/ui/main.qml
+msgid "Send"
+msgstr "Gönder"
+
+#~ msgid "Type your reply..."
+#~ msgstr "Yanıtınızı yazın…"
+
+#~ msgid "%1 min ago"
+#~ msgstr "%1 dk önce"
+
+#~ msgid "%1 h ago"
+#~ msgstr "%1 sa önce"
+
+#~ msgid "%1 d ago"
+#~ msgstr "%1 gün önce"
+
+#~ msgid "Scanning for devices..."
+#~ msgstr "Aygıtlar aranıyor…"
+
+#~ msgid ""
+#~ "Connect your phone with KDE Connect and select it in the widget settings "
+#~ "to start sending SMS."
+#~ msgstr ""
+#~ "Telefonunuzu KDE Connect ile bağlayın ve SMS göndermeye başlamak için "
+#~ "widget ayarlarından seçin."
+
+#~ msgid "Send failed with exit code %1"
+#~ msgstr "Gönderme başarısız, çıkış kodu %1"
+
+#~ msgid "Configure a device in widget settings"
+#~ msgstr "Widget ayarlarında bir aygıt yapılandırın"
+
+#~ msgid "kdeconnect-cli exited with code %1"
+#~ msgstr "kdeconnect-cli %1 koduyla sonlandı"
+
+#~ msgid "Device name:"
+#~ msgstr "Aygıt adı:"
+
+#~ msgid "KDE Connect paired device name"
+#~ msgstr "KDE Connect ile eşleştirilmiş aygıt adı"
+
+#~ msgid "Country calling code:"
+#~ msgstr "Ülke arama kodu:"
+
+#~ msgid "+33"
+#~ msgstr "+90"
+
+#~ msgid "Valid number (%1)"
+#~ msgstr "Geçerli numara (%1)"
+
+#~ msgid "Configure a device name in widget settings"
+#~ msgstr "Widget ayarlarında bir aygıt adı yapılandırın"
+
+#~ msgid "%1 characters"
+#~ msgstr "%1 karakter"
+
+#~ msgid "KDE Connect SMS — Coming soon"
+#~ msgstr "KDE Connect SMS — Yakında"

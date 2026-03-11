@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <!-- KDE Connect paired device ID (preferred) -->
+    <entry name="defaultDeviceId" type="String">
+      <default></default>
+    </entry>
+    <!-- KDE Connect paired device name (display / fallback) -->
+    <entry name="defaultDeviceName" type="String">
+      <default></default>
+    </entry>
+    <!-- Default country ISO 3166-1 alpha-2 code (e.g. "FR") -->
+    <entry name="defaultCountry" type="String">
+      <default></default>
+    </entry>
+    <!-- Beep after sending SMS -->
+    <entry name="speakerBeep" type="Bool">
+      <default>false</default>
+    </entry>
+    <!-- Number of beep repetitions -->
+    <entry name="speakerBeepReps" type="Int">
+      <default>1</default>
+    </entry>
+  </group>
+</kcfg>

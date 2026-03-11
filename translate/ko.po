@@ -1,0 +1,353 @@
+# Translation of KDE Connect SMS
+# Copyright (C) 2026 David DIVERRES
+# This file is distributed under the same license as the kdeconnectsms package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeconnectsms\n"
+"Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
+"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"PO-Revision-Date: 2026-03-11 00:24+0000\n"
+"Last-Translator: David DIVERRES <david@comexpertise.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/config/config.qml
+msgid "General"
+msgstr "일반"
+
+#: contents/ui/CountryPicker.qml
+msgid "Search country..."
+msgstr "국가 검색…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message:"
+msgstr "메시지:"
+
+#: contents/ui/MessageInput.qml
+msgid "Type your message here..."
+msgstr "여기에 메시지를 입력하세요…"
+
+#: contents/ui/MessageInput.qml
+msgid "Clear message"
+msgstr "메시지 지우기"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 character"
+msgid_plural "%1 characters"
+msgstr[0] "%1자"
+
+#: contents/ui/MessageInput.qml
+msgid "%1 segment"
+msgid_plural "%1 segments"
+msgstr[0] "%1개 세그먼트"
+
+#: contents/ui/MessageInput.qml
+msgid "Unicode"
+msgstr "유니코드"
+
+#: contents/ui/MessageInput.qml
+msgid "Spell check"
+msgstr "맞춤법 검사"
+
+#: contents/ui/MessageInput.qml
+msgid "Disable spell check"
+msgstr "맞춤법 검사 비활성화"
+
+#: contents/ui/MessageInput.qml
+msgid "Enable spell check"
+msgstr "맞춤법 검사 활성화"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number:"
+msgstr "전화번호:"
+
+#: contents/ui/PhoneInput.qml
+msgid "To: %1"
+msgstr "받는 사람: %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Clear contact"
+msgstr "연락처 지우기"
+
+#: contents/ui/PhoneInput.qml
+msgid "Country"
+msgstr "국가"
+
+#: contents/ui/PhoneInput.qml
+msgid "Enter phone number"
+msgstr "전화번호 입력"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number — %1"
+msgstr "유효한 번호 — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Valid number"
+msgstr "유효한 번호"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number — %1"
+msgstr "가능한 번호 — %1"
+
+#: contents/ui/PhoneInput.qml
+msgid "Possible number"
+msgstr "가능한 번호"
+
+#: contents/ui/PhoneInput.qml
+msgid "Incomplete number"
+msgstr "불완전한 번호"
+
+#: contents/ui/PhoneInput.qml
+msgid "Mobile"
+msgstr "휴대전화"
+
+#: contents/ui/PhoneInput.qml
+msgid "Work"
+msgstr "직장"
+
+#: contents/ui/PhoneInput.qml
+msgid "Home"
+msgstr "집"
+
+#: contents/ui/PhoneInput.qml
+msgid "Fax"
+msgstr "팩스"
+
+#: contents/ui/SmsHistory.qml
+msgid "Recent"
+msgstr "최근"
+
+#: contents/ui/SmsHistory.qml
+msgid "Clear history"
+msgstr "기록 지우기"
+
+#: contents/ui/SmsHistory.qml contents/ui/main.qml
+msgid "Dismiss"
+msgstr "닫기"
+
+#: contents/ui/SmsHistory.qml
+msgid "Just now"
+msgstr "방금"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 min ago"
+msgid_plural "%1 min ago"
+msgstr[0] "%1분 전"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 h ago"
+msgid_plural "%1 h ago"
+msgstr[0] "%1시간 전"
+
+#: contents/ui/SmsHistory.qml
+msgid "1 d ago"
+msgid_plural "%1 d ago"
+msgstr[0] "%1일 전"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a device --"
+msgstr "-- 장치 선택 --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- No devices found --"
+msgstr "-- 장치를 찾을 수 없음 --"
+
+#: contents/ui/configGeneral.qml
+msgid "-- Select a country --"
+msgstr "-- 국가 선택 --"
+
+#: contents/ui/configGeneral.qml
+msgid "Device:"
+msgstr "장치:"
+
+#: contents/ui/configGeneral.qml
+msgid "Refresh"
+msgstr "새로고침"
+
+#: contents/ui/configGeneral.qml
+msgid "Country:"
+msgstr "국가:"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep after sending:"
+msgstr "전송 후 알림음:"
+
+#: contents/ui/configGeneral.qml
+msgid "Play a beep sound after SMS is sent"
+msgstr "SMS 전송 후 알림음 재생"
+
+#: contents/ui/configGeneral.qml
+msgid "Beep repetitions:"
+msgstr "알림음 반복 횟수:"
+
+#: contents/ui/main.qml
+msgid "No device available"
+msgstr "사용 가능한 장치가 없습니다"
+
+#: contents/ui/main.qml
+msgid "No device configured"
+msgstr "설정된 장치가 없습니다"
+
+#: contents/ui/main.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "KDE Connect로 휴대전화를 페어링하고 연결하여 SMS 전송을 시작하세요."
+
+#: contents/ui/main.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "위젯 설정에서 장치를 선택하여 SMS 전송을 시작하세요."
+
+#: contents/ui/main.qml
+msgid "Open Settings"
+msgstr "설정 열기"
+
+#: contents/ui/main.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"이 장치에서 SMS 플러그인을 사용할 수 없습니다. 장치에 접근할 수 있는지, 그리"
+"고 KDE Connect 설정에서 SMS 플러그인이 활성화되어 있는지 확인하세요."
+
+#: contents/ui/main.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect 열기"
+
+#: contents/ui/main.qml
+msgid "Drop files to share with %1"
+msgstr "%1와(과) 공유할 파일을 놓으세요"
+
+#: contents/ui/main.qml
+msgid "Drop files here to share them via KDE Connect"
+msgstr "KDE Connect를 통해 공유하려면 여기에 파일을 놓으세요"
+
+#: contents/ui/main.qml
+msgid "Sending..."
+msgstr "전송 중…"
+
+#: contents/ui/main.qml
+msgid "SMS sent successfully"
+msgstr "SMS가 성공적으로 전송되었습니다"
+
+#: contents/ui/main.qml
+msgid "Failed to send SMS"
+msgstr "SMS 전송에 실패했습니다"
+
+#: contents/ui/main.qml
+msgid "SMS History"
+msgstr "SMS 기록"
+
+#: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "휴대전화에서 연락처 동기화"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "대화 열기"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "기기 없음"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "기기 전환"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "새 SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMS 보내기"
+
+#: contents/ui/main.qml
+msgid "Sharing file..."
+msgstr "파일 공유 중…"
+
+#: contents/ui/main.qml
+msgid "File shared successfully"
+msgstr "파일이 성공적으로 공유되었습니다"
+
+#: contents/ui/main.qml
+msgid "Failed to share file"
+msgstr "파일 공유에 실패했습니다"
+
+#: contents/ui/main.qml
+msgid "Notification"
+msgstr "알림"
+
+#: contents/ui/main.qml
+msgid "Reply"
+msgstr "답장"
+
+#: contents/ui/main.qml
+msgid "Cancel"
+msgstr "취소"
+
+#: contents/ui/main.qml
+msgid "Reply to %1..."
+msgstr "%1에 답장…"
+
+#: contents/ui/main.qml
+msgid "Send"
+msgstr "보내기"
+
+#~ msgid "Type your reply..."
+#~ msgstr "답장을 입력하세요…"
+
+#~ msgid "%1 min ago"
+#~ msgstr "%1분 전"
+
+#~ msgid "%1 h ago"
+#~ msgstr "%1시간 전"
+
+#~ msgid "%1 d ago"
+#~ msgstr "%1일 전"
+
+#~ msgid "Scanning for devices..."
+#~ msgstr "장치 검색 중…"
+
+#~ msgid ""
+#~ "Connect your phone with KDE Connect and select it in the widget settings "
+#~ "to start sending SMS."
+#~ msgstr ""
+#~ "KDE Connect로 휴대전화를 연결하고 위젯 설정에서 선택하여 SMS 전송을 시작하"
+#~ "세요."
+
+#~ msgid "Send failed with exit code %1"
+#~ msgstr "전송 실패 (종료 코드 %1)"
+
+#~ msgid "Configure a device in widget settings"
+#~ msgstr "위젯 설정에서 장치를 구성하세요"
+
+#~ msgid "kdeconnect-cli exited with code %1"
+#~ msgstr "kdeconnect-cli가 코드 %1로 종료되었습니다"
+
+#~ msgid "Device name:"
+#~ msgstr "장치 이름:"
+
+#~ msgid "KDE Connect paired device name"
+#~ msgstr "KDE Connect로 페어링된 장치 이름"
+
+#~ msgid "Country calling code:"
+#~ msgstr "국가 전화 코드:"
+
+#~ msgid "+33"
+#~ msgstr "+82"
+
+#~ msgid "Valid number (%1)"
+#~ msgstr "유효한 번호 (%1)"
+
+#~ msgid "Configure a device name in widget settings"
+#~ msgstr "위젯 설정에서 장치 이름을 구성하세요"
+
+#~ msgid "%1 characters"
+#~ msgstr "%1자"
+
+#~ msgid "KDE Connect SMS — Coming soon"
+#~ msgstr "KDE Connect SMS — 곧 출시"
