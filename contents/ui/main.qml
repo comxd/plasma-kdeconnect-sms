@@ -196,6 +196,15 @@ PlasmoidItem {
         Layout.maximumHeight: Kirigami.Units.gridUnit * 28
         spacing: Kirigami.Units.smallSpacing
 
+        // Auto-focus phone field when popup opens
+        Connections {
+            target: root
+            function onExpandedChanged() {
+                if (root.expanded && root.deviceId.length > 0)
+                    phoneInput.focusPhoneField();
+            }
+        }
+
         // ── Onboarding: no device configured ──
 
         ColumnLayout {

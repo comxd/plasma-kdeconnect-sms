@@ -49,6 +49,10 @@ ColumnLayout {
         selectedContactName = "";
     }
 
+    function focusPhoneField() {
+        phoneField.forceActiveFocus();
+    }
+
     function setPhone(phone, contactName) {
         phoneField.text = phone;
         phoneField.rawInput = phone;
