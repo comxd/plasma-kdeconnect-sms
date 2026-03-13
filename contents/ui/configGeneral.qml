@@ -79,7 +79,10 @@ Kirigami.FormLayout {
         id: countryModel
     }
 
+    property bool _buildingCountry: false
+
     function buildCountryModel() {
+        _buildingCountry = true;
         countryModel.clear();
         countryModel.append({ countryCode: "", countryDisplay: i18n("-- Select a country --") });
         var countries = Helpers.getCountryList();
@@ -89,8 +92,11 @@ Kirigami.FormLayout {
                 countryDisplay: countries[i].name + " (+" + countries[i].callingCode + ")"
             });
         }
+        _syncCountryIndex();
+        _buildingCountry = false;
+    }
 
-        // Restore saved selection
+    function _syncCountryIndex() {
         var idx = 0;
         if (cfg_defaultCountry) {
             for (var j = 1; j < countryModel.count; j++) {
@@ -101,6 +107,11 @@ Kirigami.FormLayout {
             }
         }
         countryCombo.currentIndex = idx;
+    }
+
+    onCfg_defaultCountryChanged: {
+        if (!_buildingCountry && countryModel.count > 0)
+            _syncCountryIndex();
     }
 
     Component.onCompleted: {
@@ -166,6 +177,9 @@ Kirigami.FormLayout {
 
         // Type-ahead: jump to first matching country as user types
         onEditTextChanged: {
+            // Skip during model rebuild
+            if (configPage._buildingCountry)
+                return;
             // Skip programmatic changes (when editText matches selected item)
             if (currentIndex >= 0
                     && currentIndex < countryModel.count
