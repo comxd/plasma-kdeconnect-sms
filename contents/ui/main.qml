@@ -29,7 +29,9 @@ PlasmoidItem {
 
     property string deviceId: plasmoid.configuration.defaultDeviceId
     property string deviceName: plasmoid.configuration.defaultDeviceName
-    property string activeCountry: plasmoid.configuration.defaultCountry
+    property string overrideCountry: ""
+    property string activeCountry: overrideCountry.length > 0
+        ? overrideCountry : plasmoid.configuration.defaultCountry
     property bool speakerBeep: plasmoid.configuration.speakerBeep
     property int speakerBeepReps: plasmoid.configuration.speakerBeepReps
 
@@ -199,8 +201,11 @@ PlasmoidItem {
         Connections {
             target: root
             function onExpandedChanged() {
-                if (root.expanded && root.deviceId.length > 0)
-                    phoneInput.focusPhoneField();
+                if (root.expanded) {
+                    root.overrideCountry = "";
+                    if (root.deviceId.length > 0)
+                        phoneInput.focusPhoneField();
+                }
             }
         }
 
@@ -595,6 +600,7 @@ PlasmoidItem {
                     phoneInput.clear();
                     messageInput.clear();
                     root.sendState = "idle";
+                    root.overrideCountry = "";
                 }
             }
 
@@ -806,7 +812,7 @@ PlasmoidItem {
             id: countryPicker
             activeCountry: root.activeCountry
             onCountrySelected: function(code) {
-                plasmoid.configuration.defaultCountry = code;
+                root.overrideCountry = code;
             }
         }
 

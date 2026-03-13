@@ -158,7 +158,7 @@ Kirigami.FormLayout {
         }
 
         onAccepted: {
-            if (currentIndex > 0) {
+            if (currentIndex >= 0) {
                 var selected = countryModel.get(currentIndex);
                 cfg_defaultCountry = selected ? selected.countryCode : "";
             }
@@ -177,6 +177,7 @@ Kirigami.FormLayout {
                 var entry = countryModel.get(i);
                 if (entry.countryDisplay.toLowerCase().indexOf(search) === 0) {
                     currentIndex = i;
+                    cfg_defaultCountry = entry.countryCode;
                     break;
                 }
             }
