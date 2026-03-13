@@ -188,17 +188,23 @@ PlasmoidItem {
     // ── Full representation ──
 
     fullRepresentation: PlasmaExtras.Representation {
+        id: fullRep
+
         Layout.preferredWidth: Kirigami.Units.gridUnit * 26
         Layout.minimumWidth: Kirigami.Units.gridUnit * 20
         Layout.minimumHeight: Kirigami.Units.gridUnit * 12
             + (phoneInput._hasContact ? Kirigami.Units.gridUnit * 2 : 0)
         Layout.maximumHeight: Kirigami.Units.gridUnit * 28
 
-        // Auto-focus phone field when popup opens
+        // ── Page navigation: 0 = SMS form, 1 = Country picker ──
+        property int currentPage: 0
+
+        // Auto-focus phone field when popup opens; reset to form page
         Connections {
             target: root
             function onExpandedChanged() {
                 if (root.expanded) {
+                    fullRep.currentPage = 0;
                     root.overrideCountry = "";
                     if (root.deviceId.length > 0)
                         phoneInput.focusPhoneField();
@@ -209,7 +215,7 @@ PlasmoidItem {
         // ── Footer toolbar ──
 
         footer: PlasmaExtras.PlasmoidHeading {
-            visible: root.deviceId.length > 0
+            visible: root.deviceId.length > 0 && fullRep.currentPage === 0
             contentItem: RowLayout {
                 spacing: Kirigami.Units.smallSpacing
 
@@ -317,10 +323,16 @@ PlasmoidItem {
             }
         }
 
-        // ── Main content ──
+        // ── Main content (StackLayout: page 0 = form, page 1 = country picker) ──
+
+        StackLayout {
+            id: pageStack
+            anchors.fill: parent
+            currentIndex: fullRep.currentPage
+
+        // ── Page 0: SMS form ──
 
         ColumnLayout {
-            anchors.fill: parent
             spacing: Kirigami.Units.smallSpacing
 
             // ── Onboarding: no device configured ──
@@ -422,7 +434,10 @@ PlasmoidItem {
                         sendState: root.sendState
                         contactSearchModel: contactSearchProxy
 
-                        onCountryBadgeClicked: countryPicker.open()
+                        onCountryBadgeClicked: {
+                            fullRep.currentPage = 1;
+                            countryPicker.activate();
+                        }
 
                         onPhoneTextChanged: {
                             if (root.sendState === "success" || root.sendState === "error")
@@ -800,23 +815,27 @@ PlasmoidItem {
                 }
             }
 
-            // ── Country picker popup ──
-
-            CountryPicker {
-                id: countryPicker
-                activeCountry: root.activeCountry
-                onCountrySelected: function(code) {
-                    root.overrideCountry = code;
-                }
-            }
-
             // ── Clear message field after successful send ──
 
             Connections {
                 target: root
                 function onClearAfterSend() { messageInput.clear(); }
             }
+        }
+
+        // ── Page 1: Country picker (inline view) ──
+
+        CountryPicker {
+            id: countryPicker
+            activeCountry: root.activeCountry
+            onCountrySelected: function(code) {
+                root.overrideCountry = code;
+                fullRep.currentPage = 0;
             }
+            onBackRequested: fullRep.currentPage = 0
+        }
+
+        } // StackLayout
     }
 
     // ── Send SMS via kdeconnect-cli ──

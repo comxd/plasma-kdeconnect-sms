@@ -2,41 +2,22 @@
     SPDX-FileCopyrightText: 2026 ComExpertise
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    Country picker popup with search and filterable list.
+    Country picker inline view with search and filterable list.
+    Designed to be used as a page in a StackLayout.
 */
 
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
-import org.kde.kirigami.primitives as KirigamiPrimitives
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.components as PlasmaComponents3
 
 import "../code/helpers.js" as Helpers
 
-Controls.Popup {
+ColumnLayout {
     id: countryPicker
-    width: Kirigami.Units.gridUnit * 18
-    height: Kirigami.Units.gridUnit * 14
-    modal: true
-    focus: true
-    closePolicy: Controls.Popup.CloseOnEscape | Controls.Popup.CloseOnPressOutside
-
-    enter: Transition {
-        NumberAnimation { property: "opacity"; from: 0; to: 1; duration: 150 }
-    }
-    exit: Transition {
-        NumberAnimation { property: "opacity"; from: 1; to: 0; duration: 100 }
-    }
-
-    background: KirigamiPrimitives.ShadowedRectangle {
-        color: Kirigami.Theme.backgroundColor
-        border.color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.2)
-        border.width: 1
-        radius: Kirigami.Units.cornerRadius
-        shadow.size: 12
-        shadow.yOffset: 4
-        shadow.color: Qt.rgba(0, 0, 0, 0.15)
-    }
+    spacing: 0
 
     // ── Required properties ──
 
@@ -45,26 +26,75 @@ Controls.Popup {
     // ── Signals ──
 
     signal countrySelected(string code)
+    signal backRequested()
 
-    // ── UI ──
+    // ── Public API ──
 
-    ColumnLayout {
-        anchors.fill: parent
-        spacing: Kirigami.Units.smallSpacing
+    function activate() {
+        countrySearchField.text = "";
+        countryFilterModel.update();
+        countrySearchField.forceActiveFocus();
+    }
 
-        Controls.TextField {
-            id: countrySearchField
-            Layout.fillWidth: true
-            placeholderText: i18n("Search country...")
-            onTextChanged: countryFilterModel.update()
+    // ── Header with back button ──
+
+    PlasmaExtras.PlasmoidHeading {
+        Layout.fillWidth: true
+
+        contentItem: RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            PlasmaComponents3.Button {
+                icon.name: mirrored ? "go-next" : "go-previous"
+                text: i18n("Back")
+                onClicked: countryPicker.backRequested()
+            }
+
+            PlasmaComponents3.Label {
+                Layout.fillWidth: true
+                text: i18n("Select Country")
+                horizontalAlignment: Text.AlignHCenter
+                font.bold: true
+                elide: Text.ElideRight
+            }
+
+            // Spacer to balance the back button
+            Item {
+                implicitWidth: Kirigami.Units.gridUnit * 4
+            }
         }
+    }
+
+    // ── Search field ──
+
+    Controls.TextField {
+        id: countrySearchField
+        Layout.fillWidth: true
+        Layout.leftMargin: Kirigami.Units.smallSpacing
+        Layout.rightMargin: Kirigami.Units.smallSpacing
+        Layout.topMargin: Kirigami.Units.smallSpacing
+        placeholderText: i18n("Search country...")
+        onTextChanged: countryFilterModel.update()
+
+        Keys.onEscapePressed: countryPicker.backRequested()
+    }
+
+    // ── Country list ──
+
+    PlasmaComponents3.ScrollView {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        Layout.topMargin: Kirigami.Units.smallSpacing
+
+        PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
 
         ListView {
             id: countryListView
-            Layout.fillWidth: true
-            Layout.fillHeight: true
             clip: true
             model: countryFilterModel
+            currentIndex: -1
+            boundsBehavior: Flickable.StopAtBounds
+            Keys.onEscapePressed: countryPicker.backRequested()
 
             delegate: Controls.ItemDelegate {
                 width: countryListView.width
@@ -72,17 +102,10 @@ Controls.Popup {
                 highlighted: model.code === countryPicker.activeCountry
                 onClicked: {
                     countryPicker.countrySelected(model.code);
-                    countryPicker.close();
                     countrySearchField.text = "";
                 }
             }
         }
-    }
-
-    onOpened: {
-        countrySearchField.text = "";
-        countryFilterModel.update();
-        countrySearchField.forceActiveFocus();
     }
 
     ListModel {
