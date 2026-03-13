@@ -66,13 +66,6 @@ ColumnLayout {
         return Helpers.formatPhoneNumberE164(phoneField.text, phoneInput.activeCountry);
     }
 
-    // ── Country badge + phone field ──
-
-    Controls.Label {
-        text: i18n("Phone number:")
-        Layout.fillWidth: true
-    }
-
     // ── Selected contact chip ──
 
     RowLayout {
@@ -136,6 +129,7 @@ ColumnLayout {
         Controls.TextField {
             id: phoneField
             Layout.fillWidth: true
+            Accessible.name: i18n("Phone number")
             placeholderText: {
                 var example = Helpers.examplePhoneNumber(phoneInput.activeCountry);
                 return example || i18n("Enter phone number");

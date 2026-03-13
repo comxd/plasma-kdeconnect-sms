@@ -36,11 +36,6 @@ ColumnLayout {
 
     // ── UI ──
 
-    Controls.Label {
-        text: i18n("Message:")
-        Layout.fillWidth: true
-    }
-
     Item {
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -51,6 +46,7 @@ ColumnLayout {
             Controls.TextArea {
                 id: messageField
                 placeholderText: i18n("Type your message here...")
+                Accessible.name: i18n("Message")
                 wrapMode: TextEdit.WordWrap
                 enabled: messageInput.sendState !== "sending"
                 Kirigami.SpellCheck.enabled: true
