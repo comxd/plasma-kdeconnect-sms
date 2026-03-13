@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -25,12 +25,12 @@ msgid "Search country..."
 msgstr "Ülke ara…"
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
-msgstr "Mesaj:"
-
-#: contents/ui/MessageInput.qml
 msgid "Type your message here..."
 msgstr "Mesajınızı buraya yazın…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message"
+msgstr "Mesaj"
 
 #: contents/ui/MessageInput.qml
 msgid "Clear message"
@@ -65,40 +65,20 @@ msgid "Enable spell check"
 msgstr "Yazım denetimini aç"
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr "Telefon numarası:"
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr "Kime: %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr "Kişiyi temizle"
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
 msgstr "Ülke"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
+msgstr "Telefon numarası"
 
 #: contents/ui/PhoneInput.qml
 msgid "Enter phone number"
 msgstr "Telefon numarasını girin"
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr "Geçerli numara — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr "Geçerli numara"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr "Olası numara — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
-msgstr "Olası numara"
+msgid "Clear contact"
+msgstr "Kişiyi temizle"
 
 #: contents/ui/PhoneInput.qml
 msgid "Incomplete number"
@@ -200,7 +180,7 @@ msgstr "Yapılandırılmış aygıt yok"
 
 #: contents/ui/main.qml
 msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirin ve bağlayın."
+msgstr ""
 "SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirip "
 "bağlayın."
 
@@ -303,58 +283,3 @@ msgstr "%1 için yanıt yazın…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Gönder"
-
-#~ msgid "Type your reply..."
-#~ msgstr "Yanıtınızı yazın…"
-
-#~ msgid "%1 min ago"
-#~ msgstr "%1 dk önce"
-
-#~ msgid "%1 h ago"
-#~ msgstr "%1 sa önce"
-
-#~ msgid "%1 d ago"
-#~ msgstr "%1 gün önce"
-
-#~ msgid "Scanning for devices..."
-#~ msgstr "Aygıtlar aranıyor…"
-
-#~ msgid ""
-#~ "Connect your phone with KDE Connect and select it in the widget settings "
-#~ "to start sending SMS."
-#~ msgstr ""
-#~ "Telefonunuzu KDE Connect ile bağlayın ve SMS göndermeye başlamak için "
-#~ "widget ayarlarından seçin."
-
-#~ msgid "Send failed with exit code %1"
-#~ msgstr "Gönderme başarısız, çıkış kodu %1"
-
-#~ msgid "Configure a device in widget settings"
-#~ msgstr "Widget ayarlarında bir aygıt yapılandırın"
-
-#~ msgid "kdeconnect-cli exited with code %1"
-#~ msgstr "kdeconnect-cli %1 koduyla sonlandı"
-
-#~ msgid "Device name:"
-#~ msgstr "Aygıt adı:"
-
-#~ msgid "KDE Connect paired device name"
-#~ msgstr "KDE Connect ile eşleştirilmiş aygıt adı"
-
-#~ msgid "Country calling code:"
-#~ msgstr "Ülke arama kodu:"
-
-#~ msgid "+33"
-#~ msgstr "+90"
-
-#~ msgid "Valid number (%1)"
-#~ msgstr "Geçerli numara (%1)"
-
-#~ msgid "Configure a device name in widget settings"
-#~ msgstr "Widget ayarlarında bir aygıt adı yapılandırın"
-
-#~ msgid "%1 characters"
-#~ msgstr "%1 karakter"
-
-#~ msgid "KDE Connect SMS — Coming soon"
-#~ msgstr "KDE Connect SMS — Yakında"

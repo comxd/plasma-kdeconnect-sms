@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,11 @@ msgid "Search country..."
 msgstr ""
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
+msgid "Type your message here..."
 msgstr ""
 
 #: contents/ui/MessageInput.qml
-msgid "Type your message here..."
+msgid "Message"
 msgstr ""
 
 #: contents/ui/MessageInput.qml
@@ -67,19 +67,11 @@ msgid "Enable spell check"
 msgstr ""
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
+msgstr ""
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
 msgstr ""
 
 #: contents/ui/PhoneInput.qml
@@ -87,19 +79,7 @@ msgid "Enter phone number"
 msgstr ""
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr ""
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
+msgid "Clear contact"
 msgstr ""
 
 #: contents/ui/PhoneInput.qml

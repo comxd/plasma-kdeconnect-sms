@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -25,12 +25,12 @@ msgid "Search country..."
 msgstr "국가 검색…"
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
-msgstr "메시지:"
-
-#: contents/ui/MessageInput.qml
 msgid "Type your message here..."
 msgstr "여기에 메시지를 입력하세요…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message"
+msgstr "메시지"
 
 #: contents/ui/MessageInput.qml
 msgid "Clear message"
@@ -63,40 +63,20 @@ msgid "Enable spell check"
 msgstr "맞춤법 검사 활성화"
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr "전화번호:"
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr "받는 사람: %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr "연락처 지우기"
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
 msgstr "국가"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
+msgstr "전화번호"
 
 #: contents/ui/PhoneInput.qml
 msgid "Enter phone number"
 msgstr "전화번호 입력"
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr "유효한 번호 — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr "유효한 번호"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr "가능한 번호 — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
-msgstr "가능한 번호"
+msgid "Clear contact"
+msgstr "연락처 지우기"
 
 #: contents/ui/PhoneInput.qml
 msgid "Incomplete number"
@@ -296,58 +276,3 @@ msgstr "%1에 답장…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "보내기"
-
-#~ msgid "Type your reply..."
-#~ msgstr "답장을 입력하세요…"
-
-#~ msgid "%1 min ago"
-#~ msgstr "%1분 전"
-
-#~ msgid "%1 h ago"
-#~ msgstr "%1시간 전"
-
-#~ msgid "%1 d ago"
-#~ msgstr "%1일 전"
-
-#~ msgid "Scanning for devices..."
-#~ msgstr "장치 검색 중…"
-
-#~ msgid ""
-#~ "Connect your phone with KDE Connect and select it in the widget settings "
-#~ "to start sending SMS."
-#~ msgstr ""
-#~ "KDE Connect로 휴대전화를 연결하고 위젯 설정에서 선택하여 SMS 전송을 시작하"
-#~ "세요."
-
-#~ msgid "Send failed with exit code %1"
-#~ msgstr "전송 실패 (종료 코드 %1)"
-
-#~ msgid "Configure a device in widget settings"
-#~ msgstr "위젯 설정에서 장치를 구성하세요"
-
-#~ msgid "kdeconnect-cli exited with code %1"
-#~ msgstr "kdeconnect-cli가 코드 %1로 종료되었습니다"
-
-#~ msgid "Device name:"
-#~ msgstr "장치 이름:"
-
-#~ msgid "KDE Connect paired device name"
-#~ msgstr "KDE Connect로 페어링된 장치 이름"
-
-#~ msgid "Country calling code:"
-#~ msgstr "국가 전화 코드:"
-
-#~ msgid "+33"
-#~ msgstr "+82"
-
-#~ msgid "Valid number (%1)"
-#~ msgstr "유효한 번호 (%1)"
-
-#~ msgid "Configure a device name in widget settings"
-#~ msgstr "위젯 설정에서 장치 이름을 구성하세요"
-
-#~ msgid "%1 characters"
-#~ msgstr "%1자"
-
-#~ msgid "KDE Connect SMS — Coming soon"
-#~ msgstr "KDE Connect SMS — 곧 출시"

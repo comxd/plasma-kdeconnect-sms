@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -25,12 +25,12 @@ msgid "Search country..."
 msgstr "搜索国家…"
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
-msgstr "消息："
-
-#: contents/ui/MessageInput.qml
 msgid "Type your message here..."
 msgstr "在此输入消息…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message"
+msgstr "消息"
 
 #: contents/ui/MessageInput.qml
 msgid "Clear message"
@@ -63,40 +63,20 @@ msgid "Enable spell check"
 msgstr "启用拼写检查"
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr "电话号码："
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr "收件人：%1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr "清除联系人"
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
 msgstr "国家"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
+msgstr "电话号码"
 
 #: contents/ui/PhoneInput.qml
 msgid "Enter phone number"
 msgstr "输入电话号码"
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr "有效号码 — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr "有效号码"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr "可能的号码 — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
-msgstr "可能的号码"
+msgid "Clear contact"
+msgstr "清除联系人"
 
 #: contents/ui/PhoneInput.qml
 msgid "Incomplete number"
@@ -296,57 +276,3 @@ msgstr "回复 %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "发送"
-
-#~ msgid "Type your reply..."
-#~ msgstr "输入回复…"
-
-#~ msgid "%1 min ago"
-#~ msgstr "%1 分钟前"
-
-#~ msgid "%1 h ago"
-#~ msgstr "%1 小时前"
-
-#~ msgid "%1 d ago"
-#~ msgstr "%1 天前"
-
-#~ msgid "Scanning for devices..."
-#~ msgstr "正在搜索设备…"
-
-#~ msgid ""
-#~ "Connect your phone with KDE Connect and select it in the widget settings "
-#~ "to start sending SMS."
-#~ msgstr ""
-#~ "使用 KDE Connect 连接您的手机，并在小部件设置中选择该设备以开始发送短信。"
-
-#~ msgid "Send failed with exit code %1"
-#~ msgstr "发送失败，退出代码 %1"
-
-#~ msgid "Configure a device in widget settings"
-#~ msgstr "请在小部件设置中配置设备"
-
-#~ msgid "kdeconnect-cli exited with code %1"
-#~ msgstr "kdeconnect-cli 以代码 %1 退出"
-
-#~ msgid "Device name:"
-#~ msgstr "设备名称："
-
-#~ msgid "KDE Connect paired device name"
-#~ msgstr "KDE Connect 已配对的设备名称"
-
-#~ msgid "Country calling code:"
-#~ msgstr "国际区号："
-
-#~ msgid "+33"
-#~ msgstr "+86"
-
-#~ msgid "Valid number (%1)"
-#~ msgstr "有效号码（%1）"
-
-#~ msgid "Configure a device name in widget settings"
-#~ msgstr "请在小部件设置中配置设备名称"
-
-#~ msgid "%1 characters"
-#~ msgstr "%1 个字符"
-
-#~ msgid "KDE Connect SMS — Coming soon"
-#~ msgstr "KDE Connect 短信 — 即将推出"

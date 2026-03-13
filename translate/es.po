@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -25,12 +25,12 @@ msgid "Search country..."
 msgstr "Buscar país…"
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
-msgstr "Mensaje:"
-
-#: contents/ui/MessageInput.qml
 msgid "Type your message here..."
 msgstr "Escriba su mensaje aquí…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message"
+msgstr "Mensaje"
 
 #: contents/ui/MessageInput.qml
 msgid "Clear message"
@@ -65,40 +65,20 @@ msgid "Enable spell check"
 msgstr "Activar corrector ortográfico"
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr "Número de teléfono:"
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr "Para: %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr "Borrar contacto"
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
 msgstr "País"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
+msgstr "Número de teléfono"
 
 #: contents/ui/PhoneInput.qml
 msgid "Enter phone number"
 msgstr "Introducir número de teléfono"
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr "Número válido — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr "Número válido"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr "Número posible — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
-msgstr "Número posible"
+msgid "Clear contact"
+msgstr "Borrar contacto"
 
 #: contents/ui/PhoneInput.qml
 msgid "Incomplete number"
@@ -200,14 +180,14 @@ msgstr "Ningún dispositivo configurado"
 
 #: contents/ui/main.qml
 msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "Vincula y conecta tu teléfono con KDE Connect para empezar a enviar SMS."
-"Empareje y conecte su teléfono con KDE Connect para empezar a enviar SMS."
+msgstr ""
+"Empareja y conecta tu teléfono con KDE Connect para empezar a enviar SMS."
 
 #: contents/ui/main.qml
 msgid "Select a device in the widget settings to start sending SMS."
-msgstr "Selecciona un dispositivo en la configuración del widget para empezar a enviar SMS."
-"Seleccione un dispositivo en los ajustes del widget para empezar a enviar "
-"SMS."
+msgstr ""
+"Selecciona un dispositivo en la configuración del widget para empezar a "
+"enviar SMS."
 
 #: contents/ui/main.qml
 msgid "Open Settings"
@@ -305,58 +285,3 @@ msgstr "Responder a %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Enviar"
-
-#~ msgid "Type your reply..."
-#~ msgstr "Escriba su respuesta…"
-
-#~ msgid "%1 min ago"
-#~ msgstr "Hace %1 min"
-
-#~ msgid "%1 h ago"
-#~ msgstr "Hace %1 h"
-
-#~ msgid "%1 d ago"
-#~ msgstr "Hace %1 d"
-
-#~ msgid "Scanning for devices..."
-#~ msgstr "Buscando dispositivos…"
-
-#~ msgid ""
-#~ "Connect your phone with KDE Connect and select it in the widget settings "
-#~ "to start sending SMS."
-#~ msgstr ""
-#~ "Conecte su teléfono con KDE Connect y selecciónelo en los ajustes del "
-#~ "widget para empezar a enviar SMS."
-
-#~ msgid "Send failed with exit code %1"
-#~ msgstr "Error de envío con código de salida %1"
-
-#~ msgid "Configure a device in widget settings"
-#~ msgstr "Configure un dispositivo en los ajustes del widget"
-
-#~ msgid "kdeconnect-cli exited with code %1"
-#~ msgstr "kdeconnect-cli finalizó con el código %1"
-
-#~ msgid "Device name:"
-#~ msgstr "Nombre del dispositivo:"
-
-#~ msgid "KDE Connect paired device name"
-#~ msgstr "Nombre del dispositivo emparejado con KDE Connect"
-
-#~ msgid "Country calling code:"
-#~ msgstr "Código de llamada del país:"
-
-#~ msgid "+33"
-#~ msgstr "+34"
-
-#~ msgid "Valid number (%1)"
-#~ msgstr "Número válido (%1)"
-
-#~ msgid "Configure a device name in widget settings"
-#~ msgstr "Configure un nombre de dispositivo en los ajustes del widget"
-
-#~ msgid "%1 characters"
-#~ msgstr "%1 caracteres"
-
-#~ msgid "KDE Connect SMS — Coming soon"
-#~ msgstr "KDE Connect SMS — Próximamente"

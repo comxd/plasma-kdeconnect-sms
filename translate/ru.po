@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-11 22:52+0100\n"
+"POT-Creation-Date: 2026-03-13 19:02+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -26,12 +26,12 @@ msgid "Search country..."
 msgstr "Поиск страны…"
 
 #: contents/ui/MessageInput.qml
-msgid "Message:"
-msgstr "Сообщение:"
-
-#: contents/ui/MessageInput.qml
 msgid "Type your message here..."
 msgstr "Введите сообщение…"
+
+#: contents/ui/MessageInput.qml
+msgid "Message"
+msgstr "Сообщение"
 
 #: contents/ui/MessageInput.qml
 msgid "Clear message"
@@ -68,40 +68,20 @@ msgid "Enable spell check"
 msgstr "Включить проверку орфографии"
 
 #: contents/ui/PhoneInput.qml
-msgid "Phone number:"
-msgstr "Номер телефона:"
-
-#: contents/ui/PhoneInput.qml
-msgid "To: %1"
-msgstr "Кому: %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Clear contact"
-msgstr "Очистить контакт"
-
-#: contents/ui/PhoneInput.qml
 msgid "Country"
 msgstr "Страна"
+
+#: contents/ui/PhoneInput.qml
+msgid "Phone number"
+msgstr "Номер телефона"
 
 #: contents/ui/PhoneInput.qml
 msgid "Enter phone number"
 msgstr "Введите номер телефона"
 
 #: contents/ui/PhoneInput.qml
-msgid "Valid number — %1"
-msgstr "Корректный номер — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Valid number"
-msgstr "Корректный номер"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number — %1"
-msgstr "Возможный номер — %1"
-
-#: contents/ui/PhoneInput.qml
-msgid "Possible number"
-msgstr "Возможный номер"
+msgid "Clear contact"
+msgstr "Очистить контакт"
 
 #: contents/ui/PhoneInput.qml
 msgid "Incomplete number"
@@ -206,8 +186,9 @@ msgstr "Устройство не настроено"
 
 #: contents/ui/main.qml
 msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "Подключите и свяжите телефон через KDE Connect, чтобы начать отправку SMS."
-"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку SMS."
+msgstr ""
+"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку "
+"SMS."
 
 #: contents/ui/main.qml
 msgid "Select a device in the widget settings to start sending SMS."
@@ -308,58 +289,3 @@ msgstr "Ответить %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Отправить"
-
-#~ msgid "Type your reply..."
-#~ msgstr "Введите ответ…"
-
-#~ msgid "%1 min ago"
-#~ msgstr "%1 мин. назад"
-
-#~ msgid "%1 h ago"
-#~ msgstr "%1 ч. назад"
-
-#~ msgid "%1 d ago"
-#~ msgstr "%1 дн. назад"
-
-#~ msgid "Scanning for devices..."
-#~ msgstr "Поиск устройств…"
-
-#~ msgid ""
-#~ "Connect your phone with KDE Connect and select it in the widget settings "
-#~ "to start sending SMS."
-#~ msgstr ""
-#~ "Подключите телефон через KDE Connect и выберите его в настройках виджета, "
-#~ "чтобы начать отправку SMS."
-
-#~ msgid "Send failed with exit code %1"
-#~ msgstr "Ошибка отправки с кодом завершения %1"
-
-#~ msgid "Configure a device in widget settings"
-#~ msgstr "Укажите устройство в настройках виджета"
-
-#~ msgid "kdeconnect-cli exited with code %1"
-#~ msgstr "kdeconnect-cli завершился с кодом %1"
-
-#~ msgid "Device name:"
-#~ msgstr "Имя устройства:"
-
-#~ msgid "KDE Connect paired device name"
-#~ msgstr "Имя устройства, сопряжённого через KDE Connect"
-
-#~ msgid "Country calling code:"
-#~ msgstr "Код страны:"
-
-#~ msgid "+33"
-#~ msgstr "+7"
-
-#~ msgid "Valid number (%1)"
-#~ msgstr "Корректный номер (%1)"
-
-#~ msgid "Configure a device name in widget settings"
-#~ msgstr "Укажите имя устройства в настройках виджета"
-
-#~ msgid "%1 characters"
-#~ msgstr "%1 символов"
-
-#~ msgid "KDE Connect SMS — Coming soon"
-#~ msgstr "KDE Connect SMS — Скоро"
