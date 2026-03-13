@@ -152,19 +152,31 @@ Kirigami.FormLayout {
         valueRole: "countryCode"
         editable: true
 
-        onActivated: {
-            var selected = countryModel.get(currentIndex);
+        onActivated: function(index) {
+            var selected = countryModel.get(index);
             cfg_defaultCountry = selected ? selected.countryCode : "";
         }
 
-        // Filter countries by typed text
+        onAccepted: {
+            if (currentIndex > 0) {
+                var selected = countryModel.get(currentIndex);
+                cfg_defaultCountry = selected ? selected.countryCode : "";
+            }
+        }
+
+        // Type-ahead: jump to first matching country as user types
         onEditTextChanged: {
-            if (!editText || countryCombo.currentIndex >= 0) return;
+            // Skip programmatic changes (when editText matches selected item)
+            if (currentIndex >= 0
+                    && currentIndex < countryModel.count
+                    && editText === countryModel.get(currentIndex).countryDisplay)
+                return;
             var search = editText.toLowerCase();
+            if (!search) return;
             for (var i = 1; i < countryModel.count; i++) {
                 var entry = countryModel.get(i);
                 if (entry.countryDisplay.toLowerCase().indexOf(search) === 0) {
-                    countryCombo.currentIndex = i;
+                    currentIndex = i;
                     break;
                 }
             }

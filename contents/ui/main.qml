@@ -29,8 +29,7 @@ PlasmoidItem {
 
     property string deviceId: plasmoid.configuration.defaultDeviceId
     property string deviceName: plasmoid.configuration.defaultDeviceName
-    property string defaultCountry: plasmoid.configuration.defaultCountry
-    property string activeCountry: defaultCountry
+    property string activeCountry: plasmoid.configuration.defaultCountry
     property bool speakerBeep: plasmoid.configuration.speakerBeep
     property int speakerBeepReps: plasmoid.configuration.speakerBeepReps
 
