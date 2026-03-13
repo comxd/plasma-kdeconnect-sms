@@ -66,41 +66,15 @@ ColumnLayout {
         return Helpers.formatPhoneNumberE164(phoneField.text, phoneInput.activeCountry);
     }
 
-    // ── Selected contact chip ──
+    // ── Computed state helpers ──
 
-    RowLayout {
-        Layout.fillWidth: true
-        visible: phoneInput.selectedContactName.length > 0
-        spacing: Kirigami.Units.smallSpacing
+    readonly property bool _hasContact: selectedContactName.length > 0
+    readonly property bool _hasDigits: phoneField.text.length > 0
+        && /\d/.test(phoneField.text)
+    readonly property bool _isIncomplete: _hasDigits
+        && !Helpers.isPossiblePhoneNumber(phoneField.text, phoneInput.activeCountry)
 
-        Kirigami.Icon {
-            source: "user"
-            Layout.preferredWidth: Kirigami.Units.iconSizes.small
-            Layout.preferredHeight: Kirigami.Units.iconSizes.small
-        }
-
-        Controls.Label {
-            text: i18n("To: %1", phoneInput.selectedContactName)
-            Layout.fillWidth: true
-            elide: Text.ElideRight
-            font.pointSize: Kirigami.Theme.smallFont.pointSize
-            color: Kirigami.Theme.activeTextColor
-        }
-
-        Controls.ToolButton {
-            icon.name: "edit-clear"
-            icon.width: Kirigami.Units.iconSizes.small
-            icon.height: Kirigami.Units.iconSizes.small
-            width: Kirigami.Units.iconSizes.medium
-            height: Kirigami.Units.iconSizes.medium
-            onClicked: {
-                phoneInput.clear();
-                phoneField.forceActiveFocus();
-            }
-            Controls.ToolTip.text: i18n("Clear contact")
-            Controls.ToolTip.visible: hovered
-        }
-    }
+    // ── Country badge + phone field ──
 
     RowLayout {
         id: phoneFieldRow
@@ -195,55 +169,82 @@ ColumnLayout {
         }
     }
 
-    // ── Validation hint ──
+    // ── Contact chip + validation warning (combined compact row) ──
 
     RowLayout {
         Layout.fillWidth: true
         spacing: Kirigami.Units.smallSpacing
-        visible: phoneHint.text.length > 0
+        visible: phoneInput._hasContact || phoneInput._isIncomplete
 
+        // Contact chip (pill with border)
+        Rectangle {
+            visible: phoneInput._hasContact
+            Layout.maximumWidth: phoneFieldRow.width
+            implicitWidth: chipRow.implicitWidth + Kirigami.Units.largeSpacing * 2
+            implicitHeight: chipRow.implicitHeight + 2
+            radius: height / 2
+            color: Qt.rgba(Kirigami.Theme.textColor.r,
+                           Kirigami.Theme.textColor.g,
+                           Kirigami.Theme.textColor.b, 0.06)
+            border.width: 1
+            border.color: Qt.rgba(Kirigami.Theme.textColor.r,
+                                  Kirigami.Theme.textColor.g,
+                                  Kirigami.Theme.textColor.b, 0.15)
+
+            RowLayout {
+                id: chipRow
+                anchors.centerIn: parent
+                spacing: Kirigami.Units.smallSpacing / 2
+
+                Kirigami.Icon {
+                    source: "user"
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                }
+
+                Controls.Label {
+                    text: phoneInput.selectedContactName
+                    elide: Text.ElideRight
+                    Layout.maximumWidth: phoneFieldRow.width
+                        - Kirigami.Units.iconSizes.small
+                        - Kirigami.Units.iconSizes.medium
+                        - Kirigami.Units.smallSpacing * 4
+                    font.pointSize: Kirigami.Theme.smallFont.pointSize
+                    color: Kirigami.Theme.textColor
+                }
+
+                Controls.ToolButton {
+                    icon.name: "edit-clear"
+                    icon.width: Kirigami.Units.iconSizes.small
+                    icon.height: Kirigami.Units.iconSizes.small
+                    width: Kirigami.Units.iconSizes.smallMedium
+                    height: Kirigami.Units.iconSizes.smallMedium
+                    onClicked: {
+                        phoneInput.clear();
+                        phoneField.forceActiveFocus();
+                    }
+                    Controls.ToolTip.text: i18n("Clear contact")
+                    Controls.ToolTip.visible: hovered
+                }
+            }
+        }
+
+        Item { Layout.fillWidth: true }
+
+        // Validation warning (right-aligned)
         Kirigami.Icon {
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
-            source: {
-                if (phoneField.text.length === 0 || !/\d/.test(phoneField.text))
-                    return "";
-                if (Helpers.isValidPhoneNumber(phoneField.text, phoneInput.activeCountry))
-                    return "dialog-ok";
-                if (Helpers.isPossiblePhoneNumber(phoneField.text, phoneInput.activeCountry))
-                    return "dialog-information";
-                return "dialog-warning";
-            }
-            color: phoneHint.color
+            source: "dialog-warning"
+            color: Kirigami.Theme.neutralTextColor
+            visible: phoneInput._isIncomplete
         }
 
         Controls.Label {
-            id: phoneHint
-            Layout.fillWidth: true
             font.pointSize: Kirigami.Theme.smallFont.pointSize
-            color: {
-                if (phoneField.text.length === 0 || !/\d/.test(phoneField.text))
-                    return Kirigami.Theme.disabledTextColor;
-                if (Helpers.isValidPhoneNumber(phoneField.text, phoneInput.activeCountry))
-                    return Kirigami.Theme.positiveTextColor;
-                if (Helpers.isPossiblePhoneNumber(phoneField.text, phoneInput.activeCountry))
-                    return Kirigami.Theme.linkColor;
-                return Kirigami.Theme.neutralTextColor;
-            }
-            text: {
-                if (phoneField.text.length === 0 || !/\d/.test(phoneField.text))
-                    return "";
-                var countryCode = Helpers.detectCountry(phoneField.text, phoneInput.activeCountry);
-                if (Helpers.isValidPhoneNumber(phoneField.text, phoneInput.activeCountry)) {
-                    var name = countryCode ? Helpers.countryName(countryCode) : "";
-                    return name ? i18n("Valid number — %1", name) : i18n("Valid number");
-                }
-                if (Helpers.isPossiblePhoneNumber(phoneField.text, phoneInput.activeCountry)) {
-                    var possibleName = countryCode ? Helpers.countryName(countryCode) : "";
-                    return possibleName ? i18n("Possible number — %1", possibleName) : i18n("Possible number");
-                }
-                return i18n("Incomplete number");
-            }
+            color: Kirigami.Theme.neutralTextColor
+            text: i18n("Incomplete number")
+            visible: phoneInput._isIncomplete
         }
     }
 
