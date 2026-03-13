@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,14 @@ msgstr ""
 
 #: contents/config/config.qml
 msgid "General"
+msgstr ""
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr ""
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
 msgstr ""
 
 #: contents/ui/CountryPicker.qml
@@ -173,6 +181,30 @@ msgid "Beep repetitions:"
 msgstr ""
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr ""
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr ""
 
@@ -222,30 +254,6 @@ msgstr ""
 
 #: contents/ui/main.qml
 msgid "SMS History"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Send SMS"
 msgstr ""
 
 #: contents/ui/main.qml

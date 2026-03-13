@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "일반"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "뒤로"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "국가 선택"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -166,6 +174,30 @@ msgid "Beep repetitions:"
 msgstr "알림음 반복 횟수:"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "휴대전화에서 연락처 동기화"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "대화 열기"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "기기 없음"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "기기 전환"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "새 SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMS 보내기"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "사용 가능한 장치가 없습니다"
 
@@ -220,30 +252,6 @@ msgstr "SMS 전송에 실패했습니다"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "SMS 기록"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "휴대전화에서 연락처 동기화"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "대화 열기"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "기기 없음"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "기기 전환"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "새 SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMS 보내기"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

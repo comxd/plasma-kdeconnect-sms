@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -20,6 +20,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "Общие"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "Назад"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "Выбрать страну"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -177,6 +185,30 @@ msgid "Beep repetitions:"
 msgstr "Количество сигналов:"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Синхронизировать контакты с телефона"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Открыть разговоры"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Нет устройства"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Сменить устройство"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Новое SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "Отправить SMS"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "Нет доступных устройств"
 
@@ -187,8 +219,7 @@ msgstr "Устройство не настроено"
 #: contents/ui/main.qml
 msgid "Pair and connect your phone with KDE Connect to start sending SMS."
 msgstr ""
-"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку "
-"SMS."
+"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку SMS."
 
 #: contents/ui/main.qml
 msgid "Select a device in the widget settings to start sending SMS."
@@ -233,30 +264,6 @@ msgstr "Не удалось отправить SMS"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "История SMS"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Синхронизировать контакты с телефона"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Открыть разговоры"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Нет устройства"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Сменить устройство"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Новое SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "Отправить SMS"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

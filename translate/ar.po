@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -20,6 +20,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "عام"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "رجوع"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "اختر الدولة"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -192,6 +200,30 @@ msgid "Beep repetitions:"
 msgstr "عدد تكرارات التنبيه:"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "مزامنة جهات الاتصال من الهاتف"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "فتح المحادثات"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "لا يوجد جهاز"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "تبديل الجهاز"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "رسالة قصيرة جديدة"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "إرسال رسالة قصيرة"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "لا يوجد جهاز متاح"
 
@@ -246,30 +278,6 @@ msgstr "فشل إرسال الرسالة القصيرة"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "سجل الرسائل"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "مزامنة جهات الاتصال من الهاتف"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "فتح المحادثات"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "لا يوجد جهاز"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "تبديل الجهاز"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "رسالة قصيرة جديدة"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "إرسال رسالة قصيرة"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

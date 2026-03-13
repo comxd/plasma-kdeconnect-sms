@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "Général"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "Retour"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "Sélectionner le pays"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -171,6 +179,30 @@ msgid "Beep repetitions:"
 msgstr "Nombre de bips :"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Synchroniser les contacts depuis le téléphone"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Ouvrir les conversations"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Aucun appareil"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Changer d'appareil"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Nouveau SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "Envoyer le SMS"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "Aucun appareil disponible"
 
@@ -230,30 +262,6 @@ msgstr "Échec de l'envoi du SMS"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "Historique des SMS"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Synchroniser les contacts depuis le téléphone"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Ouvrir les conversations"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Aucun appareil"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Changer d'appareil"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Nouveau SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "Envoyer le SMS"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

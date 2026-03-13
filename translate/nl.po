@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "Algemeen"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "Terug"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "Land selecteren"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -171,6 +179,30 @@ msgid "Beep repetitions:"
 msgstr "Pieptoon herhalingen:"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Contacten synchroniseren vanaf telefoon"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Gesprekken openen"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Geen apparaat"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Apparaat wisselen"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Nieuw SMS-bericht"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMS verzenden"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "Geen apparaat beschikbaar"
 
@@ -229,30 +261,6 @@ msgstr "Verzenden van SMS mislukt"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "SMS-geschiedenis"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Contacten synchroniseren vanaf telefoon"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Gesprekken openen"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Geen apparaat"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Apparaat wisselen"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Nieuw SMS-bericht"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMS verzenden"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

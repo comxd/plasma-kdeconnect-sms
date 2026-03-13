@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "Obecné"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "Zpět"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "Vybrat zemi"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -176,6 +184,30 @@ msgid "Beep repetitions:"
 msgstr "Počet opakování signálu:"
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "Synchronizovat kontakty z telefonu"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "Otevřít konverzace"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "Žádné zařízení"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "Přepnout zařízení"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "Nová SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "Odeslat SMS"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "Žádné zařízení není dostupné"
 
@@ -232,30 +264,6 @@ msgstr "Odeslání SMS se nezdařilo"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "Historie SMS"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Synchronizovat kontakty z telefonu"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Otevřít konverzace"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Žádné zařízení"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Přepnout zařízení"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Nová SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "Odeslat SMS"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."

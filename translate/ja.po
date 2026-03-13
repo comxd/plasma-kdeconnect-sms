@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 19:02+0100\n"
+"POT-Creation-Date: 2026-03-13 20:01+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 #: contents/config/config.qml
 msgid "General"
 msgstr "一般"
+
+#: contents/ui/CountryPicker.qml
+msgid "Back"
+msgstr "戻る"
+
+#: contents/ui/CountryPicker.qml
+msgid "Select Country"
+msgstr "国を選択"
 
 #: contents/ui/CountryPicker.qml
 msgid "Search country..."
@@ -166,6 +174,30 @@ msgid "Beep repetitions:"
 msgstr "ビープ音の繰り返し回数："
 
 #: contents/ui/main.qml
+msgid "Sync contacts from phone"
+msgstr "スマートフォンから連絡先を同期"
+
+#: contents/ui/main.qml
+msgid "Open conversations"
+msgstr "会話を開く"
+
+#: contents/ui/main.qml
+msgid "No device"
+msgstr "デバイスなし"
+
+#: contents/ui/main.qml
+msgid "Switch device"
+msgstr "デバイスを切り替え"
+
+#: contents/ui/main.qml
+msgid "New SMS"
+msgstr "新規 SMS"
+
+#: contents/ui/main.qml
+msgid "Send SMS"
+msgstr "SMSを送信"
+
+#: contents/ui/main.qml
 msgid "No device available"
 msgstr "利用可能なデバイスがありません"
 
@@ -223,30 +255,6 @@ msgstr "SMSの送信に失敗しました"
 #: contents/ui/main.qml
 msgid "SMS History"
 msgstr "SMS履歴"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "スマートフォンから連絡先を同期"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "会話を開く"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "デバイスなし"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "デバイスを切り替え"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "新規 SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMSを送信"
 
 #: contents/ui/main.qml
 msgid "Sharing file..."
