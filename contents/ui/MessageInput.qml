@@ -73,6 +73,7 @@ ColumnLayout {
 
     RowLayout {
         Layout.fillWidth: true
+        Layout.topMargin: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.largeSpacing
 
         Controls.Label {
