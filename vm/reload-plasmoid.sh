@@ -4,6 +4,7 @@
 # Usage:
 #   ./vm/reload-plasmoid.sh              # Update plasmoid + restart plasmashell
 #   ./vm/reload-plasmoid.sh --reinstall  # Remove + reinstall + restart + add to panel
+#   ./vm/reload-plasmoid.sh --reset      # Clear widget settings + reinstall + add to panel
 #
 # Prerequisites:
 #   - VM running with serial console (launched via ./vm/launch-vm.sh)
@@ -22,7 +23,14 @@ check_serial_sock
 echo "Preparing plasmashell restart script..."
 vm_serial 'bash /mnt/plasmoid/vm/guest/restart-plasmashell.sh prepare'
 
-if [ "${1:-}" = "--reinstall" ]; then
+MODE="${1:-}"
+
+if [ "$MODE" = "--reset" ] || [ "$MODE" = "--reinstall" ]; then
+    if [ "$MODE" = "--reset" ]; then
+        echo "Clearing Plasma widget settings..."
+        vm_as_neon "rm -f ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmashellrc" 2>/dev/null || true
+    fi
+
     echo "Reinstalling plasmoid..."
     vm_as_neon "kpackagetool6 -t Plasma/Applet -r ${PLUGIN_ID} 2>/dev/null; kpackagetool6 -t Plasma/Applet -i /mnt/plasmoid"
     sleep 1
