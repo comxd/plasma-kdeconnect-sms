@@ -801,21 +801,21 @@ PlasmoidItem {
             }
         }
 
+        // ── Country picker popup ──
+
+        CountryPicker {
+            id: countryPicker
+            activeCountry: root.activeCountry
+            onCountrySelected: function(code) {
+                plasmoid.configuration.defaultCountry = code;
+            }
+        }
+
         // ── Clear message field after successful send ──
 
         Connections {
             target: root
             function onClearAfterSend() { messageInput.clear(); }
-        }
-    }
-
-    // ── Country picker popup ──
-
-    CountryPicker {
-        id: countryPicker
-        activeCountry: root.activeCountry
-        onCountrySelected: function(code) {
-            root.activeCountry = code;
         }
     }
 
