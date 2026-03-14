@@ -83,11 +83,13 @@ echo "[3/3] Starting kdeconnectd with loopback..."
 su - neon -c '
     export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
     export XDG_RUNTIME_DIR=/run/user/1000
+    export WAYLAND_DISPLAY=wayland-0
     kdeconnectd &
 ' 2>/dev/null || {
     su - neon -c "
         export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
         export XDG_RUNTIME_DIR=/run/user/1000
+        export WAYLAND_DISPLAY=wayland-0
         $DAEMON_PATH &
     " 2>/dev/null || true
 }
