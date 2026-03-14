@@ -28,6 +28,9 @@ MONITOR_SOCK="/tmp/kdeconnect-sms-vm-monitor.sock"
 SERIAL_SOCK="/tmp/kdeconnect-sms-vm-serial.sock"
 RAM="4G"
 CPUS="4"
+VM_WIDTH="${VM_WIDTH:-1920}"
+VM_HEIGHT="${VM_HEIGHT:-1080}"
+VM_SCALE="${VM_SCALE:-auto}"
 
 # ── Create disk image if needed ──
 if [ ! -f "$DISK" ]; then
@@ -88,8 +91,8 @@ QEMU_CMD=(
     -netdev user,id=net0
     -device virtio-net-pci,netdev=net0
 
-    -device virtio-vga-gl
-    -display gtk,gl=on
+    -device "virtio-vga-gl,xres=$VM_WIDTH,yres=$VM_HEIGHT"
+    -display gtk,gl=on,zoom-to-fit=on
 
     -device qemu-xhci
     -device usb-tablet
@@ -250,6 +253,22 @@ if [ "${1:-}" = "--setup" ]; then
     echo ""
     echo "Setup log:"
     vm_serial "cat /tmp/setup-vm.log" 1 5
+
+    # ── Configure HiDPI scaling if needed ──
+    SCALE="$VM_SCALE"
+    if [ "$SCALE" = "auto" ]; then
+        if [ "$VM_WIDTH" -ge 3840 ]; then
+            SCALE=2
+        else
+            SCALE=1
+        fi
+    fi
+    if [ "$SCALE" != "1" ]; then
+        echo ""
+        echo "Configuring HiDPI scaling (${SCALE}x)..."
+        vm_serial "su - neon -c 'DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus XDG_RUNTIME_DIR=/run/user/1000 WAYLAND_DISPLAY=wayland-0 kscreen-doctor output.1.scale.$SCALE'" 2 3
+        echo "  OK: Scale set to ${SCALE}x (resolution: ${VM_WIDTH}x${VM_HEIGHT})"
+    fi
 
     echo ""
     echo "=== Fully automated setup complete! ==="
