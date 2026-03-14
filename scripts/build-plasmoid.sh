@@ -30,6 +30,12 @@ if [ -x "$PROJECT_DIR/translate/build.sh" ] && ls "$PROJECT_DIR"/translate/*.po 
     bash "$PROJECT_DIR/translate/build.sh"
 fi
 
+# Touch QML/JS files so zip timestamps are fresh — forces Qt QML cache
+# invalidation when kpackage extracts the archive (avoids stale UI after update)
+find "$PROJECT_DIR/contents" "$PROJECT_DIR/metadata.json" -type f \
+    \( -name "*.qml" -o -name "*.js" -o -name "metadata.json" \) \
+    -exec touch {} +
+
 # Remove previous build if present
 rm -f "$ARCHIVE_PATH"
 
