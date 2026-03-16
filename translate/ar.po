@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -199,6 +199,40 @@ msgstr "تشغيل صوت تنبيه بعد إرسال الرسالة القصي
 msgid "Beep repetitions:"
 msgstr "عدد تكرارات التنبيه:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "إظهار الودجة"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "إخفاء أيقونة الودجة من اللوحة"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"أيقونة الودجة مخفية من اللوحة. لاستعادتها، ادخل وضع التحرير، وانقر بزر "
+"الماوس الأيمن على الودجة، وألغِ تحديد \"إخفاء الودجة من اللوحة\". تلميح: "
+"يمكنك أيضًا تعيين اختصار لوحة مفاتيح عام لفتح النافذة المنبثقة."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"يخفي أيقونة الودجة من اللوحة. تظل الودجة قابلة للوصول عبر وضع التحرير أو "
+"اختصار لوحة المفاتيح."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "تكوين اختصار لوحة المفاتيح…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr "تعيين اختصار عام لفتح النافذة المنبثقة للودجة بدون أيقونة في اللوحة."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "مزامنة جهات الاتصال من الهاتف"
@@ -310,3 +344,7 @@ msgstr "الرد على %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "إرسال"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "إخفاء الودجة من اللوحة"

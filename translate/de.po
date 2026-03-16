@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -178,6 +178,44 @@ msgstr "Signalton nach dem Senden der SMS abspielen"
 msgid "Beep repetitions:"
 msgstr "Signalton-Wiederholungen:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Widget-Sichtbarkeit"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Widget-Symbol aus der Leiste ausblenden"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"Das Widget-Symbol ist in der Leiste ausgeblendet. Um es wiederherzustellen, "
+"wechseln Sie in den Bearbeitungsmodus, klicken Sie mit der rechten Maustaste "
+"auf das Widget und deaktivieren Sie „Widget aus der Leiste ausblenden\". "
+"Tipp: Sie können auch ein globales Tastenkürzel zuweisen, um das Popup "
+"umzuschalten."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Blendet das Widget-Symbol aus der Leiste aus. Das Widget bleibt über den "
+"Bearbeitungsmodus oder ein Tastenkürzel erreichbar."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Tastenkürzel einrichten…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Ein globales Tastenkürzel zuweisen, um das Widget-Popup ohne Leistensymbol "
+"zu öffnen."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Kontakte vom Telefon synchronisieren"
@@ -292,3 +330,7 @@ msgstr "Antwort an %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Senden"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Widget aus der Leiste ausblenden"

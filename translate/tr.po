@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -178,6 +178,43 @@ msgstr "SMS gönderildikten sonra bip sesi çal"
 msgid "Beep repetitions:"
 msgstr "Bip sesi tekrarı:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Widget görünürlüğü"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Widget simgesini panelden gizle"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"Widget simgesi panelden gizlenmiştir. Geri yüklemek için Düzenleme Moduna "
+"girin, widget'a sağ tıklayın ve \"Widget'ı panelden gizle\" seçeneğinin "
+"işaretini kaldırın. İpucu: Açılır pencereyi açmak için bir genel klavye "
+"kısayolu da atayabilirsiniz."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Widget simgesini panelden gizler. Widget, Düzenleme Modu veya klavye "
+"kısayolu aracılığıyla erişilebilir kalır."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Klavye kısayolunu yapılandır…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Panel simgesi olmadan widget açılır penceresini açmak için genel bir kısayol "
+"atayın."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Kişileri telefondan eşitle"
@@ -291,3 +328,7 @@ msgstr "%1 için yanıt yazın…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Gönder"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Widget'ı panelden gizle"

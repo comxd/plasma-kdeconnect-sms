@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -183,6 +183,43 @@ msgstr "Přehrát zvukový signál po odeslání SMS"
 msgid "Beep repetitions:"
 msgstr "Počet opakování signálu:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Viditelnost widgetu"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Skrýt ikonu widgetu z panelu"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"Ikona widgetu je skryta z panelu. Pro obnovení přejděte do režimu úprav, "
+"klikněte pravým tlačítkem na widget a zrušte zaškrtnutí „Skrýt widget z "
+"panelu\". Tip: můžete také přiřadit globální klávesovou zkratku pro otevření "
+"vyskakovacího okna."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Skryje ikonu widgetu z panelu. Widget zůstává přístupný přes režim úprav "
+"nebo klávesovou zkratku."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Nastavit klávesovou zkratku…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Přiřadit globální zkratku pro otevření vyskakovacího okna widgetu bez ikony "
+"na panelu."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Synchronizovat kontakty z telefonu"
@@ -296,3 +333,7 @@ msgstr "Odpovědět %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Odeslat"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Skrýt widget z panelu"

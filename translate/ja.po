@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -173,6 +173,43 @@ msgstr "SMS送信後にビープ音を再生"
 msgid "Beep repetitions:"
 msgstr "ビープ音の繰り返し回数："
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "ウィジェットの表示"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "パネルからウィジェットアイコンを非表示にする"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"ウィジェットアイコンはパネルから非表示になっています。復元するには、編集モー"
+"ドに入り、ウィジェットを右クリックして「パネルからウィジェットを非表示」の"
+"チェックを外してください。ヒント：グローバルキーボードショートカットを割り当"
+"ててポップアップを切り替えることもできます。"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"パネルからウィジェットアイコンを非表示にします。ウィジェットは編集モードまた"
+"はキーボードショートカットからアクセスできます。"
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "キーボードショートカットの設定…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"パネルアイコンなしでウィジェットのポップアップを開くグローバルショートカット"
+"を割り当てます。"
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "スマートフォンから連絡先を同期"
@@ -287,3 +324,7 @@ msgstr "%1 に返信…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "送信"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "パネルからウィジェットを非表示"

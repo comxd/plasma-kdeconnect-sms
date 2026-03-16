@@ -148,7 +148,11 @@ PlasmoidItem {
         }
     }
 
-    Component.onCompleted: _autoSelectDevice()
+    Component.onCompleted: {
+        _autoSelectDevice();
+        updatePlasmoidStatus();
+        hideWidgetAction.checked = plasmoid.configuration.hideWidget;
+    }
 
 
     // ── Compact representation ──
@@ -960,6 +964,44 @@ PlasmoidItem {
             root.fileShareError = "";
         }
     }
+
+    // ── Hide widget from panel ──
+
+    property bool editMode: {
+        if (Plasmoid.containment && Plasmoid.containment.corona) {
+            return Plasmoid.containment.corona.editMode;
+        }
+        return false;
+    }
+    property bool hideWidget: plasmoid.configuration.hideWidget
+
+    function updatePlasmoidStatus() {
+        Plasmoid.status = (editMode || !hideWidget)
+            ? PlasmaCore.Types.ActiveStatus
+            : PlasmaCore.Types.HiddenStatus;
+    }
+
+    onEditModeChanged: updatePlasmoidStatus()
+    onHideWidgetChanged: updatePlasmoidStatus()
+
+    property PlasmaCore.Action hideWidgetAction: PlasmaCore.Action {
+        text: i18n("Hide widget from panel")
+        icon.name: "visibility-symbolic"
+        checkable: true
+        onTriggered: {
+            plasmoid.configuration.hideWidget = !plasmoid.configuration.hideWidget;
+            plasmoid.configuration.writeConfig();
+        }
+    }
+
+    Connections {
+        target: plasmoid.configuration
+        function onHideWidgetChanged() {
+            hideWidgetAction.checked = plasmoid.configuration.hideWidget;
+        }
+    }
+
+    Plasmoid.contextualActions: [hideWidgetAction]
 
     Connections {
         target: beepExecutor

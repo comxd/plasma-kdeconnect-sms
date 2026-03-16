@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 
+import org.kde.plasma.plasmoid
 import org.kde.kdeconnect as KDEConnect
 
 import "../code/helpers.js" as Helpers
@@ -20,6 +21,7 @@ Kirigami.FormLayout {
     property string cfg_defaultCountry
     property alias cfg_speakerBeep: speakerBeepCheck.checked
     property alias cfg_speakerBeepReps: speakerBeepReps.value
+    property alias cfg_hideWidget: hideWidgetCheck.checked
 
     // ── Device list (KDE Connect native model) ──
 
@@ -210,5 +212,60 @@ Kirigami.FormLayout {
         from: 1
         to: 10
         enabled: speakerBeepCheck.checked
+    }
+
+    // ── Widget visibility ──
+
+    Kirigami.Separator {
+        Kirigami.FormData.isSection: true
+    }
+
+    Controls.Label {
+        text: i18n("Widget visibility")
+        font.bold: true
+    }
+
+    Controls.CheckBox {
+        id: hideWidgetCheck
+        text: i18n("Hide widget icon from panel")
+        checked: plasmoid.configuration.hideWidget
+        onToggled: {
+            plasmoid.configuration.hideWidget = checked;
+            plasmoid.configuration.writeConfig();
+        }
+
+        Connections {
+            target: plasmoid.configuration
+            function onHideWidgetChanged() {
+                hideWidgetCheck.checked = plasmoid.configuration.hideWidget;
+            }
+        }
+    }
+
+    Controls.Label {
+        Layout.fillWidth: true
+        wrapMode: Text.Wrap
+        font.pixelSize: Kirigami.Theme.smallFont.pixelSize
+        color: plasmoid.configuration.hideWidget
+            ? Kirigami.Theme.neutralTextColor
+            : Kirigami.Theme.disabledTextColor
+        text: plasmoid.configuration.hideWidget
+            ? i18n("The widget icon is hidden from the panel. To restore it, enter Edit Mode, right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can also assign a global keyboard shortcut to toggle the popup.")
+            : i18n("Hides the widget icon from the panel. The widget remains accessible via Edit Mode or a keyboard shortcut.")
+    }
+
+    Controls.Button {
+        icon.name: "preferences-desktop-keyboard"
+        text: i18n("Configure Keyboard Shortcut…")
+        onClicked: Plasmoid.internalAction("configure").trigger()
+        Layout.topMargin: Kirigami.Units.smallSpacing
+    }
+
+    Controls.Label {
+        Layout.fillWidth: true
+        wrapMode: Text.Wrap
+        font.pixelSize: Kirigami.Theme.smallFont.pixelSize
+        color: Kirigami.Theme.disabledTextColor
+        text: i18n("Assign a global shortcut to open the widget popup without a panel icon.")
     }
 }

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -184,6 +184,43 @@ msgstr "Відтворити звуковий сигнал після надси
 msgid "Beep repetitions:"
 msgstr "Кількість сигналів:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Видимість віджета"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Сховати значок віджета з панелі"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"Значок віджета сховано з панелі. Щоб відновити його, увійдіть у режим "
+"редагування, клацніть правою кнопкою миші на віджеті та зніміть прапорець "
+"«Сховати віджет з панелі». Порада: ви також можете призначити глобальну "
+"комбінацію клавіш для відкриття спливаючого вікна."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Ховає значок віджета з панелі. Віджет залишається доступним через режим "
+"редагування або комбінацію клавіш."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Налаштувати комбінацію клавіш…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Призначити глобальну комбінацію клавіш для відкриття спливаючого вікна "
+"віджета без значка на панелі."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Синхронізувати контакти з телефону"
@@ -297,3 +334,7 @@ msgstr "Відповісти %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Надіслати"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Сховати віджет з панелі"
