@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -178,6 +178,43 @@ msgstr "Pieptoon afspelen na het verzenden van het SMS-bericht"
 msgid "Beep repetitions:"
 msgstr "Pieptoon herhalingen:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Widgetzichtbaarheid"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Widgetpictogram verbergen in paneel"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"Het widgetpictogram is verborgen in het paneel. Om het te herstellen, ga "
+"naar de bewerkingsmodus, klik met de rechtermuisknop op de widget en schakel "
+"\"Widget verbergen in paneel\" uit. Tip: u kunt ook een globale sneltoets "
+"toewijzen om het popup-venster te openen."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Verbergt het widgetpictogram in het paneel. De widget blijft toegankelijk "
+"via de bewerkingsmodus of een sneltoets."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Sneltoets instellen…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Een globale sneltoets toewijzen om het widgetpopup-venster te openen zonder "
+"paneelpictogram."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Contacten synchroniseren vanaf telefoon"
@@ -293,3 +330,7 @@ msgstr "Antwoord aan %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Verzenden"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Widget verbergen in paneel"

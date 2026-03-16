@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -178,6 +178,43 @@ msgstr "Reproducir un pitido después de enviar el SMS"
 msgid "Beep repetitions:"
 msgstr "Repeticiones del pitido:"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Visibilidad del widget"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Ocultar icono del widget del panel"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"El icono del widget está oculto del panel. Para restaurarlo, entre en el "
+"modo de edición, haga clic derecho en el widget y desmarque «Ocultar widget "
+"del panel». Consejo: también puede asignar un atajo de teclado global para "
+"abrir la ventana emergente."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Oculta el icono del widget del panel. El widget sigue accesible mediante el "
+"modo de edición o un atajo de teclado."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Configurar atajo de teclado…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Asignar un atajo global para abrir la ventana emergente del widget sin icono "
+"en el panel."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Sincronizar contactos desde el teléfono"
@@ -293,3 +330,7 @@ msgstr "Responder a %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Enviar"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Ocultar widget del panel"

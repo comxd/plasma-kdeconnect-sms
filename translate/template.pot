@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -180,6 +180,30 @@ msgstr ""
 msgid "Beep repetitions:"
 msgstr ""
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "The widget icon is hidden from the panel. To restore it, enter Edit Mode, right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Hides the widget icon from the panel. The widget remains accessible via Edit Mode or a keyboard shortcut."
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr ""
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr ""
@@ -286,4 +310,8 @@ msgstr ""
 
 #: contents/ui/main.qml
 msgid "Send"
+msgstr ""
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
 msgstr ""

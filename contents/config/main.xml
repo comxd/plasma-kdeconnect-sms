@@ -26,5 +26,9 @@
     <entry name="speakerBeepReps" type="Int">
       <default>1</default>
     </entry>
+    <!-- Hide widget from panel (show only in edit mode) -->
+    <entry name="hideWidget" type="Bool">
+      <default>false</default>
+    </entry>
   </group>
 </kcfg>

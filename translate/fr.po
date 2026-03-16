@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -178,6 +178,43 @@ msgstr "Jouer un bip sonore après l'envoi du SMS"
 msgid "Beep repetitions:"
 msgstr "Nombre de bips :"
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "Visibilité du widget"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "Masquer l'icône du widget du panneau"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"L'icône du widget est masquée du panneau. Pour la restaurer, passez en mode "
+"Édition, faites un clic droit sur le widget et décochez « Masquer le widget "
+"du panneau ». Astuce : vous pouvez aussi assigner un raccourci clavier "
+"global pour ouvrir la fenêtre contextuelle."
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr ""
+"Masque l'icône du widget du panneau. Le widget reste accessible via le mode "
+"Édition ou un raccourci clavier."
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "Configurer le raccourci clavier…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr ""
+"Assigner un raccourci global pour ouvrir la fenêtre contextuelle du widget "
+"sans icône dans le panneau."
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "Synchroniser les contacts depuis le téléphone"
@@ -294,3 +331,7 @@ msgstr "Répondre à %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "Envoyer"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "Masquer le widget du panneau"

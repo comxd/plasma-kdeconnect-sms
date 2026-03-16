@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-13 20:01+0100\n"
+"POT-Creation-Date: 2026-03-16 03:24+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -173,6 +173,37 @@ msgstr "短信发送后播放提示音"
 msgid "Beep repetitions:"
 msgstr "提示音重复次数："
 
+#: contents/ui/configGeneral.qml
+msgid "Widget visibility"
+msgstr "小部件可见性"
+
+#: contents/ui/configGeneral.qml
+msgid "Hide widget icon from panel"
+msgstr "从面板隐藏小部件图标"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"The widget icon is hidden from the panel. To restore it, enter Edit Mode, "
+"right-click the widget, and uncheck \"Hide widget from panel\". Tip: you can "
+"also assign a global keyboard shortcut to toggle the popup."
+msgstr ""
+"小部件图标已从面板隐藏。要恢复它，请进入编辑模式，右键点击小部件，然后取消勾"
+"选「从面板隐藏小部件」。提示：您还可以分配一个全局键盘快捷键来切换弹出窗口。"
+
+#: contents/ui/configGeneral.qml
+msgid ""
+"Hides the widget icon from the panel. The widget remains accessible via Edit "
+"Mode or a keyboard shortcut."
+msgstr "从面板隐藏小部件图标。小部件仍可通过编辑模式或键盘快捷键访问。"
+
+#: contents/ui/configGeneral.qml
+msgid "Configure Keyboard Shortcut…"
+msgstr "配置键盘快捷键…"
+
+#: contents/ui/configGeneral.qml
+msgid "Assign a global shortcut to open the widget popup without a panel icon."
+msgstr "分配一个全局快捷键，无需面板图标即可打开小部件弹出窗口。"
+
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
 msgstr "从手机同步联系人"
@@ -284,3 +315,7 @@ msgstr "回复 %1…"
 #: contents/ui/main.qml
 msgid "Send"
 msgstr "发送"
+
+#: contents/ui/main.qml
+msgid "Hide widget from panel"
+msgstr "从面板隐藏小部件"
