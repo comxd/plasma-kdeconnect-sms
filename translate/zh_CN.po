@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "帮助"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "返回"
 
@@ -134,6 +135,79 @@ msgstr "家庭"
 msgid "Fax"
 msgstr "传真"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "无可用设备"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "未配置设备"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "通过 KDE Connect 配对并连接您的手机以开始发送短信。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "在小部件设置中选择一个设备以开始发送短信。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "打开设置"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"此设备上的短信插件不可用。请确保设备可访问且已在 KDE Connect 设置中启用短信插"
+"件。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "打开 KDE Connect"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "正在发送…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "短信发送成功"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "短信发送失败"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "短信记录 (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "从手机同步联系人"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "打开对话"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "无设备"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "切换设备"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "新建短信"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "发送短信"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "最近"
@@ -164,6 +238,14 @@ msgstr[0] "%1 小时前"
 msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] "%1 天前"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "短信历史"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "尚未发送任何消息"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -324,8 +406,7 @@ msgid ""
 "This plasmoid is developed and maintained on my free time. If you find it "
 "useful, you can support its development:"
 msgstr ""
-"这个小部件是在我的业余时间开发和维护的。如果您觉得它有用，可以支持它的"
-"开发："
+"这个小部件是在我的业余时间开发和维护的。如果您觉得它有用，可以支持它的开发："
 
 #: contents/ui/configHelp.qml
 msgid "Can I use this widget on the desktop (not just the panel)?"
@@ -348,80 +429,8 @@ msgid ""
 "Use the device switcher button in the widget footer (next to the phone "
 "name). You can also change the default device in the widget settings."
 msgstr ""
-"使用小部件底部的设备切换按钮（在手机名称旁边）。您也可以在小部件设置中更改"
-"默认设备。"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "从手机同步联系人"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "打开对话"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "无设备"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "切换设备"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "新建短信"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "发送短信"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "无可用设备"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "未配置设备"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "通过 KDE Connect 配对并连接您的手机以开始发送短信。"
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "在小部件设置中选择一个设备以开始发送短信。"
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "打开设置"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"此设备上的短信插件不可用。请确保设备可访问且已在 KDE Connect 设置中启用短信插"
-"件。"
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "打开 KDE Connect"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "正在发送…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "短信发送成功"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "短信发送失败"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "短信历史"
+"使用小部件底部的设备切换按钮（在手机名称旁边）。您也可以在小部件设置中更改默"
+"认设备。"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "도움말"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "뒤로"
 
@@ -134,6 +135,79 @@ msgstr "집"
 msgid "Fax"
 msgstr "팩스"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "사용 가능한 장치가 없습니다"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "설정된 장치가 없습니다"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "KDE Connect로 휴대전화를 페어링하고 연결하여 SMS 전송을 시작하세요."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "위젯 설정에서 장치를 선택하여 SMS 전송을 시작하세요."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "설정 열기"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"이 장치에서 SMS 플러그인을 사용할 수 없습니다. 장치에 접근할 수 있는지, 그리"
+"고 KDE Connect 설정에서 SMS 플러그인이 활성화되어 있는지 확인하세요."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect 열기"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "전송 중…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMS가 성공적으로 전송되었습니다"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "SMS 전송에 실패했습니다"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "SMS 기록 (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "휴대전화에서 연락처 동기화"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "대화 열기"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "기기 없음"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "기기 전환"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "새 SMS"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "SMS 보내기"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "최근"
@@ -164,6 +238,14 @@ msgstr[0] "%1시간 전"
 msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] "%1일 전"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "SMS 기록"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "아직 보낸 메시지가 없습니다"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -354,80 +436,8 @@ msgid ""
 "Use the device switcher button in the widget footer (next to the phone "
 "name). You can also change the default device in the widget settings."
 msgstr ""
-"위젯 하단의 장치 전환 버튼(전화 이름 옆)을 사용하세요. 위젯 설정에서 기본 "
-"장치를 변경할 수도 있습니다."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "휴대전화에서 연락처 동기화"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "대화 열기"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "기기 없음"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "기기 전환"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "새 SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMS 보내기"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "사용 가능한 장치가 없습니다"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "설정된 장치가 없습니다"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "KDE Connect로 휴대전화를 페어링하고 연결하여 SMS 전송을 시작하세요."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "위젯 설정에서 장치를 선택하여 SMS 전송을 시작하세요."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "설정 열기"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"이 장치에서 SMS 플러그인을 사용할 수 없습니다. 장치에 접근할 수 있는지, 그리"
-"고 KDE Connect 설정에서 SMS 플러그인이 활성화되어 있는지 확인하세요."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "KDE Connect 열기"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "전송 중…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMS가 성공적으로 전송되었습니다"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "SMS 전송에 실패했습니다"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "SMS 기록"
+"위젯 하단의 장치 전환 버튼(전화 이름 옆)을 사용하세요. 위젯 설정에서 기본 장"
+"치를 변경할 수도 있습니다."
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

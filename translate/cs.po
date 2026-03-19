@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "Nápověda"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "Zpět"
 
@@ -138,6 +139,83 @@ msgstr "Domů"
 msgid "Fax"
 msgstr "Fax"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "Žádné zařízení není dostupné"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "Žádné zařízení není nakonfigurováno"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+"Spárujte a připojte telefon přes KDE Connect, abyste mohli začít odesílat "
+"SMS."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "Vyberte zařízení v nastavení widgetu, abyste mohli začít odesílat SMS."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "Otevřít nastavení"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"Plugin SMS není na tomto zařízení dostupný. Ujistěte se, že je zařízení "
+"dosažitelné a že je plugin SMS povolen v nastavení KDE Connect."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "Otevřít KDE Connect"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "Odesílání…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMS úspěšně odeslána"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "Odeslání SMS se nezdařilo"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "Historie SMS (%1)"
+msgstr[1] "Historie SMS (%1)"
+msgstr[2] "Historie SMS (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "Synchronizovat kontakty z telefonu"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "Otevřít konverzace"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "Žádné zařízení"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "Přepnout zařízení"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "Nová SMS"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "Odeslat SMS"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "Nedávné"
@@ -174,6 +252,14 @@ msgid_plural "%1 d ago"
 msgstr[0] "Před 1 d"
 msgstr[1] "Před %1 d"
 msgstr[2] "Před %1 d"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "Historie SMS"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "Zatím nebyly odeslány žádné zprávy"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -355,8 +441,8 @@ msgid ""
 "Yes! The widget works both in the panel and on the desktop. Right-click your "
 "desktop, select Add Widgets, and search for KDE Connect SMS."
 msgstr ""
-"Ano! Widget funguje jak v panelu, tak na ploše. Klikněte pravým tlačítkem "
-"na plochu, vyberte Přidat widgety a vyhledejte KDE Connect SMS."
+"Ano! Widget funguje jak v panelu, tak na ploše. Klikněte pravým tlačítkem na "
+"plochu, vyberte Přidat widgety a vyhledejte KDE Connect SMS."
 
 #: contents/ui/configHelp.qml
 msgid "How do I switch between multiple phones?"
@@ -369,80 +455,6 @@ msgid ""
 msgstr ""
 "Použijte tlačítko přepínání zařízení v zápatí widgetu (vedle názvu "
 "telefonu). Výchozí zařízení můžete změnit také v nastavení widgetu."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Synchronizovat kontakty z telefonu"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Otevřít konverzace"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Žádné zařízení"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Přepnout zařízení"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Nová SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "Odeslat SMS"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "Žádné zařízení není dostupné"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "Žádné zařízení není nakonfigurováno"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-"Spárujte a připojte telefon přes KDE Connect, abyste mohli začít odesílat "
-"SMS."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "Vyberte zařízení v nastavení widgetu, abyste mohli začít odesílat SMS."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "Otevřít nastavení"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"Plugin SMS není na tomto zařízení dostupný. Ujistěte se, že je zařízení "
-"dosažitelné a že je plugin SMS povolen v nastavení KDE Connect."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "Otevřít KDE Connect"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "Odesílání…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMS úspěšně odeslána"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "Odeslání SMS se nezdařilo"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "Historie SMS"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Arabic <ar@li.org>\n"
@@ -26,6 +26,7 @@ msgid "Help"
 msgstr "مساعدة"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "رجوع"
 
@@ -145,6 +146,84 @@ msgstr "منزل"
 msgid "Fax"
 msgstr "فاكس"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "لا يوجد جهاز متاح"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "لم يتم تكوين أي جهاز"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr "قم بإقران هاتفك وتوصيله عبر KDE Connect لبدء إرسال الرسائل القصيرة."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "اختر جهازًا في إعدادات الودجة لبدء إرسال الرسائل القصيرة."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "فتح الإعدادات"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"إضافة الرسائل القصيرة غير متوفرة على هذا الجهاز. تأكد من أن الجهاز يمكن "
+"الوصول إليه وأن إضافة الرسائل القصيرة مفعّلة في إعدادات KDE Connect."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "فتح KDE Connect"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "جارٍ الإرسال…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "تم إرسال الرسالة القصيرة بنجاح"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "فشل إرسال الرسالة القصيرة"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "سجل الرسائل القصيرة (%1)"
+msgstr[1] "سجل الرسائل القصيرة (%1)"
+msgstr[2] "سجل الرسائل القصيرة (%1)"
+msgstr[3] "سجل الرسائل القصيرة (%1)"
+msgstr[4] "سجل الرسائل القصيرة (%1)"
+msgstr[5] "سجل الرسائل القصيرة (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "مزامنة جهات الاتصال من الهاتف"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "فتح المحادثات"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "لا يوجد جهاز"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "تبديل الجهاز"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "رسالة قصيرة جديدة"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "إرسال رسالة قصيرة"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "الأخيرة"
@@ -190,6 +269,14 @@ msgstr[2] "قبل يومين"
 msgstr[3] "قبل %1 أيام"
 msgstr[4] "قبل %1 يومًا"
 msgstr[5] "قبل %1 يوم"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "سجل الرسائل"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "لم يتم إرسال أي رسائل بعد"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -368,8 +455,8 @@ msgid ""
 "Yes! The widget works both in the panel and on the desktop. Right-click your "
 "desktop, select Add Widgets, and search for KDE Connect SMS."
 msgstr ""
-"نعم! تعمل الودجة في اللوحة وعلى سطح المكتب. انقر بزر الماوس الأيمن على "
-"سطح المكتب، واختر إضافة ودجات، وابحث عن KDE Connect SMS."
+"نعم! تعمل الودجة في اللوحة وعلى سطح المكتب. انقر بزر الماوس الأيمن على سطح "
+"المكتب، واختر إضافة ودجات، وابحث عن KDE Connect SMS."
 
 #: contents/ui/configHelp.qml
 msgid "How do I switch between multiple phones?"
@@ -380,80 +467,8 @@ msgid ""
 "Use the device switcher button in the widget footer (next to the phone "
 "name). You can also change the default device in the widget settings."
 msgstr ""
-"استخدم زر تبديل الجهاز في أسفل الودجة (بجوار اسم الهاتف). يمكنك أيضًا "
-"تغيير الجهاز الافتراضي في إعدادات الودجة."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "مزامنة جهات الاتصال من الهاتف"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "فتح المحادثات"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "لا يوجد جهاز"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "تبديل الجهاز"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "رسالة قصيرة جديدة"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "إرسال رسالة قصيرة"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "لا يوجد جهاز متاح"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "لم يتم تكوين أي جهاز"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr "قم بإقران هاتفك وتوصيله عبر KDE Connect لبدء إرسال الرسائل القصيرة."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "اختر جهازًا في إعدادات الودجة لبدء إرسال الرسائل القصيرة."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "فتح الإعدادات"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"إضافة الرسائل القصيرة غير متوفرة على هذا الجهاز. تأكد من أن الجهاز يمكن "
-"الوصول إليه وأن إضافة الرسائل القصيرة مفعّلة في إعدادات KDE Connect."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "فتح KDE Connect"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "جارٍ الإرسال…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "تم إرسال الرسالة القصيرة بنجاح"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "فشل إرسال الرسالة القصيرة"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "سجل الرسائل"
+"استخدم زر تبديل الجهاز في أسفل الودجة (بجوار اسم الهاتف). يمكنك أيضًا تغيير "
+"الجهاز الافتراضي في إعدادات الودجة."
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"
