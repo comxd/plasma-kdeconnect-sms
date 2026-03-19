@@ -7,14 +7,16 @@
                 "Name": "David DIVERRES"
             }
         ],
-        "Version": "2.1.2",
+        "Version": "2.2.0",
         "Category": "Utilities",
         "Description": "Send SMS from your desktop via KDE Connect",
         "Icon": "kdeconnect",
         "Id": "com.comexpertise.plasma.kdeconnectsms",
         "License": "GPL-2.0-or-later",
         "Name": "KDE Connect SMS",
-        "Website": "https://www.comexpertise.com"
+        "Website": "https://www.comexpertise.com",
+        "BugReportUrl": "https://github.com/comxd/plasma-kdeconnect-sms/issues"
     },
-    "X-Plasma-API-Minimum-Version": "6.0"
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-FormFactors": ["desktop", "tablet"]
 }
