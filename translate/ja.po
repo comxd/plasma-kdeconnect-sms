@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "ヘルプ"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "戻る"
 
@@ -134,6 +135,82 @@ msgstr "自宅"
 msgid "Fax"
 msgstr "FAX"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "利用可能なデバイスがありません"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "デバイスが未設定です"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+"KDE Connect でスマートフォンをペアリングして接続し、SMS の送信を開始してくだ"
+"さい。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "ウィジェットの設定でデバイスを選択して、SMS の送信を開始してください。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "設定を開く"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"このデバイスでは SMS プラグインを利用できません。デバイスに到達可能であるこ"
+"と、および KDE Connect の設定で SMS プラグインが有効になっていることを確認し"
+"てください。"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect を開く"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "送信中…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMSの送信に成功しました"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "SMSの送信に失敗しました"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "SMS履歴 (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "スマートフォンから連絡先を同期"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "会話を開く"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "デバイスなし"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "デバイスを切り替え"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "新規 SMS"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "SMSを送信"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "最近"
@@ -164,6 +241,14 @@ msgstr[0] "%1 時間前"
 msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] "%1 日前"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "SMS履歴"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "まだメッセージは送信されていません"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -345,8 +430,9 @@ msgid ""
 "Yes! The widget works both in the panel and on the desktop. Right-click your "
 "desktop, select Add Widgets, and search for KDE Connect SMS."
 msgstr ""
-"はい！ウィジェットはパネルとデスクトップの両方で動作します。デスクトップを右ク"
-"リックし、ウィジェットを追加を選択して、KDE Connect SMS を検索してください。"
+"はい！ウィジェットはパネルとデスクトップの両方で動作します。デスクトップを右"
+"クリックし、ウィジェットを追加を選択して、KDE Connect SMS を検索してくださ"
+"い。"
 
 #: contents/ui/configHelp.qml
 msgid "How do I switch between multiple phones?"
@@ -357,83 +443,8 @@ msgid ""
 "Use the device switcher button in the widget footer (next to the phone "
 "name). You can also change the default device in the widget settings."
 msgstr ""
-"ウィジェットのフッターにあるデバイス切り替えボタン（電話名の隣）を使用してくだ"
-"さい。ウィジェットの設定でデフォルトのデバイスを変更することもできます。"
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "スマートフォンから連絡先を同期"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "会話を開く"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "デバイスなし"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "デバイスを切り替え"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "新規 SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMSを送信"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "利用可能なデバイスがありません"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "デバイスが未設定です"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-"KDE Connect でスマートフォンをペアリングして接続し、SMS の送信を開始してくだ"
-"さい。"
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "ウィジェットの設定でデバイスを選択して、SMS の送信を開始してください。"
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "設定を開く"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"このデバイスでは SMS プラグインを利用できません。デバイスに到達可能であるこ"
-"と、および KDE Connect の設定で SMS プラグインが有効になっていることを確認し"
-"てください。"
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "KDE Connect を開く"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "送信中…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMSの送信に成功しました"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "SMSの送信に失敗しました"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "SMS履歴"
+"ウィジェットのフッターにあるデバイス切り替えボタン（電話名の隣）を使用してく"
+"ださい。ウィジェットの設定でデフォルトのデバイスを変更することもできます。"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -26,6 +26,7 @@ msgid "Help"
 msgstr "Справка"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "Назад"
 
@@ -139,6 +140,82 @@ msgstr "Домашний"
 msgid "Fax"
 msgstr "Факс"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "Нет доступных устройств"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "Устройство не настроено"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку SMS."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "Выберите устройство в настройках виджета, чтобы начать отправку SMS."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "Открыть настройки"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"Плагин SMS недоступен на этом устройстве. Убедитесь, что устройство доступно "
+"и плагин SMS включён в настройках KDE Connect."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "Открыть KDE Connect"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "Отправка…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMS успешно отправлено"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "Не удалось отправить SMS"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "История SMS (%1)"
+msgstr[1] "История SMS (%1)"
+msgstr[2] "История SMS (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "Синхронизировать контакты с телефона"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "Открыть разговоры"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "Нет устройства"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "Сменить устройство"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "Новое SMS"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "Отправить SMS"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "Недавние"
@@ -175,6 +252,14 @@ msgid_plural "%1 d ago"
 msgstr[0] "1 д назад"
 msgstr[1] "%1 д назад"
 msgstr[2] "%1 д назад"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "История SMS"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "Сообщения ещё не отправлялись"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -344,12 +429,13 @@ msgid ""
 "This plasmoid is developed and maintained on my free time. If you find it "
 "useful, you can support its development:"
 msgstr ""
-"Этот плазмоид разработан и поддерживается в моё свободное время. Если он "
-"вам полезен, вы можете поддержать его разработку:"
+"Этот плазмоид разработан и поддерживается в моё свободное время. Если он вам "
+"полезен, вы можете поддержать его разработку:"
 
 #: contents/ui/configHelp.qml
 msgid "Can I use this widget on the desktop (not just the panel)?"
-msgstr "Можно ли использовать этот виджет на рабочем столе (а не только в панели)?"
+msgstr ""
+"Можно ли использовать этот виджет на рабочем столе (а не только в панели)?"
 
 #: contents/ui/configHelp.qml
 msgid ""
@@ -372,79 +458,6 @@ msgstr ""
 "Используйте кнопку переключения устройства в нижней части виджета (рядом с "
 "именем телефона). Вы также можете изменить устройство по умолчанию в "
 "настройках виджета."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Синхронизировать контакты с телефона"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Открыть разговоры"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Нет устройства"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Сменить устройство"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Новое SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "Отправить SMS"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "Нет доступных устройств"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "Устройство не настроено"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-"Сопрягите и подключите телефон через KDE Connect, чтобы начать отправку SMS."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "Выберите устройство в настройках виджета, чтобы начать отправку SMS."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "Открыть настройки"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"Плагин SMS недоступен на этом устройстве. Убедитесь, что устройство доступно "
-"и плагин SMS включён в настройках KDE Connect."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "Открыть KDE Connect"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "Отправка…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMS успешно отправлено"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "Не удалось отправить SMS"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "История SMS"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

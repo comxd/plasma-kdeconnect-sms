@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "Yardım"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "Geri"
 
@@ -136,6 +137,82 @@ msgstr "Ev"
 msgid "Fax"
 msgstr "Faks"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "Kullanılabilir aygıt yok"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "Yapılandırılmış aygıt yok"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+"SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirip "
+"bağlayın."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr "SMS göndermeye başlamak için widget ayarlarından bir aygıt seçin."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "Ayarları aç"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"Bu aygıtta SMS eklentisi kullanılamıyor. Aygıtın erişilebilir olduğundan ve "
+"KDE Connect ayarlarında SMS eklentisinin etkinleştirildiğinden emin olun."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect'i Aç"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "Gönderiliyor…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMS başarıyla gönderildi"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "SMS gönderilemedi"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "SMS Geçmişi (%1)"
+msgstr[1] "SMS Geçmişi (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "Kişileri telefondan eşitle"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "Konuşmaları aç"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "Cihaz yok"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "Cihaz değiştir"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "Yeni SMS"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "SMS Gönder"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "Son"
@@ -169,6 +246,14 @@ msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] "1 g önce"
 msgstr[1] "%1 g önce"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "SMS Geçmişi"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "Henüz mesaj gönderilmedi"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -364,80 +449,6 @@ msgid ""
 msgstr ""
 "Widget alt bilgisindeki aygıt değiştirme düğmesini kullanın (telefon adının "
 "yanında). Varsayılan aygıtı widget ayarlarından da değiştirebilirsiniz."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Kişileri telefondan eşitle"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Konuşmaları aç"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Cihaz yok"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Cihaz değiştir"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Yeni SMS"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMS Gönder"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "Kullanılabilir aygıt yok"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "Yapılandırılmış aygıt yok"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-"SMS göndermeye başlamak için telefonunuzu KDE Connect ile eşleştirip "
-"bağlayın."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr "SMS göndermeye başlamak için widget ayarlarından bir aygıt seçin."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "Ayarları aç"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"Bu aygıtta SMS eklentisi kullanılamıyor. Aygıtın erişilebilir olduğundan ve "
-"KDE Connect ayarlarında SMS eklentisinin etkinleştirildiğinden emin olun."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "KDE Connect'i Aç"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "Gönderiliyor…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMS başarıyla gönderildi"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "SMS gönderilemedi"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "SMS Geçmişi"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -25,6 +25,7 @@ msgid "Help"
 msgstr "Help"
 
 #: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr "Terug"
 
@@ -136,6 +137,84 @@ msgstr "Thuis"
 msgid "Fax"
 msgstr "Fax"
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr "Geen apparaat beschikbaar"
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr "Geen apparaat ingesteld"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+"Koppel en verbind uw telefoon met KDE Connect om SMS-berichten te verzenden."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr ""
+"Selecteer een apparaat in de widgetinstellingen om SMS-berichten te "
+"verzenden."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr "Instellingen openen"
+
+#: contents/ui/SmsFormPage.qml
+msgid ""
+"SMS plugin is not available on this device. Make sure the device is "
+"reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+"De SMS-plugin is niet beschikbaar op dit apparaat. Controleer of het "
+"apparaat bereikbaar is en of de SMS-plugin is ingeschakeld in de KDE Connect-"
+"instellingen."
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr "KDE Connect openen"
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr "Verzenden…"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr "SMS succesvol verzonden"
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr "Verzenden van SMS mislukt"
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] "SMS-geschiedenis (%1)"
+msgstr[1] "SMS-geschiedenis (%1)"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr "Contacten synchroniseren vanaf telefoon"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr "Gesprekken openen"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr "Geen apparaat"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr "Apparaat wisselen"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr "Nieuw SMS-bericht"
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr "SMS verzenden"
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr "Recent"
@@ -169,6 +248,14 @@ msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] "1 d geleden"
 msgstr[1] "%1 d geleden"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr "SMS-geschiedenis"
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr "Nog geen berichten verzonden"
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -344,7 +431,8 @@ msgstr ""
 
 #: contents/ui/configHelp.qml
 msgid "Can I use this widget on the desktop (not just the panel)?"
-msgstr "Kan ik deze widget op het bureaublad gebruiken (niet alleen in het paneel)?"
+msgstr ""
+"Kan ik deze widget op het bureaublad gebruiken (niet alleen in het paneel)?"
 
 #: contents/ui/configHelp.qml
 msgid ""
@@ -366,82 +454,6 @@ msgid ""
 msgstr ""
 "Gebruik de apparaatwisselknop in de widgetvoettekst (naast de telefoonnaam). "
 "U kunt het standaardapparaat ook wijzigen in de widgetinstellingen."
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr "Contacten synchroniseren vanaf telefoon"
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr "Gesprekken openen"
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr "Geen apparaat"
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr "Apparaat wisselen"
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr "Nieuw SMS-bericht"
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr "SMS verzenden"
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr "Geen apparaat beschikbaar"
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr "Geen apparaat ingesteld"
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-"Koppel en verbind uw telefoon met KDE Connect om SMS-berichten te verzenden."
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr ""
-"Selecteer een apparaat in de widgetinstellingen om SMS-berichten te "
-"verzenden."
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr "Instellingen openen"
-
-#: contents/ui/main.qml
-msgid ""
-"SMS plugin is not available on this device. Make sure the device is "
-"reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-"De SMS-plugin is niet beschikbaar op dit apparaat. Controleer of het "
-"apparaat bereikbaar is en of de SMS-plugin is ingeschakeld in de KDE Connect-"
-"instellingen."
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr "KDE Connect openen"
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr "Verzenden…"
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr "SMS succesvol verzonden"
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr "Verzenden van SMS mislukt"
-
-#: contents/ui/main.qml
-msgid "SMS History"
-msgstr "SMS-geschiedenis"
 
 #: contents/ui/main.qml
 msgid "Hide widget from panel"

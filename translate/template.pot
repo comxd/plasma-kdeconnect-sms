@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-18 22:44+0100\n"
+"POT-Creation-Date: 2026-03-19 01:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
+#: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml contents/ui/SmsHistoryPage.qml
 msgid "Back"
 msgstr ""
 
@@ -134,6 +134,76 @@ msgstr ""
 msgid "Fax"
 msgstr ""
 
+#: contents/ui/SmsFormPage.qml
+msgid "No device available"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "No device configured"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "Pair and connect your phone with KDE Connect to start sending SMS."
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "Select a device in the widget settings to start sending SMS."
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open Settings"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS plugin is not available on this device. Make sure the device is reachable and the SMS plugin is enabled in KDE Connect settings."
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "Open KDE Connect"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "Sending..."
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS sent successfully"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml contents/ui/SmsSender.qml
+msgid "Failed to send SMS"
+msgstr ""
+
+#: contents/ui/SmsFormPage.qml
+msgid "SMS History (%1)"
+msgid_plural "SMS History (%1)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Sync contacts from phone"
+msgstr ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Open conversations"
+msgstr ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "No device"
+msgstr ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Switch device"
+msgstr ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "New SMS"
+msgstr ""
+
+#: contents/ui/SmsFormToolbar.qml
+msgid "Send SMS"
+msgstr ""
+
 #: contents/ui/SmsHistory.qml
 msgid "Recent"
 msgstr ""
@@ -167,6 +237,14 @@ msgid "1 d ago"
 msgid_plural "%1 d ago"
 msgstr[0] ""
 msgstr[1] ""
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "SMS History"
+msgstr ""
+
+#: contents/ui/SmsHistoryPage.qml
+msgid "No messages sent yet"
+msgstr ""
 
 #: contents/ui/configGeneral.qml
 msgid "-- Select a device --"
@@ -314,74 +392,6 @@ msgstr ""
 
 #: contents/ui/configHelp.qml
 msgid "Use the device switcher button in the widget footer (next to the phone name). You can also change the default device in the widget settings."
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Sync contacts from phone"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Open conversations"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "No device"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Switch device"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "New SMS"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Send SMS"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "No device available"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "No device configured"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Pair and connect your phone with KDE Connect to start sending SMS."
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Select a device in the widget settings to start sending SMS."
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Open Settings"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "SMS plugin is not available on this device. Make sure the device is reachable and the SMS plugin is enabled in KDE Connect settings."
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Open KDE Connect"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Sending..."
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "SMS sent successfully"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "Failed to send SMS"
-msgstr ""
-
-#: contents/ui/main.qml
-msgid "SMS History"
 msgstr ""
 
 #: contents/ui/main.qml
