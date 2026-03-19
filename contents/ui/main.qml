@@ -89,7 +89,13 @@ PlasmoidItem {
         }
     }
 
-    onDeviceIdChanged: _refreshDevice()
+    onDeviceIdChanged: {
+        _refreshDevice();
+        if (deviceId.length > 0) {
+            syncConversationThreads();
+            refreshUnreadCount();
+        }
+    }
 
     // ── KDE Connect: SMS plugin availability ──
     // supportedPlugins is a D-Bus property (non-bindable, loaded async).
@@ -125,16 +131,51 @@ PlasmoidItem {
         }
     }
 
-    // (SMS sending handled via kdeconnect-cli — see sendSms())
+    // ── Unread SMS count (via D-Bus conversations API) ──
 
-    // ── KDE Connect: notifications model (for unread SMS badge) ──
+    property int unreadCount: 0
 
-    KDEConnect.NotificationsModel {
-        id: notificationsModel
-        deviceId: root.deviceId
+    Lib.ExecuteCommand {
+        id: unreadExecutor
+        onFinished: function(exitCode, stdout, stderr) {
+            if (exitCode === 0)
+                root.unreadCount = Helpers.countUnreadSms(stdout);
+        }
     }
 
-    readonly property int unreadCount: notificationsModel.count
+    function refreshUnreadCount() {
+        if (root.deviceId.length === 0) return;
+        var cmd = Helpers.buildActiveConversationsCommand(root.deviceId);
+        if (cmd) unreadExecutor.run(cmd);
+    }
+
+    Lib.ExecuteCommand {
+        id: conversationSyncExecutor
+        onFinished: function(exitCode, stdout, stderr) {
+            unreadRefreshDelay.start();
+        }
+    }
+
+    function syncConversationThreads() {
+        if (root.deviceId.length === 0) return;
+        var cmd = Helpers.buildRequestConversationThreadsCommand(root.deviceId);
+        if (cmd) conversationSyncExecutor.run(cmd);
+    }
+
+    Timer {
+        id: unreadRefreshDelay
+        interval: 3000
+        repeat: false
+        onTriggered: root.refreshUnreadCount()
+    }
+
+    Timer {
+        id: unreadPollTimer
+        interval: 60000
+        running: root.deviceId.length > 0
+        repeat: true
+        onTriggered: root.refreshUnreadCount()
+    }
 
     // ── Auto-select first device if none configured ──
 
@@ -152,18 +193,26 @@ PlasmoidItem {
         _autoSelectDevice();
         updatePlasmoidStatus();
         hideWidgetAction.checked = plasmoid.configuration.hideWidget;
+        if (deviceId.length > 0) {
+            syncConversationThreads();
+            refreshUnreadCount();
+        }
     }
 
 
     // ── Compact representation ──
 
-    compactRepresentation: MouseArea {
-        onClicked: root.expanded = !root.expanded
+    compactRepresentation: Item {
 
-        Kirigami.Icon {
+        MouseArea {
             anchors.fill: parent
-            source: Plasmoid.icon
-            active: parent.containsMouse
+            onClicked: root.expanded = !root.expanded
+
+            Kirigami.Icon {
+                anchors.fill: parent
+                source: Plasmoid.icon
+                active: parent.containsMouse
+            }
         }
 
         // ── Unread SMS badge ──
@@ -173,7 +222,7 @@ PlasmoidItem {
             anchors.right: parent.right
             anchors.topMargin: -Math.round(height / 4)
             anchors.rightMargin: -Math.round(width / 4)
-            width: badgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2
+            width: Math.max(badgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2, height)
             height: badgeLabel.implicitHeight + Kirigami.Units.smallSpacing
             radius: height / 2
             color: Kirigami.Theme.highlightColor
@@ -200,7 +249,7 @@ PlasmoidItem {
             + (phoneInput._hasContact ? Kirigami.Units.gridUnit * 2 : 0)
         Layout.maximumHeight: Kirigami.Units.gridUnit * 28
 
-        // ── Page navigation: 0 = SMS form, 1 = Country picker ──
+        // ── Page navigation: 0 = SMS form, 1 = Country picker, 2 = About ──
         property int currentPage: 0
 
         // Auto-focus phone field when popup opens; reset to form page
@@ -208,10 +257,17 @@ PlasmoidItem {
             target: root
             function onExpandedChanged() {
                 if (root.expanded) {
-                    fullRep.currentPage = 0;
-                    root.overrideCountry = "";
-                    if (root.deviceId.length > 0)
-                        phoneInput.focusPhoneField();
+                    root.refreshUnreadCount();
+                    if (root._pendingPage >= 0) {
+                        fullRep.currentPage = root._pendingPage;
+                        // Don't reset _pendingPage here — the popup may toggle
+                        // (close/open) from context menu. Let the 2s timer reset it.
+                    } else {
+                        fullRep.currentPage = 0;
+                        root.overrideCountry = "";
+                        if (root.deviceId.length > 0)
+                            phoneInput.focusPhoneField();
+                    }
                 }
             }
         }
@@ -246,12 +302,21 @@ PlasmoidItem {
                         visible: root.unreadCount > 0
                         anchors.top: parent.top
                         anchors.right: parent.right
-                        anchors.topMargin: Kirigami.Units.smallSpacing
-                        anchors.rightMargin: Kirigami.Units.smallSpacing
-                        width: Kirigami.Units.smallSpacing * 2
-                        height: width
-                        radius: width / 2
+                        anchors.topMargin: -Math.round(height / 4)
+                        anchors.rightMargin: -Math.round(width / 4)
+                        width: Math.max(conversationBadgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2, height)
+                        height: conversationBadgeLabel.implicitHeight + Kirigami.Units.smallSpacing
+                        radius: height / 2
                         color: Kirigami.Theme.highlightColor
+
+                        Controls.Label {
+                            id: conversationBadgeLabel
+                            anchors.centerIn: parent
+                            text: root.unreadCount > 99 ? "99+" : String(root.unreadCount)
+                            font.pointSize: Kirigami.Theme.smallFont.pointSize
+                            font.bold: true
+                            color: Kirigami.Theme.highlightedTextColor
+                        }
                     }
                 }
 
@@ -327,7 +392,7 @@ PlasmoidItem {
             }
         }
 
-        // ── Main content (StackLayout: page 0 = form, page 1 = country picker) ──
+        // ── Main content (StackLayout: page 0 = form, page 1 = country picker, page 2 = about) ──
 
         StackLayout {
             id: pageStack
@@ -418,109 +483,37 @@ PlasmoidItem {
                 Item { Layout.fillHeight: true }
             }
 
-            // ── SMS form with drag & drop file sharing ──
+            // ── SMS form ──
 
-            Item {
-                id: smsFormContainer
+            PhoneInput {
+                id: phoneInput
+                Layout.fillWidth: true
+                visible: root.deviceId.length > 0 && root.smsPluginAvailable
+                activeCountry: root.activeCountry
+                sendState: root.sendState
+                contactSearchModel: contactSearchProxy
+
+                onCountryBadgeClicked: {
+                    fullRep.currentPage = 1;
+                    countryPicker.activate();
+                }
+
+                onPhoneTextChanged: {
+                    if (root.sendState === "success" || root.sendState === "error")
+                        root.sendState = "idle";
+                }
+            }
+
+            MessageInput {
+                id: messageInput
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: root.deviceId.length > 0 && root.smsPluginAvailable
+                sendState: root.sendState
 
-                ColumnLayout {
-                    id: smsFormColumn
-                    anchors.fill: parent
-                    spacing: Kirigami.Units.smallSpacing
-
-                    PhoneInput {
-                        id: phoneInput
-                        Layout.fillWidth: true
-                        activeCountry: root.activeCountry
-                        sendState: root.sendState
-                        contactSearchModel: contactSearchProxy
-
-                        onCountryBadgeClicked: {
-                            fullRep.currentPage = 1;
-                            countryPicker.activate();
-                        }
-
-                        onPhoneTextChanged: {
-                            if (root.sendState === "success" || root.sendState === "error")
-                                root.sendState = "idle";
-                        }
-                    }
-
-                    MessageInput {
-                        id: messageInput
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        sendState: root.sendState
-
-                        onTextEdited: {
-                            if (root.sendState === "success" || root.sendState === "error")
-                                root.sendState = "idle";
-                        }
-                    }
-                }
-
-                // ── DropArea overlay for file sharing ──
-
-                DropArea {
-                    id: fileDropArea
-                    anchors.fill: parent
-
-                    onDropped: function(drop) {
-                        if (drop.hasUrls) {
-                            for (var i = 0; i < drop.urls.length; i++) {
-                                var urlStr = drop.urls[i].toString();
-                                if (urlStr.indexOf("file://") !== 0)
-                                    continue;
-                                var filePath = urlStr.substring(7);
-                                root.shareFile(filePath);
-                            }
-                            drop.accept();
-                        }
-                    }
-                }
-
-                // Drag indicator overlay (dashed border + icon + label)
-                Rectangle {
-                    id: dropIndicator
-                    anchors.fill: parent
-                    anchors.margins: Kirigami.Units.smallSpacing
-                    visible: fileDropArea.containsDrag
-                    color: Qt.rgba(
-                        Kirigami.Theme.highlightColor.r,
-                        Kirigami.Theme.highlightColor.g,
-                        Kirigami.Theme.highlightColor.b, 0.1)
-                    radius: Kirigami.Units.cornerRadius
-                    border.color: Kirigami.Theme.highlightColor
-                    border.width: 2
-
-                    ColumnLayout {
-                        anchors.centerIn: parent
-                        spacing: Kirigami.Units.smallSpacing
-
-                        Kirigami.Icon {
-                            Layout.alignment: Qt.AlignHCenter
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.large
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.large
-                            source: "document-share"
-                        }
-
-                        Controls.Label {
-                            Layout.alignment: Qt.AlignHCenter
-                            text: i18n("Drop files to share with %1", root.deviceName)
-                            color: Kirigami.Theme.highlightColor
-                            font.bold: true
-                        }
-                    }
-                }
-
-                Controls.ToolTip {
-                    parent: smsFormContainer
-                    visible: fileDropArea.containsDrag
-                    text: i18n("Drop files here to share them via KDE Connect")
-                    delay: 0
+                onTextEdited: {
+                    if (root.sendState === "success" || root.sendState === "error")
+                        root.sendState = "idle";
                 }
             }
 
@@ -644,181 +637,6 @@ PlasmoidItem {
                 }
             }
 
-            // ── File share status ──
-
-            Controls.Label {
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignHCenter
-                font.pointSize: Kirigami.Theme.smallFont.pointSize
-                visible: root.fileShareState !== "idle"
-                color: root.fileShareState === "success"
-                    ? Kirigami.Theme.positiveTextColor
-                    : root.fileShareState === "error"
-                        ? Kirigami.Theme.negativeTextColor
-                        : Kirigami.Theme.textColor
-                text: {
-                    if (root.fileShareState === "sharing")
-                        return i18n("Sharing file...");
-                    if (root.fileShareState === "success")
-                        return i18n("File shared successfully");
-                    if (root.fileShareState === "error")
-                        return root.fileShareError || i18n("Failed to share file");
-                    return "";
-                }
-            }
-
-            // ── Notification reply section ──
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                visible: root.deviceId.length > 0 && root.unreadCount > 0
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Separator {
-                    Layout.fillWidth: true
-                }
-
-                Repeater {
-                    model: notificationsModel
-
-                    delegate: ColumnLayout {
-                        id: notifDelegate
-                        Layout.fillWidth: true
-                        spacing: Kirigami.Units.smallSpacing
-
-                        required property int index
-                        required property var model
-
-                        property bool replying: false
-
-                        RowLayout {
-                            Layout.fillWidth: true
-                            spacing: Kirigami.Units.smallSpacing
-
-                            Kirigami.Icon {
-                                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
-                                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
-                                source: notifDelegate.model.appIcon || "mail-message"
-                            }
-
-                            ColumnLayout {
-                                Layout.fillWidth: true
-                                spacing: 0
-
-                                Controls.Label {
-                                    Layout.fillWidth: true
-                                    text: notifDelegate.model.appName || i18n("Notification")
-                                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                                    font.bold: true
-                                    elide: Text.ElideRight
-                                }
-
-                                Controls.Label {
-                                    Layout.fillWidth: true
-                                    text: {
-                                        var title = notifDelegate.model.title || "";
-                                        var notitext = notifDelegate.model.notitext || "";
-                                        if (title.length > 0 && title !== notifDelegate.model.appName)
-                                            return title + ": " + notitext;
-                                        return notitext;
-                                    }
-                                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                                    elide: Text.ElideRight
-                                    color: Kirigami.Theme.disabledTextColor
-                                }
-                            }
-
-                            Controls.ToolButton {
-                                id: notifReplyButton
-                                icon.name: "mail-reply-sender"
-                                icon.width: Kirigami.Units.iconSizes.smallMedium
-                                icon.height: Kirigami.Units.iconSizes.smallMedium
-                                visible: notifDelegate.model.repliable
-                                enabled: notifDelegate.model.repliable && !notifDelegate.replying
-                                Controls.ToolTip.text: i18n("Reply")
-                                Controls.ToolTip.visible: hovered
-                                onClicked: {
-                                    notifDelegate.replying = true;
-                                    replyTextField.forceActiveFocus();
-                                }
-                            }
-
-                            Controls.ToolButton {
-                                icon.name: "window-close"
-                                icon.width: Kirigami.Units.iconSizes.smallMedium
-                                icon.height: Kirigami.Units.iconSizes.smallMedium
-                                visible: notifDelegate.model.dismissable
-                                Controls.ToolTip.text: i18n("Dismiss")
-                                Controls.ToolTip.visible: hovered
-                                onClicked: notifDelegate.model.dbusInterface.dismiss()
-                            }
-                        }
-
-                        // Inline reply area
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Layout.leftMargin: Kirigami.Units.largeSpacing
-                            visible: notifDelegate.replying
-                            spacing: Kirigami.Units.smallSpacing
-
-                            Controls.ToolButton {
-                                id: replyCancelButton
-                                Layout.alignment: Qt.AlignBottom
-                                icon.name: "dialog-cancel"
-                                icon.width: Kirigami.Units.iconSizes.smallMedium
-                                icon.height: Kirigami.Units.iconSizes.smallMedium
-                                Controls.ToolTip.text: i18n("Cancel")
-                                Controls.ToolTip.visible: hovered
-                                onClicked: {
-                                    replyTextField.text = "";
-                                    notifDelegate.replying = false;
-                                }
-                            }
-
-                            Controls.TextArea {
-                                id: replyTextField
-                                Layout.fillWidth: true
-                                placeholderText: i18n("Reply to %1...", notifDelegate.model.appName || i18n("Notification"))
-                                wrapMode: TextEdit.Wrap
-                                Keys.onPressed: function(event) {
-                                    if ((event.key === Qt.Key_Return || event.key === Qt.Key_Enter)
-                                            && !(event.modifiers & Qt.ShiftModifier)) {
-                                        replySendButton.clicked();
-                                        event.accepted = true;
-                                    }
-                                    if (event.key === Qt.Key_Escape) {
-                                        replyCancelButton.clicked();
-                                        event.accepted = true;
-                                    }
-                                }
-                            }
-
-                            Controls.ToolButton {
-                                id: replySendButton
-                                Layout.alignment: Qt.AlignBottom
-                                icon.name: "document-send"
-                                icon.width: Kirigami.Units.iconSizes.smallMedium
-                                icon.height: Kirigami.Units.iconSizes.smallMedium
-                                Controls.ToolTip.text: i18n("Send")
-                                Controls.ToolTip.visible: hovered
-                                enabled: replyTextField.text.length > 0
-                                onClicked: {
-                                    notifDelegate.model.dbusInterface.sendReply(replyTextField.text);
-                                    replyTextField.text = "";
-                                    notifDelegate.replying = false;
-                                }
-                            }
-                        }
-
-                        Kirigami.Separator {
-                            Layout.fillWidth: true
-                            visible: notifDelegate.index < notificationsModel.count - 1
-                            opacity: 0.5
-                        }
-                    }
-                }
-            }
-
             // ── Clear message field after successful send ──
 
             Connections {
@@ -836,6 +654,13 @@ PlasmoidItem {
                 root.overrideCountry = code;
                 fullRep.currentPage = 0;
             }
+            onBackRequested: fullRep.currentPage = 0
+        }
+
+        // ── Page 2: About ──
+
+        AboutTab {
+            id: aboutTab
             onBackRequested: fullRep.currentPage = 0
         }
 
@@ -867,6 +692,7 @@ PlasmoidItem {
 
                 if (root.speakerBeep)
                     playBeep();
+                unreadRefreshDelay.start();
             } else {
                 root.sendState = "error";
                 root.sendError = stderr || i18n("Failed to send SMS");
@@ -926,45 +752,6 @@ PlasmoidItem {
         id: utilityExecutor
     }
 
-    // ── File sharing via kdeconnect-cli --share ──
-
-    property string fileShareState: "idle"
-    property string fileShareError: ""
-    property string _pendingShareFile: ""
-
-    function shareFile(filePath) {
-        if (root.deviceId.length === 0)
-            return;
-        root._pendingShareFile = filePath;
-        root.fileShareState = "sharing";
-        root.fileShareError = "";
-        var cmd = "kdeconnect-cli --share " + Helpers.shellEscape(filePath)
-                + " -d " + Helpers.shellEscape(root.deviceId);
-        fileShareExecutor.run(cmd);
-    }
-
-    Lib.ExecuteCommand {
-        id: fileShareExecutor
-        onFinished: function(exitCode, stdout, stderr) {
-            if (exitCode === 0) {
-                root.fileShareState = "success";
-            } else {
-                root.fileShareState = "error";
-                root.fileShareError = stderr || i18n("Failed to share file");
-            }
-            fileShareResetTimer.restart();
-        }
-    }
-
-    Timer {
-        id: fileShareResetTimer
-        interval: 3000
-        onTriggered: {
-            root.fileShareState = "idle";
-            root.fileShareError = "";
-        }
-    }
-
     // ── Hide widget from panel ──
 
     property bool editMode: {
@@ -1001,7 +788,42 @@ PlasmoidItem {
         }
     }
 
-    Plasmoid.contextualActions: [hideWidgetAction]
+    // ── About page request (cross-scope: root → fullRep) ──
+
+    property int _pendingPage: -1
+
+    // Delay popup open to let the context menu close first (avoids toggle)
+    Timer {
+        id: aboutOpenTimer
+        interval: 200
+        onTriggered: root.expanded = true
+    }
+
+    // Clear pending page after 2s safety net
+    Timer {
+        id: pendingPageTimeout
+        interval: 2000
+        onTriggered: root._pendingPage = -1
+    }
+
+    property PlasmaCore.Action aboutAction: PlasmaCore.Action {
+        text: i18n("About KDE Connect SMS")
+        icon.name: "help-about"
+        onTriggered: {
+            root.expanded = false;
+            root._pendingPage = 2;
+            pendingPageTimeout.restart();
+            aboutOpenTimer.restart();
+        }
+    }
+
+    property PlasmaCore.Action settingsAction: PlasmaCore.Action {
+        text: i18n("Help && FAQ")
+        icon.name: "help-contents"
+        onTriggered: Plasmoid.internalAction("configure").trigger()
+    }
+
+    Plasmoid.contextualActions: [aboutAction, settingsAction, hideWidgetAction]
 
     Connections {
         target: beepExecutor

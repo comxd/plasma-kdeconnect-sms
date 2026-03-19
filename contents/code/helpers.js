@@ -312,6 +312,26 @@ function relativeTimeSeconds(timestamp) {
     return Math.floor((Date.now() - timestamp) / 1000);
 }
 
+// ── Conversations (shell commands — no native QML API) ──
+
+function buildActiveConversationsCommand(deviceId) {
+    if (!deviceId) return "";
+    var path = _dbusBasePath + "/devices/" + deviceId;
+    return "qdbus6 --literal " + _dbusService + " " + shellEscape(path) + " org.kde.kdeconnect.device.conversations.activeConversations";
+}
+
+function buildRequestConversationThreadsCommand(deviceId) {
+    if (!deviceId) return "";
+    var path = _dbusBasePath + "/devices/" + deviceId;
+    return "qdbus6 " + _dbusService + " " + shellEscape(path) + " org.kde.kdeconnect.device.conversations.requestAllConversationThreads";
+}
+
+function countUnreadSms(qdbus6Output) {
+    if (!qdbus6Output) return 0;
+    var matches = qdbus6Output.match(/\}\],\s*\d+,\s*1,\s*0,/g);
+    return matches ? matches.length : 0;
+}
+
 // ── Contacts (shell command — no native QML API) ──
 
 function buildSyncContactsCommand(deviceId) {
