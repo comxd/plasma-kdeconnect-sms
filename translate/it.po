@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-16 03:24+0100\n"
+"POT-Creation-Date: 2026-03-18 22:44+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -20,9 +20,37 @@ msgstr ""
 msgid "General"
 msgstr "Generale"
 
-#: contents/ui/CountryPicker.qml
+#: contents/config/config.qml
+msgid "Help"
+msgstr "Aiuto"
+
+#: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
 msgid "Back"
 msgstr "Indietro"
+
+#: contents/ui/AboutTab.qml
+msgid "About"
+msgstr "Informazioni"
+
+#: contents/ui/AboutTab.qml
+msgid "Version %1"
+msgstr "Versione %1"
+
+#: contents/ui/AboutTab.qml
+msgid "Send SMS from your desktop via KDE Connect"
+msgstr "Invia SMS dal tuo desktop tramite KDE Connect"
+
+#: contents/ui/AboutTab.qml
+msgid "Enjoying this plasmoid? Support its development!"
+msgstr "Ti piace questo plasmoide? Supporta il suo sviluppo!"
+
+#: contents/ui/AboutTab.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, a small donation helps keep it going!"
+msgstr ""
+"Questo plasmoide è sviluppato e mantenuto nel mio tempo libero. Se lo trovi "
+"utile, una piccola donazione aiuta a mantenerlo attivo!"
 
 #: contents/ui/CountryPicker.qml
 msgid "Select Country"
@@ -76,7 +104,7 @@ msgstr "Attiva controllo ortografico"
 msgid "Country"
 msgstr "Paese"
 
-#: contents/ui/PhoneInput.qml
+#: contents/ui/PhoneInput.qml contents/ui/configGeneral.qml
 msgid "Phone number"
 msgstr "Numero di telefono"
 
@@ -116,7 +144,7 @@ msgstr "Recenti"
 msgid "Clear history"
 msgstr "Cancella cronologia"
 
-#: contents/ui/SmsHistory.qml contents/ui/main.qml
+#: contents/ui/SmsHistory.qml
 msgid "Dismiss"
 msgstr "Chiudi"
 
@@ -155,6 +183,10 @@ msgid "-- Select a country --"
 msgstr "-- Selezionare un paese --"
 
 #: contents/ui/configGeneral.qml
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: contents/ui/configGeneral.qml
 msgid "Device:"
 msgstr "Dispositivo:"
 
@@ -165,6 +197,10 @@ msgstr "Aggiorna"
 #: contents/ui/configGeneral.qml
 msgid "Country:"
 msgstr "Paese:"
+
+#: contents/ui/configGeneral.qml
+msgid "Notifications"
+msgstr "Notifiche"
 
 #: contents/ui/configGeneral.qml
 msgid "Beep after sending:"
@@ -181,6 +217,10 @@ msgstr "Ripetizioni del segnale:"
 #: contents/ui/configGeneral.qml
 msgid "Widget visibility"
 msgstr "Visibilità del widget"
+
+#: contents/ui/configGeneral.qml
+msgid "Panel icon:"
+msgstr "Icona del pannello:"
 
 #: contents/ui/configGeneral.qml
 msgid "Hide widget icon from panel"
@@ -205,15 +245,126 @@ msgstr ""
 "Nasconde l'icona del widget dal pannello. Il widget resta accessibile "
 "tramite la modalità modifica o una scorciatoia da tastiera."
 
-#: contents/ui/configGeneral.qml
-msgid "Configure Keyboard Shortcut…"
-msgstr "Configura scorciatoia da tastiera…"
+#: contents/ui/configHelp.qml
+msgid "Frequently Asked Questions"
+msgstr "Domande frequenti"
 
-#: contents/ui/configGeneral.qml
-msgid "Assign a global shortcut to open the widget popup without a panel icon."
+#: contents/ui/configHelp.qml
+msgid "My SMS won't send. What's wrong?"
+msgstr "Il mio SMS non si invia. Qual è il problema?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Make sure the <b>SMS</b> plugin is enabled in KDE Connect settings for your "
+"paired device."
 msgstr ""
-"Assegna una scorciatoia globale per aprire il popup del widget senza icona "
-"nel pannello."
+"Assicurati che il plugin <b>SMS</b> sia abilitato nelle impostazioni di KDE "
+"Connect per il tuo dispositivo associato."
+
+#: contents/ui/configHelp.qml
+msgid "The unread message badge doesn't appear. Why?"
+msgstr "Il badge dei messaggi non letti non appare. Perché?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"The unread badge counts unread SMS conversations from your phone. The "
+"<b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates "
+"every 60 seconds and refreshes when you open the widget."
+msgstr ""
+"Il badge dei non letti conta le conversazioni SMS non lette dal telefono. Il "
+"plugin <b>SMS</b> deve essere attivato nelle impostazioni di KDE Connect. Il "
+"contatore si aggiorna ogni 60 secondi e si aggiorna quando si apre il widget."
+
+#: contents/ui/configHelp.qml
+msgid "No contacts appear when I type a name. How do I fix this?"
+msgstr "Non appaiono contatti quando digito un nome. Come posso risolvere?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Your contacts must be synced to your local address book (KPeople). Enable "
+"the <b>Contacts</b> plugin in KDE Connect and click the sync button in the "
+"widget footer. Contacts from NextCloud, Google, or other synced sources also "
+"work."
+msgstr ""
+"I tuoi contatti devono essere sincronizzati con la rubrica locale (KPeople). "
+"Abilita il plugin <b>Contatti</b> in KDE Connect e clicca il pulsante di "
+"sincronizzazione nel piè di pagina del widget. Funzionano anche i contatti "
+"da NextCloud, Google o altre fonti sincronizzate."
+
+#: contents/ui/configHelp.qml
+msgid "How do I reply to an incoming SMS?"
+msgstr "Come rispondo a un SMS in arrivo?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use KDE's native notification popup — it appears when you receive a message "
+"and includes a reply field. You can also open the full conversation window "
+"by clicking the conversations button in the widget."
+msgstr ""
+"Usa la notifica nativa di KDE — appare quando ricevi un messaggio e include "
+"un campo di risposta. Puoi anche aprire la finestra di conversazione "
+"completa cliccando il pulsante delle conversazioni nel widget."
+
+#: contents/ui/configHelp.qml
+msgid "Where can I report a bug or suggest a feature?"
+msgstr "Dove posso segnalare un bug o suggerire una funzionalità?"
+
+#: contents/ui/configHelp.qml
+msgid "For issues with this widget:"
+msgstr "Per problemi con questo widget:"
+
+#: contents/ui/configHelp.qml
+msgid "For issues with KDE Connect itself:"
+msgstr "Per problemi con KDE Connect:"
+
+#: contents/ui/configHelp.qml
+msgid "Where can I find more information about KDE Connect?"
+msgstr "Dove posso trovare maggiori informazioni su KDE Connect?"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Connect Documentation"
+msgstr "Documentazione di KDE Connect"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Store Page"
+msgstr "Pagina del KDE Store"
+
+#: contents/ui/configHelp.qml
+msgid "How can I support this project?"
+msgstr "Come posso supportare questo progetto?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, you can support its development:"
+msgstr ""
+"Questo plasmoide è sviluppato e mantenuto nel mio tempo libero. Se lo trovi "
+"utile, puoi supportare il suo sviluppo:"
+
+#: contents/ui/configHelp.qml
+msgid "Can I use this widget on the desktop (not just the panel)?"
+msgstr "Posso usare questo widget sul desktop (non solo nel pannello)?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Yes! The widget works both in the panel and on the desktop. Right-click your "
+"desktop, select Add Widgets, and search for KDE Connect SMS."
+msgstr ""
+"Sì! Il widget funziona sia nel pannello che sul desktop. Fai clic destro sul "
+"desktop, seleziona Aggiungi widget e cerca KDE Connect SMS."
+
+#: contents/ui/configHelp.qml
+msgid "How do I switch between multiple phones?"
+msgstr "Come passo da un telefono all'altro?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use the device switcher button in the widget footer (next to the phone "
+"name). You can also change the default device in the widget settings."
+msgstr ""
+"Usa il pulsante di cambio dispositivo nel piè di pagina del widget (accanto "
+"al nome del telefono). Puoi anche cambiare il dispositivo predefinito nelle "
+"impostazioni del widget."
 
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
@@ -276,14 +427,6 @@ msgid "Open KDE Connect"
 msgstr "Apri KDE Connect"
 
 #: contents/ui/main.qml
-msgid "Drop files to share with %1"
-msgstr "Rilascia file da condividere con %1"
-
-#: contents/ui/main.qml
-msgid "Drop files here to share them via KDE Connect"
-msgstr "Rilascia qui i file per condividerli tramite KDE Connect"
-
-#: contents/ui/main.qml
 msgid "Sending..."
 msgstr "Invio in corso…"
 
@@ -300,37 +443,22 @@ msgid "SMS History"
 msgstr "Cronologia SMS"
 
 #: contents/ui/main.qml
-msgid "Sharing file..."
-msgstr "Condivisione file…"
-
-#: contents/ui/main.qml
-msgid "File shared successfully"
-msgstr "File condiviso con successo"
-
-#: contents/ui/main.qml
-msgid "Failed to share file"
-msgstr "Impossibile condividere il file"
-
-#: contents/ui/main.qml
-msgid "Notification"
-msgstr "Notifica"
-
-#: contents/ui/main.qml
-msgid "Reply"
-msgstr "Rispondi"
-
-#: contents/ui/main.qml
-msgid "Cancel"
-msgstr "Annulla"
-
-#: contents/ui/main.qml
-msgid "Reply to %1..."
-msgstr "Rispondi a %1…"
-
-#: contents/ui/main.qml
-msgid "Send"
-msgstr "Invia"
-
-#: contents/ui/main.qml
 msgid "Hide widget from panel"
 msgstr "Nascondi widget dal pannello"
+
+#: contents/ui/main.qml
+msgid "About KDE Connect SMS"
+msgstr "Informazioni su KDE Connect SMS"
+
+#: contents/ui/main.qml
+msgid "Help && FAQ"
+msgstr "Aiuto e FAQ"
+
+#~ msgid "Configure Keyboard Shortcut…"
+#~ msgstr "Configura scorciatoia da tastiera…"
+
+#~ msgid ""
+#~ "Assign a global shortcut to open the widget popup without a panel icon."
+#~ msgstr ""
+#~ "Assegna una scorciatoia globale per aprire il popup del widget senza "
+#~ "icona nel pannello."

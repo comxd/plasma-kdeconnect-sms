@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-16 03:24+0100\n"
+"POT-Creation-Date: 2026-03-18 22:44+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -20,9 +20,37 @@ msgstr ""
 msgid "General"
 msgstr "Genel"
 
-#: contents/ui/CountryPicker.qml
+#: contents/config/config.qml
+msgid "Help"
+msgstr "Yardım"
+
+#: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
 msgid "Back"
 msgstr "Geri"
+
+#: contents/ui/AboutTab.qml
+msgid "About"
+msgstr "Hakkında"
+
+#: contents/ui/AboutTab.qml
+msgid "Version %1"
+msgstr "Sürüm %1"
+
+#: contents/ui/AboutTab.qml
+msgid "Send SMS from your desktop via KDE Connect"
+msgstr "KDE Connect aracılığıyla masaüstünüzden SMS gönderin"
+
+#: contents/ui/AboutTab.qml
+msgid "Enjoying this plasmoid? Support its development!"
+msgstr "Bu plasmoidi beğendiniz mi? Geliştirilmesini destekleyin!"
+
+#: contents/ui/AboutTab.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, a small donation helps keep it going!"
+msgstr ""
+"Bu plasmoid boş zamanlarımda geliştirilmekte ve bakımı yapılmaktadır. "
+"Faydalı buluyorsanız, küçük bir bağış devam etmesine yardımcı olur!"
 
 #: contents/ui/CountryPicker.qml
 msgid "Select Country"
@@ -76,7 +104,7 @@ msgstr "Yazım denetimini aç"
 msgid "Country"
 msgstr "Ülke"
 
-#: contents/ui/PhoneInput.qml
+#: contents/ui/PhoneInput.qml contents/ui/configGeneral.qml
 msgid "Phone number"
 msgstr "Telefon numarası"
 
@@ -116,7 +144,7 @@ msgstr "Son"
 msgid "Clear history"
 msgstr "Geçmişi temizle"
 
-#: contents/ui/SmsHistory.qml contents/ui/main.qml
+#: contents/ui/SmsHistory.qml
 msgid "Dismiss"
 msgstr "Kapat"
 
@@ -155,6 +183,10 @@ msgid "-- Select a country --"
 msgstr "-- Bir ülke seçin --"
 
 #: contents/ui/configGeneral.qml
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: contents/ui/configGeneral.qml
 msgid "Device:"
 msgstr "Aygıt:"
 
@@ -165,6 +197,10 @@ msgstr "Yenile"
 #: contents/ui/configGeneral.qml
 msgid "Country:"
 msgstr "Ülke:"
+
+#: contents/ui/configGeneral.qml
+msgid "Notifications"
+msgstr "Bildirimler"
 
 #: contents/ui/configGeneral.qml
 msgid "Beep after sending:"
@@ -181,6 +217,10 @@ msgstr "Bip sesi tekrarı:"
 #: contents/ui/configGeneral.qml
 msgid "Widget visibility"
 msgstr "Widget görünürlüğü"
+
+#: contents/ui/configGeneral.qml
+msgid "Panel icon:"
+msgstr "Panel simgesi:"
 
 #: contents/ui/configGeneral.qml
 msgid "Hide widget icon from panel"
@@ -205,15 +245,125 @@ msgstr ""
 "Widget simgesini panelden gizler. Widget, Düzenleme Modu veya klavye "
 "kısayolu aracılığıyla erişilebilir kalır."
 
-#: contents/ui/configGeneral.qml
-msgid "Configure Keyboard Shortcut…"
-msgstr "Klavye kısayolunu yapılandır…"
+#: contents/ui/configHelp.qml
+msgid "Frequently Asked Questions"
+msgstr "Sık sorulan sorular"
 
-#: contents/ui/configGeneral.qml
-msgid "Assign a global shortcut to open the widget popup without a panel icon."
+#: contents/ui/configHelp.qml
+msgid "My SMS won't send. What's wrong?"
+msgstr "SMS'im gönderilmiyor. Sorun nedir?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Make sure the <b>SMS</b> plugin is enabled in KDE Connect settings for your "
+"paired device."
 msgstr ""
-"Panel simgesi olmadan widget açılır penceresini açmak için genel bir kısayol "
-"atayın."
+"Eşleştirilmiş aygıtınız için KDE Connect ayarlarında <b>SMS</b> eklentisinin "
+"etkinleştirildiğinden emin olun."
+
+#: contents/ui/configHelp.qml
+msgid "The unread message badge doesn't appear. Why?"
+msgstr "Okunmamış mesaj rozeti görünmüyor. Neden?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"The unread badge counts unread SMS conversations from your phone. The "
+"<b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates "
+"every 60 seconds and refreshes when you open the widget."
+msgstr ""
+"Okunmamış rozeti, telefonunuzdaki okunmamış SMS konuşmalarını sayar. KDE "
+"Connect ayarlarında <b>SMS</b> eklentisi etkinleştirilmiş olmalıdır. Sayaç "
+"her 60 saniyede güncellenir ve widget açıldığında yenilenir."
+
+#: contents/ui/configHelp.qml
+msgid "No contacts appear when I type a name. How do I fix this?"
+msgstr "Bir isim yazdığımda kişiler görünmüyor. Bunu nasıl düzeltirim?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Your contacts must be synced to your local address book (KPeople). Enable "
+"the <b>Contacts</b> plugin in KDE Connect and click the sync button in the "
+"widget footer. Contacts from NextCloud, Google, or other synced sources also "
+"work."
+msgstr ""
+"Kişileriniz yerel adres defterinizle (KPeople) eşitlenmiş olmalıdır. KDE "
+"Connect'te <b>Kişiler</b> eklentisini etkinleştirin ve widget alt "
+"bilgisindeki eşitleme düğmesine tıklayın. NextCloud, Google veya diğer "
+"eşitlenmiş kaynaklardan gelen kişiler de çalışır."
+
+#: contents/ui/configHelp.qml
+msgid "How do I reply to an incoming SMS?"
+msgstr "Gelen bir SMS'e nasıl yanıt veririm?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use KDE's native notification popup — it appears when you receive a message "
+"and includes a reply field. You can also open the full conversation window "
+"by clicking the conversations button in the widget."
+msgstr ""
+"KDE'nin yerel bildirim açılır penceresini kullanın — bir mesaj aldığınızda "
+"görünür ve yanıt alanı içerir. Widget'taki konuşmalar düğmesine tıklayarak "
+"tam konuşma penceresini de açabilirsiniz."
+
+#: contents/ui/configHelp.qml
+msgid "Where can I report a bug or suggest a feature?"
+msgstr "Hata bildirmek veya özellik önermek için nereye başvurabilirim?"
+
+#: contents/ui/configHelp.qml
+msgid "For issues with this widget:"
+msgstr "Bu widget ile ilgili sorunlar için:"
+
+#: contents/ui/configHelp.qml
+msgid "For issues with KDE Connect itself:"
+msgstr "KDE Connect ile ilgili sorunlar için:"
+
+#: contents/ui/configHelp.qml
+msgid "Where can I find more information about KDE Connect?"
+msgstr "KDE Connect hakkında daha fazla bilgiyi nerede bulabilirim?"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Connect Documentation"
+msgstr "KDE Connect Belgeleri"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Store Page"
+msgstr "KDE Mağaza Sayfası"
+
+#: contents/ui/configHelp.qml
+msgid "How can I support this project?"
+msgstr "Bu projeyi nasıl destekleyebilirim?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, you can support its development:"
+msgstr ""
+"Bu plasmoid boş zamanlarımda geliştirilmekte ve bakımı yapılmaktadır. "
+"Faydalı buluyorsanız, geliştirilmesini destekleyebilirsiniz:"
+
+#: contents/ui/configHelp.qml
+msgid "Can I use this widget on the desktop (not just the panel)?"
+msgstr "Bu widget'ı masaüstünde kullanabilir miyim (sadece panelde değil)?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Yes! The widget works both in the panel and on the desktop. Right-click your "
+"desktop, select Add Widgets, and search for KDE Connect SMS."
+msgstr ""
+"Evet! Widget hem panelde hem de masaüstünde çalışır. Masaüstünüze sağ "
+"tıklayın, Widget Ekle seçeneğini seçin ve KDE Connect SMS araması yapın."
+
+#: contents/ui/configHelp.qml
+msgid "How do I switch between multiple phones?"
+msgstr "Birden fazla telefon arasında nasıl geçiş yapabilirim?"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use the device switcher button in the widget footer (next to the phone "
+"name). You can also change the default device in the widget settings."
+msgstr ""
+"Widget alt bilgisindeki aygıt değiştirme düğmesini kullanın (telefon adının "
+"yanında). Varsayılan aygıtı widget ayarlarından da değiştirebilirsiniz."
 
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
@@ -274,14 +424,6 @@ msgid "Open KDE Connect"
 msgstr "KDE Connect'i Aç"
 
 #: contents/ui/main.qml
-msgid "Drop files to share with %1"
-msgstr "%1 ile paylaşmak için dosyaları bırakın"
-
-#: contents/ui/main.qml
-msgid "Drop files here to share them via KDE Connect"
-msgstr "KDE Connect üzerinden paylaşmak için dosyaları buraya bırakın"
-
-#: contents/ui/main.qml
 msgid "Sending..."
 msgstr "Gönderiliyor…"
 
@@ -298,37 +440,22 @@ msgid "SMS History"
 msgstr "SMS Geçmişi"
 
 #: contents/ui/main.qml
-msgid "Sharing file..."
-msgstr "Dosya paylaşılıyor…"
-
-#: contents/ui/main.qml
-msgid "File shared successfully"
-msgstr "Dosya başarıyla paylaşıldı"
-
-#: contents/ui/main.qml
-msgid "Failed to share file"
-msgstr "Dosya paylaşılamadı"
-
-#: contents/ui/main.qml
-msgid "Notification"
-msgstr "Bildirim"
-
-#: contents/ui/main.qml
-msgid "Reply"
-msgstr "Yanıtla"
-
-#: contents/ui/main.qml
-msgid "Cancel"
-msgstr "İptal"
-
-#: contents/ui/main.qml
-msgid "Reply to %1..."
-msgstr "%1 için yanıt yazın…"
-
-#: contents/ui/main.qml
-msgid "Send"
-msgstr "Gönder"
-
-#: contents/ui/main.qml
 msgid "Hide widget from panel"
 msgstr "Widget'ı panelden gizle"
+
+#: contents/ui/main.qml
+msgid "About KDE Connect SMS"
+msgstr "KDE Connect SMS Hakkında"
+
+#: contents/ui/main.qml
+msgid "Help && FAQ"
+msgstr "Yardım ve SSS"
+
+#~ msgid "Configure Keyboard Shortcut…"
+#~ msgstr "Klavye kısayolunu yapılandır…"
+
+#~ msgid ""
+#~ "Assign a global shortcut to open the widget popup without a panel icon."
+#~ msgstr ""
+#~ "Panel simgesi olmadan widget açılır penceresini açmak için genel bir "
+#~ "kısayol atayın."
