@@ -74,6 +74,13 @@ for f in "$PREBUILT_DIR"/libkdeconnect*.so*; do
     echo "  Installed $(basename "$f") → $LIB_DIR/"
 done
 
+# Copy patched sendnotifications plugin (silent mode — prevents loopback feedback loop)
+PLUGIN_DIR=$(find /usr -path "*/kdeconnect/kdeconnect_sendnotifications.so" -exec dirname {} \; 2>/dev/null | head -1)
+if [ -n "$PLUGIN_DIR" ] && [ -f "$PREBUILT_DIR/plugins/kdeconnect_sendnotifications.so" ]; then
+    cp "$PREBUILT_DIR/plugins/kdeconnect_sendnotifications.so" "$PLUGIN_DIR/"
+    echo "  Installed patched kdeconnect_sendnotifications.so → $PLUGIN_DIR/"
+fi
+
 # Refresh library cache
 ldconfig 2>/dev/null || true
 

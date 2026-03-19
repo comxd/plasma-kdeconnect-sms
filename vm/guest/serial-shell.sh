@@ -3,7 +3,7 @@
 # This allows the host to send commands to the VM via the serial socket.
 #
 # Called by: launch-vm.sh --setup (via sendkey bootstrap)
-# The host sends commands via: (echo "cmd"; sleep 2) | socat -t3 - UNIX:/tmp/kdeconnect-sms-vm-serial.sock
+# The host sends commands via: (echo "cmd"; sleep 2) | socat -t3 - UNIX:/tmp/<VM_NAME>-vm-serial.sock
 
 set -uo pipefail
 

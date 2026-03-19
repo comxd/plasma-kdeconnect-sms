@@ -50,6 +50,8 @@ fi
 
 # 3. Install plasmoid (as neon user)
 echo "[3/$TOTAL_STEPS] Installing plasmoid..."
+run_as_neon "rm -rf ~/.cache/qt6/qmlcache/ ~/.cache/plasma* 2>/dev/null || true"
+run_as_neon "find /mnt/plasmoid/contents /mnt/plasmoid/metadata.json -type f \( -name '*.qml' -o -name '*.js' -o -name 'metadata.json' \) -exec touch {} + 2>/dev/null || true"
 run_as_neon "kpackagetool6 -t Plasma/Applet -r com.comexpertise.plasma.kdeconnectsms 2>/dev/null || true"
 run_as_neon "kpackagetool6 -t Plasma/Applet -i /mnt/plasmoid"
 echo "  OK: plasmoid installed"

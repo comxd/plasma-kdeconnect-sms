@@ -12,6 +12,13 @@
 
 set -euo pipefail
 
+_PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+export VM_NAME="${VM_NAME:-$(sed -n 's/.*"Id"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$_PROJECT_DIR/metadata.json" 2>/dev/null)}"
+if [ -z "$VM_NAME" ]; then
+    echo "ERROR: Could not determine VM_NAME — no \"Id\" field in metadata.json"
+    exit 1
+fi
+
 source "$(dirname "$0")/lib/neon.sh"
 
 PLUGIN_ID="com.comexpertise.plasma.kdeconnectsms"
@@ -31,7 +38,9 @@ if [ "$MODE" = "--reset" ] || [ "$MODE" = "--reinstall" ]; then
         vm_as_neon "rm -f ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasmashellrc" 2>/dev/null || true
     fi
 
-    echo "Reinstalling plasmoid..."
+    echo "Invalidating QML cache and reinstalling plasmoid..."
+    vm_as_neon "rm -rf ~/.cache/qt6/qmlcache/ ~/.cache/plasma* 2>/dev/null; true"
+    vm_as_neon "find /mnt/plasmoid/contents /mnt/plasmoid/metadata.json -type f \\( -name '*.qml' -o -name '*.js' -o -name 'metadata.json' \\) -exec touch {} + 2>/dev/null; true"
     vm_as_neon "kpackagetool6 -t Plasma/Applet -r ${PLUGIN_ID} 2>/dev/null; kpackagetool6 -t Plasma/Applet -i /mnt/plasmoid"
     sleep 1
 
