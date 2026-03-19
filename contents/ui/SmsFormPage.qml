@@ -2,7 +2,7 @@
     SPDX-FileCopyrightText: 2026 ComExpertise
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    SMS form page: onboarding, plugin warning, phone/message inputs, status label, SMS history.
+    SMS form page: onboarding, plugin warning, phone/message inputs, status label.
 */
 
 import QtQuick
@@ -22,7 +22,7 @@ ColumnLayout {
     required property bool smsPluginAvailable
     required property string sendState
     required property string sendError
-    required property var smsHistory
+    required property int historyCount
     required property string activeCountry
     required property var contactSearchModel
 
@@ -31,18 +31,12 @@ ColumnLayout {
     property alias phoneInput: phoneInput
     property alias messageInput: messageInput
 
-    // ── Local state ──
-
-    property bool historyExpanded: true
-
     // ── Signals ──
 
     signal countryBadgeClicked()
     signal phoneEdited()
     signal textEdited()
-    signal historyEntryClicked(string phone, string name)
-    signal historyEntryDismissed(int index)
-    signal historyClearRequested()
+    signal historyPageRequested()
     signal openKdeConnect()
 
     // ── Onboarding: no device configured ──
@@ -194,73 +188,36 @@ ColumnLayout {
         }
     }
 
-    // ── SMS history (collapsible) ──
+    // ── SMS history navigation ──
 
-    ColumnLayout {
+    Controls.ItemDelegate {
         Layout.fillWidth: true
-        visible: smsFormPage.deviceId.length > 0 && smsFormPage.smsHistory.length > 0
-        spacing: 0
+        visible: smsFormPage.deviceId.length > 0 && smsFormPage.historyCount > 0
+        padding: Kirigami.Units.smallSpacing
+        onClicked: smsFormPage.historyPageRequested()
 
-        // Collapsible header
-        Controls.ItemDelegate {
-            Layout.fillWidth: true
-            padding: Kirigami.Units.smallSpacing
-            onClicked: smsFormPage.historyExpanded = !smsFormPage.historyExpanded
+        contentItem: RowLayout {
+            spacing: Kirigami.Units.smallSpacing
 
-            contentItem: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Icon {
-                    source: "arrow-down"
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                    color: Kirigami.Theme.textColor
-
-                    rotation: smsFormPage.historyExpanded ? 0 : -90
-
-                    Behavior on rotation {
-                        NumberAnimation {
-                            duration: Kirigami.Units.shortDuration
-                            easing.type: Easing.InOutQuad
-                        }
-                    }
-                }
-
-                Controls.Label {
-                    text: i18n("SMS History")
-                    Layout.fillWidth: true
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    color: Kirigami.Theme.disabledTextColor
-                }
-            }
-        }
-
-        // Animated collapsible container
-        Item {
-            Layout.fillWidth: true
-            Layout.preferredHeight: smsFormPage.historyExpanded ? smsHistoryContent.implicitHeight : 0
-            clip: true
-
-            Behavior on Layout.preferredHeight {
-                NumberAnimation {
-                    duration: Kirigami.Units.shortDuration
-                    easing.type: Easing.InOutQuad
-                }
+            Kirigami.Icon {
+                source: "mail-sent"
+                Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                color: Kirigami.Theme.disabledTextColor
             }
 
-            SmsHistory {
-                id: smsHistoryContent
-                width: parent.width
-                historyModel: smsFormPage.smsHistory
+            Controls.Label {
+                text: i18np("SMS History (%1)", "SMS History (%1)", smsFormPage.historyCount)
+                Layout.fillWidth: true
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                color: Kirigami.Theme.disabledTextColor
+            }
 
-                onEntryClicked: function(phoneNumber, contactName) {
-                    phoneInput.setPhone(phoneNumber, contactName);
-                    smsFormPage.historyEntryClicked(phoneNumber, contactName);
-                }
-                onEntryDismissed: function(index) {
-                    smsFormPage.historyEntryDismissed(index);
-                }
-                onClearRequested: smsFormPage.historyClearRequested()
+            Kirigami.Icon {
+                source: mirrored ? "go-previous" : "go-next"
+                Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                color: Kirigami.Theme.disabledTextColor
             }
         }
     }

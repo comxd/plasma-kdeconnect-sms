@@ -212,7 +212,7 @@ PlasmoidItem {
             + (smsFormPage.phoneInput._hasContact ? Kirigami.Units.gridUnit * 2 : 0)
         Layout.maximumHeight: Kirigami.Units.gridUnit * 28
 
-        // ── Page navigation: 0 = SMS form, 1 = Country picker, 2 = About ──
+        // ── Page navigation: 0 = SMS form, 1 = Country picker, 2 = About, 3 = SMS history ──
         property int currentPage: 0
 
         // Auto-focus phone field when popup opens; reset to form page
@@ -270,7 +270,7 @@ PlasmoidItem {
             )
         }
 
-        // ── Main content (StackLayout: page 0 = form, page 1 = country picker, page 2 = about) ──
+        // ── Main content (StackLayout: page 0 = form, page 1 = country picker, page 2 = about, page 3 = history) ──
 
         StackLayout {
             id: pageStack
@@ -286,7 +286,7 @@ PlasmoidItem {
             smsPluginAvailable: root.smsPluginAvailable
             sendState: smsSender.sendState
             sendError: smsSender.sendError
-            smsHistory: root.smsHistory
+            historyCount: root.smsHistory.length
             activeCountry: root.activeCountry
             contactSearchModel: contactSearchProxy
 
@@ -302,15 +302,7 @@ PlasmoidItem {
                 if (smsSender.sendState === "success" || smsSender.sendState === "error")
                     smsSender.reset();
             }
-            onHistoryEntryClicked: function(phone, name) {
-                smsSender.reset();
-            }
-            onHistoryEntryDismissed: function(index) {
-                var arr = root.smsHistory.slice();
-                arr.splice(index, 1);
-                root.smsHistory = arr;
-            }
-            onHistoryClearRequested: root.smsHistory = []
+            onHistoryPageRequested: fullRep.currentPage = 3
             onOpenKdeConnect: utilityExecutor.run("kdeconnect-settings")
         }
 
@@ -330,6 +322,26 @@ PlasmoidItem {
 
         AboutTab {
             id: aboutTab
+            onBackRequested: fullRep.currentPage = 0
+        }
+
+        // ── Page 3: SMS history ──
+
+        SmsHistoryPage {
+            id: smsHistoryPage
+            smsHistory: root.smsHistory
+
+            onEntryClicked: function(phoneNumber, contactName) {
+                smsFormPage.phoneInput.setPhone(phoneNumber, contactName);
+                smsSender.reset();
+                fullRep.currentPage = 0;
+            }
+            onEntryDismissed: function(index) {
+                var arr = root.smsHistory.slice();
+                arr.splice(index, 1);
+                root.smsHistory = arr;
+            }
+            onClearRequested: root.smsHistory = []
             onBackRequested: fullRep.currentPage = 0
         }
 
