@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-16 03:24+0100\n"
+"POT-Creation-Date: 2026-03-18 22:44+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -20,9 +20,37 @@ msgstr ""
 msgid "General"
 msgstr "常规"
 
-#: contents/ui/CountryPicker.qml
+#: contents/config/config.qml
+msgid "Help"
+msgstr "帮助"
+
+#: contents/ui/AboutTab.qml contents/ui/CountryPicker.qml
 msgid "Back"
 msgstr "返回"
+
+#: contents/ui/AboutTab.qml
+msgid "About"
+msgstr "关于"
+
+#: contents/ui/AboutTab.qml
+msgid "Version %1"
+msgstr "版本 %1"
+
+#: contents/ui/AboutTab.qml
+msgid "Send SMS from your desktop via KDE Connect"
+msgstr "通过 KDE Connect 从桌面发送短信"
+
+#: contents/ui/AboutTab.qml
+msgid "Enjoying this plasmoid? Support its development!"
+msgstr "喜欢这个小部件？支持它的开发！"
+
+#: contents/ui/AboutTab.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, a small donation helps keep it going!"
+msgstr ""
+"这个小部件是在我的业余时间开发和维护的。如果您觉得它有用，一点小小的捐赠就能"
+"帮助它继续发展！"
 
 #: contents/ui/CountryPicker.qml
 msgid "Select Country"
@@ -74,7 +102,7 @@ msgstr "启用拼写检查"
 msgid "Country"
 msgstr "国家"
 
-#: contents/ui/PhoneInput.qml
+#: contents/ui/PhoneInput.qml contents/ui/configGeneral.qml
 msgid "Phone number"
 msgstr "电话号码"
 
@@ -114,7 +142,7 @@ msgstr "最近"
 msgid "Clear history"
 msgstr "清除历史记录"
 
-#: contents/ui/SmsHistory.qml contents/ui/main.qml
+#: contents/ui/SmsHistory.qml
 msgid "Dismiss"
 msgstr "关闭"
 
@@ -150,6 +178,10 @@ msgid "-- Select a country --"
 msgstr "-- 选择国家 --"
 
 #: contents/ui/configGeneral.qml
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: contents/ui/configGeneral.qml
 msgid "Device:"
 msgstr "设备："
 
@@ -160,6 +192,10 @@ msgstr "刷新"
 #: contents/ui/configGeneral.qml
 msgid "Country:"
 msgstr "国家："
+
+#: contents/ui/configGeneral.qml
+msgid "Notifications"
+msgstr "通知"
 
 #: contents/ui/configGeneral.qml
 msgid "Beep after sending:"
@@ -176,6 +212,10 @@ msgstr "提示音重复次数："
 #: contents/ui/configGeneral.qml
 msgid "Widget visibility"
 msgstr "小部件可见性"
+
+#: contents/ui/configGeneral.qml
+msgid "Panel icon:"
+msgstr "面板图标："
 
 #: contents/ui/configGeneral.qml
 msgid "Hide widget icon from panel"
@@ -196,13 +236,120 @@ msgid ""
 "Mode or a keyboard shortcut."
 msgstr "从面板隐藏小部件图标。小部件仍可通过编辑模式或键盘快捷键访问。"
 
-#: contents/ui/configGeneral.qml
-msgid "Configure Keyboard Shortcut…"
-msgstr "配置键盘快捷键…"
+#: contents/ui/configHelp.qml
+msgid "Frequently Asked Questions"
+msgstr "常见问题"
 
-#: contents/ui/configGeneral.qml
-msgid "Assign a global shortcut to open the widget popup without a panel icon."
-msgstr "分配一个全局快捷键，无需面板图标即可打开小部件弹出窗口。"
+#: contents/ui/configHelp.qml
+msgid "My SMS won't send. What's wrong?"
+msgstr "我的短信发不出去。出了什么问题？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Make sure the <b>SMS</b> plugin is enabled in KDE Connect settings for your "
+"paired device."
+msgstr "请确保在 KDE Connect 设置中为您的已配对设备启用了<b>短信</b>插件。"
+
+#: contents/ui/configHelp.qml
+msgid "The unread message badge doesn't appear. Why?"
+msgstr "未读消息徽标没有显示。为什么？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"The unread badge counts unread SMS conversations from your phone. The "
+"<b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates "
+"every 60 seconds and refreshes when you open the widget."
+msgstr ""
+"未读徽章统计手机上未读的短信对话数量。需要在 KDE Connect 设置中启用<b>短信</"
+"b>插件。计数器每 60 秒更新一次，打开小部件时也会刷新。"
+
+#: contents/ui/configHelp.qml
+msgid "No contacts appear when I type a name. How do I fix this?"
+msgstr "输入姓名时没有联系人显示。如何解决？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Your contacts must be synced to your local address book (KPeople). Enable "
+"the <b>Contacts</b> plugin in KDE Connect and click the sync button in the "
+"widget footer. Contacts from NextCloud, Google, or other synced sources also "
+"work."
+msgstr ""
+"您的联系人必须同步到本地通讯录（KPeople）。在 KDE Connect 中启用<b>联系人</b>"
+"插件，然后点击小部件底部的同步按钮。来自 NextCloud、Google 或其他同步来源的联"
+"系人也可以使用。"
+
+#: contents/ui/configHelp.qml
+msgid "How do I reply to an incoming SMS?"
+msgstr "如何回复收到的短信？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use KDE's native notification popup — it appears when you receive a message "
+"and includes a reply field. You can also open the full conversation window "
+"by clicking the conversations button in the widget."
+msgstr ""
+"使用 KDE 的原生通知弹出窗口——当您收到消息时它会出现，并包含回复字段。您也可以"
+"通过点击小部件中的对话按钮来打开完整的对话窗口。"
+
+#: contents/ui/configHelp.qml
+msgid "Where can I report a bug or suggest a feature?"
+msgstr "在哪里可以报告错误或建议功能？"
+
+#: contents/ui/configHelp.qml
+msgid "For issues with this widget:"
+msgstr "关于此小部件的问题："
+
+#: contents/ui/configHelp.qml
+msgid "For issues with KDE Connect itself:"
+msgstr "关于 KDE Connect 本身的问题："
+
+#: contents/ui/configHelp.qml
+msgid "Where can I find more information about KDE Connect?"
+msgstr "在哪里可以找到有关 KDE Connect 的更多信息？"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Connect Documentation"
+msgstr "KDE Connect 文档"
+
+#: contents/ui/configHelp.qml
+msgid "KDE Store Page"
+msgstr "KDE 商店页面"
+
+#: contents/ui/configHelp.qml
+msgid "How can I support this project?"
+msgstr "如何支持这个项目？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"This plasmoid is developed and maintained on my free time. If you find it "
+"useful, you can support its development:"
+msgstr ""
+"这个小部件是在我的业余时间开发和维护的。如果您觉得它有用，可以支持它的"
+"开发："
+
+#: contents/ui/configHelp.qml
+msgid "Can I use this widget on the desktop (not just the panel)?"
+msgstr "我可以在桌面上使用这个小部件吗（不仅仅在面板中）？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Yes! The widget works both in the panel and on the desktop. Right-click your "
+"desktop, select Add Widgets, and search for KDE Connect SMS."
+msgstr ""
+"可以！小部件在面板和桌面上都能使用。右键点击桌面，选择添加小部件，然后搜索 "
+"KDE Connect SMS。"
+
+#: contents/ui/configHelp.qml
+msgid "How do I switch between multiple phones?"
+msgstr "如何在多部手机之间切换？"
+
+#: contents/ui/configHelp.qml
+msgid ""
+"Use the device switcher button in the widget footer (next to the phone "
+"name). You can also change the default device in the widget settings."
+msgstr ""
+"使用小部件底部的设备切换按钮（在手机名称旁边）。您也可以在小部件设置中更改"
+"默认设备。"
 
 #: contents/ui/main.qml
 msgid "Sync contacts from phone"
@@ -261,14 +408,6 @@ msgid "Open KDE Connect"
 msgstr "打开 KDE Connect"
 
 #: contents/ui/main.qml
-msgid "Drop files to share with %1"
-msgstr "拖放文件以与 %1 共享"
-
-#: contents/ui/main.qml
-msgid "Drop files here to share them via KDE Connect"
-msgstr "将文件拖放到此处，通过 KDE Connect 共享"
-
-#: contents/ui/main.qml
 msgid "Sending..."
 msgstr "正在发送…"
 
@@ -285,37 +424,20 @@ msgid "SMS History"
 msgstr "短信历史"
 
 #: contents/ui/main.qml
-msgid "Sharing file..."
-msgstr "正在共享文件…"
-
-#: contents/ui/main.qml
-msgid "File shared successfully"
-msgstr "文件共享成功"
-
-#: contents/ui/main.qml
-msgid "Failed to share file"
-msgstr "文件共享失败"
-
-#: contents/ui/main.qml
-msgid "Notification"
-msgstr "通知"
-
-#: contents/ui/main.qml
-msgid "Reply"
-msgstr "回复"
-
-#: contents/ui/main.qml
-msgid "Cancel"
-msgstr "取消"
-
-#: contents/ui/main.qml
-msgid "Reply to %1..."
-msgstr "回复 %1…"
-
-#: contents/ui/main.qml
-msgid "Send"
-msgstr "发送"
-
-#: contents/ui/main.qml
 msgid "Hide widget from panel"
 msgstr "从面板隐藏小部件"
+
+#: contents/ui/main.qml
+msgid "About KDE Connect SMS"
+msgstr "关于 KDE Connect 短信"
+
+#: contents/ui/main.qml
+msgid "Help && FAQ"
+msgstr "帮助与常见问题"
+
+#~ msgid "Configure Keyboard Shortcut…"
+#~ msgstr "配置键盘快捷键…"
+
+#~ msgid ""
+#~ "Assign a global shortcut to open the widget popup without a panel icon."
+#~ msgstr "分配一个全局快捷键，无需面板图标即可打开小部件弹出窗口。"
