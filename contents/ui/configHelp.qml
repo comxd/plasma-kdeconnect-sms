@@ -31,6 +31,8 @@ KCM.SimpleKCM {
 
         Controls.ItemDelegate {
             Layout.fillWidth: true
+            topPadding: Kirigami.Units.mediumSpacing
+            bottomPadding: Kirigami.Units.mediumSpacing
             onClicked: faqRoot.expanded = !faqRoot.expanded
 
             contentItem: RowLayout {
@@ -53,6 +55,7 @@ KCM.SimpleKCM {
 
         Controls.Label {
             Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.smallSpacing
             Layout.leftMargin: Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
