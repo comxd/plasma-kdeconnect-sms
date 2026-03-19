@@ -2,7 +2,6 @@
 # Shared QEMU monitor sendkey helpers for host scripts
 #
 # Usage:
-#   MONITOR_SOCK="/tmp/kdeconnect-sms-vm-monitor.sock"
 #   source "$(dirname "$0")/lib/sendkey.sh"
 #
 # Requires:
