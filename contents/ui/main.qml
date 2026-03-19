@@ -227,7 +227,6 @@ PlasmoidItem {
                         // (close/open) from context menu. Let the 2s timer reset it.
                     } else {
                         fullRep.currentPage = 0;
-                        root.overrideCountry = "";
                         if (root.deviceId.length > 0)
                             smsFormPage.phoneInput.focusPhoneField();
                     }
