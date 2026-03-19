@@ -9,7 +9,7 @@ import org.kde.plasma.configuration
 ConfigModel {
     ConfigCategory {
         name: i18n("General")
-        icon: "kdeconnect"
+        icon: Qt.resolvedUrl("../icons/icon.svg")
         source: "configGeneral.qml"
     }
     ConfigCategory {
