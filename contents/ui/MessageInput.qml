@@ -28,10 +28,16 @@ ColumnLayout {
 
     signal textEdited()
 
+    // ── Internal ──
+
+    property bool _clearing: false
+
     // ── Public API ──
 
     function clear() {
+        _clearing = true;
         messageField.text = "";
+        _clearing = false;
     }
 
     // ── UI ──
@@ -51,7 +57,10 @@ ColumnLayout {
                 enabled: messageInput.sendState !== "sending"
                 Kirigami.SpellCheck.enabled: true
 
-                onTextChanged: messageInput.textEdited()
+                onTextChanged: {
+                    if (!messageInput._clearing)
+                        messageInput.textEdited();
+                }
             }
         }
 

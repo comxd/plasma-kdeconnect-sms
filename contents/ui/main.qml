@@ -356,6 +356,7 @@ PlasmoidItem {
 
         onSent: function(entry) {
             root.smsHistory = [entry].concat(root.smsHistory).slice(0, 5);
+            root.clearAfterSend();
             if (root.speakerBeep)
                 playBeep();
             unreadRefreshDelay.start();
