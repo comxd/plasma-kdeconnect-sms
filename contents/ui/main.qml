@@ -40,15 +40,9 @@ PlasmoidItem {
 
     readonly property int kPeoplePhoneNumberRole: 260
 
-    // ── Send state: "idle" | "sending" | "success" | "error" ──
-
-    property string sendState: "idle"
-    property string sendError: ""
-
     // ── SMS history (runtime-only, last 5) ──
 
     property var smsHistory: []
-    property bool historyExpanded: true
 
     // ── Signal to clear message field after successful send ──
 
@@ -202,40 +196,9 @@ PlasmoidItem {
 
     // ── Compact representation ──
 
-    compactRepresentation: Item {
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: root.expanded = !root.expanded
-
-            Kirigami.Icon {
-                anchors.fill: parent
-                source: Plasmoid.icon
-                active: parent.containsMouse
-            }
-        }
-
-        // ── Unread SMS badge ──
-        Rectangle {
-            visible: root.unreadCount > 0
-            anchors.top: parent.top
-            anchors.right: parent.right
-            anchors.topMargin: -Math.round(height / 4)
-            anchors.rightMargin: -Math.round(width / 4)
-            width: Math.max(badgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2, height)
-            height: badgeLabel.implicitHeight + Kirigami.Units.smallSpacing
-            radius: height / 2
-            color: Kirigami.Theme.highlightColor
-
-            Controls.Label {
-                id: badgeLabel
-                anchors.centerIn: parent
-                text: root.unreadCount > 99 ? "99+" : String(root.unreadCount)
-                font.pointSize: Kirigami.Theme.smallFont.pointSize
-                font.bold: true
-                color: Kirigami.Theme.highlightedTextColor
-            }
-        }
+    compactRepresentation: CompactIcon {
+        unreadCount: root.unreadCount
+        onClicked: root.expanded = !root.expanded
     }
 
     // ── Full representation ──
@@ -246,7 +209,7 @@ PlasmoidItem {
         Layout.preferredWidth: Kirigami.Units.gridUnit * 26
         Layout.minimumWidth: Kirigami.Units.gridUnit * 20
         Layout.minimumHeight: Kirigami.Units.gridUnit * 12
-            + (phoneInput._hasContact ? Kirigami.Units.gridUnit * 2 : 0)
+            + (smsFormPage.phoneInput._hasContact ? Kirigami.Units.gridUnit * 2 : 0)
         Layout.maximumHeight: Kirigami.Units.gridUnit * 28
 
         // ── Page navigation: 0 = SMS form, 1 = Country picker, 2 = About ──
@@ -266,130 +229,46 @@ PlasmoidItem {
                         fullRep.currentPage = 0;
                         root.overrideCountry = "";
                         if (root.deviceId.length > 0)
-                            phoneInput.focusPhoneField();
+                            smsFormPage.phoneInput.focusPhoneField();
                     }
                 }
+            }
+            function onClearAfterSend() {
+                smsFormPage.messageInput.clear();
             }
         }
 
         // ── Footer toolbar ──
 
-        footer: PlasmaExtras.PlasmoidHeading {
+        footer: SmsFormToolbar {
             visible: root.deviceId.length > 0 && fullRep.currentPage === 0
-            contentItem: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+            unreadCount: root.unreadCount
+            sendState: smsSender.sendState
+            contactsLoading: root.contactsLoading
+            smsPluginAvailable: root.smsPluginAvailable
+            deviceName: root.deviceName
+            deviceCount: devicesModel.count
+            phoneText: smsFormPage.phoneInput.phoneText
+            isPhoneValid: smsFormPage.phoneInput.isPhoneValid
+            messageText: smsFormPage.messageInput.messageText
 
-                Controls.ToolButton {
-                    icon.name: "view-refresh"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    enabled: !root.contactsLoading
-                    Controls.ToolTip.text: i18n("Sync contacts from phone")
-                    Controls.ToolTip.visible: hovered
-                    onClicked: root.syncContacts()
-                }
-
-                Controls.ToolButton {
-                    icon.name: "dialog-messages"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    visible: root.smsPluginAvailable
-                    Controls.ToolTip.text: i18n("Open conversations")
-                    Controls.ToolTip.visible: hovered
-                    onClicked: utilityExecutor.run("kdeconnect-sms")
-
-                    Rectangle {
-                        visible: root.unreadCount > 0
-                        anchors.top: parent.top
-                        anchors.right: parent.right
-                        anchors.topMargin: -Math.round(height / 4)
-                        anchors.rightMargin: -Math.round(width / 4)
-                        width: Math.max(conversationBadgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2, height)
-                        height: conversationBadgeLabel.implicitHeight + Kirigami.Units.smallSpacing
-                        radius: height / 2
-                        color: Kirigami.Theme.highlightColor
-
-                        Controls.Label {
-                            id: conversationBadgeLabel
-                            anchors.centerIn: parent
-                            text: root.unreadCount > 99 ? "99+" : String(root.unreadCount)
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            font.bold: true
-                            color: Kirigami.Theme.highlightedTextColor
-                        }
-                    }
-                }
-
-                Controls.ToolButton {
-                    id: deviceSwitcherButton
-                    text: root.deviceName || i18n("No device")
-                    icon.name: "smartphone"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    visible: devicesModel.count > 0
-                    Controls.ToolTip.text: devicesModel.count > 1
-                        ? i18n("Switch device")
-                        : root.deviceName
-                    Controls.ToolTip.visible: hovered
-                    onClicked: {
-                        if (devicesModel.count > 1)
-                            deviceMenu.popup(deviceSwitcherButton, 0, -deviceMenu.height);
-                    }
-
-                    Kirigami.Icon {
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.rightMargin: Kirigami.Units.smallSpacing
-                        width: Kirigami.Units.iconSizes.small / 2
-                        height: width
-                        source: "arrow-down"
-                        visible: devicesModel.count > 1
-                    }
-                }
-
-                Item { Layout.fillWidth: true }
-
-                Controls.ToolButton {
-                    icon.name: "document-new"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    visible: phoneInput.phoneText.length > 0 || messageInput.messageText.length > 0
-                    Controls.ToolTip.text: i18n("New SMS")
-                    Controls.ToolTip.visible: hovered
-                    onClicked: {
-                        phoneInput.clear();
-                        messageInput.clear();
-                        root.sendState = "idle";
-                        root.overrideCountry = "";
-                    }
-                }
-
-                Controls.BusyIndicator {
-                    visible: root.sendState === "sending" || root.contactsLoading
-                    running: visible
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                }
-
-                Controls.Button {
-                    id: sendButton
-                    icon.name: "mail-send"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    text: i18n("Send SMS")
-                    enabled: root.sendState !== "sending"
-                             && root.smsPluginAvailable
-                             && phoneInput.isPhoneValid
-                             && messageInput.messageText.length > 0
-
-                    onClicked: root.sendSms(
-                        phoneInput.formatE164(),
-                        phoneInput.phoneText,
-                        phoneInput.selectedContactName,
-                        messageInput.messageText
-                    )
-                }
+            onSyncContacts: root.syncContacts()
+            onOpenConversations: utilityExecutor.run("kdeconnect-sms")
+            onDeviceMenuRequested: function(anchor) {
+                deviceMenu.popup(anchor, 0, -deviceMenu.height);
             }
+            onNewSms: {
+                smsFormPage.phoneInput.clear();
+                smsFormPage.messageInput.clear();
+                smsSender.reset();
+                root.overrideCountry = "";
+            }
+            onSendSms: smsSender.send(
+                smsFormPage.phoneInput.formatE164(),
+                smsFormPage.phoneInput.phoneText,
+                smsFormPage.phoneInput.selectedContactName,
+                smsFormPage.messageInput.messageText
+            )
         }
 
         // ── Main content (StackLayout: page 0 = form, page 1 = country picker, page 2 = about) ──
@@ -401,248 +280,39 @@ PlasmoidItem {
 
         // ── Page 0: SMS form ──
 
-        ColumnLayout {
-            spacing: Kirigami.Units.smallSpacing
+        SmsFormPage {
+            id: smsFormPage
+            deviceId: root.deviceId
+            deviceCount: devicesModel.count
+            smsPluginAvailable: root.smsPluginAvailable
+            sendState: smsSender.sendState
+            sendError: smsSender.sendError
+            smsHistory: root.smsHistory
+            activeCountry: root.activeCountry
+            contactSearchModel: contactSearchProxy
 
-            // ── Onboarding: no device configured ──
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                visible: root.deviceId.length === 0
-                spacing: Kirigami.Units.largeSpacing
-
-                Item { Layout.fillHeight: true }
-
-                Kirigami.Icon {
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.huge
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.huge
-                    source: "smartphone"
-                    opacity: 0.5
-                }
-
-                Controls.Label {
-                    Layout.fillWidth: true
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WordWrap
-                    text: devicesModel.count === 0
-                        ? i18n("No device available")
-                        : i18n("No device configured")
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
-                }
-
-                Controls.Label {
-                    Layout.fillWidth: true
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WordWrap
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    color: Kirigami.Theme.disabledTextColor
-                    text: devicesModel.count === 0
-                        ? i18n("Pair and connect your phone with KDE Connect to start sending SMS.")
-                        : i18n("Select a device in the widget settings to start sending SMS.")
-                }
-
-                Controls.Button {
-                    Layout.alignment: Qt.AlignHCenter
-                    icon.name: "configure"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
-                    text: i18n("Open Settings")
-                    onClicked: plasmoid.internalAction("configure").trigger()
-                }
-
-                Item { Layout.fillHeight: true }
+            onCountryBadgeClicked: {
+                fullRep.currentPage = 1;
+                countryPicker.activate();
             }
-
-            // ── SMS plugin not available warning ──
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                visible: root.deviceId.length > 0 && !root.smsPluginAvailable
-                spacing: Kirigami.Units.largeSpacing
-
-                Item { Layout.fillHeight: true }
-
-                Kirigami.InlineMessage {
-                    Layout.fillWidth: true
-                    type: Kirigami.MessageType.Warning
-                    text: i18n("SMS plugin is not available on this device. Make sure the device is reachable and the SMS plugin is enabled in KDE Connect settings.")
-                    visible: true
-
-                    actions: [
-                        Kirigami.Action {
-                            text: i18n("Open KDE Connect")
-                            icon.name: "kdeconnect"
-                            onTriggered: utilityExecutor.run("kdeconnect-settings")
-                        }
-                    ]
-                }
-
-                Item { Layout.fillHeight: true }
+            onPhoneEdited: {
+                if (smsSender.sendState === "success" || smsSender.sendState === "error")
+                    smsSender.reset();
             }
-
-            // ── SMS form ──
-
-            PhoneInput {
-                id: phoneInput
-                Layout.fillWidth: true
-                visible: root.deviceId.length > 0 && root.smsPluginAvailable
-                activeCountry: root.activeCountry
-                sendState: root.sendState
-                contactSearchModel: contactSearchProxy
-
-                onCountryBadgeClicked: {
-                    fullRep.currentPage = 1;
-                    countryPicker.activate();
-                }
-
-                onPhoneTextChanged: {
-                    if (root.sendState === "success" || root.sendState === "error")
-                        root.sendState = "idle";
-                }
+            onTextEdited: {
+                if (smsSender.sendState === "success" || smsSender.sendState === "error")
+                    smsSender.reset();
             }
-
-            MessageInput {
-                id: messageInput
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                visible: root.deviceId.length > 0 && root.smsPluginAvailable
-                sendState: root.sendState
-
-                onTextEdited: {
-                    if (root.sendState === "success" || root.sendState === "error")
-                        root.sendState = "idle";
-                }
+            onHistoryEntryClicked: function(phone, name) {
+                smsSender.reset();
             }
-
-            Controls.Label {
-                id: statusLabel
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignHCenter
-                font.pointSize: Kirigami.Theme.smallFont.pointSize
-
-                property bool shouldShow: root.sendState !== "idle" && root.deviceId.length > 0
-
-                onShouldShowChanged: {
-                    if (shouldShow) {
-                        visible = true;
-                        opacity = 1;
-                    } else {
-                        opacity = 0;
-                    }
-                }
-
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: 200
-                        onRunningChanged: {
-                            if (!running && statusLabel.opacity === 0)
-                                statusLabel.visible = false;
-                        }
-                    }
-                }
-                color: {
-                    if (root.sendState === "success")
-                        return Kirigami.Theme.positiveTextColor;
-                    if (root.sendState === "error")
-                        return Kirigami.Theme.negativeTextColor;
-                    return Kirigami.Theme.textColor;
-                }
-                text: {
-                    if (root.sendState === "sending")
-                        return i18n("Sending...");
-                    if (root.sendState === "success")
-                        return i18n("SMS sent successfully");
-                    if (root.sendState === "error")
-                        return root.sendError || i18n("Failed to send SMS");
-                    return "";
-                }
+            onHistoryEntryDismissed: function(index) {
+                var arr = root.smsHistory.slice();
+                arr.splice(index, 1);
+                root.smsHistory = arr;
             }
-
-            // ── SMS history (collapsible) ──
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                visible: root.deviceId.length > 0 && root.smsHistory.length > 0
-                spacing: 0
-
-                // Collapsible header
-                Controls.ItemDelegate {
-                    Layout.fillWidth: true
-                    padding: Kirigami.Units.smallSpacing
-                    onClicked: root.historyExpanded = !root.historyExpanded
-
-                    contentItem: RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
-
-                        Kirigami.Icon {
-                            source: "arrow-down"
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                            color: Kirigami.Theme.textColor
-
-                            rotation: root.historyExpanded ? 0 : -90
-
-                            Behavior on rotation {
-                                NumberAnimation {
-                                    duration: Kirigami.Units.shortDuration
-                                    easing.type: Easing.InOutQuad
-                                }
-                            }
-                        }
-
-                        Controls.Label {
-                            text: i18n("SMS History")
-                            Layout.fillWidth: true
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            color: Kirigami.Theme.disabledTextColor
-                        }
-                    }
-                }
-
-                // Animated collapsible container
-                Item {
-                    id: historyContainer
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: root.historyExpanded ? smsHistoryContent.implicitHeight : 0
-                    clip: true
-
-                    Behavior on Layout.preferredHeight {
-                        NumberAnimation {
-                            duration: Kirigami.Units.shortDuration
-                            easing.type: Easing.InOutQuad
-                        }
-                    }
-
-                    SmsHistory {
-                        id: smsHistoryContent
-                        width: parent.width
-                        historyModel: root.smsHistory
-
-                        onEntryClicked: function(phoneNumber, contactName) {
-                            phoneInput.setPhone(phoneNumber, contactName);
-                            root.sendState = "idle";
-                        }
-                        onEntryDismissed: function(index) {
-                            var arr = root.smsHistory.slice();
-                            arr.splice(index, 1);
-                            root.smsHistory = arr;
-                        }
-                        onClearRequested: {
-                            root.smsHistory = [];
-                        }
-                    }
-                }
-            }
-
-            // ── Clear message field after successful send ──
-
-            Connections {
-                target: root
-                function onClearAfterSend() { messageInput.clear(); }
-            }
+            onHistoryClearRequested: root.smsHistory = []
+            onOpenKdeConnect: utilityExecutor.run("kdeconnect-settings")
         }
 
         // ── Page 1: Country picker (inline view) ──
@@ -667,67 +337,20 @@ PlasmoidItem {
         } // StackLayout
     }
 
-    // ── Send SMS via kdeconnect-cli ──
+    // ── SmsSender (non-visual) ──
 
-    property string _pendingPhone: ""
-    property string _pendingContact: ""
-    property string _pendingMessage: ""
+    SmsSender {
+        id: smsSender
+        deviceId: root.deviceId
 
-    Lib.ExecuteCommand {
-        id: smsExecutor
-        onFinished: function(exitCode, stdout, stderr) {
-            if (exitCode === 0) {
-                root.sendState = "success";
-
-                var preview = root._pendingMessage;
-                if (preview.length > 30)
-                    preview = preview.substring(0, 30) + "…";
-                var entry = {
-                    phoneNumber: root._pendingPhone,
-                    contactName: root._pendingContact,
-                    messagePreview: preview,
-                    timestamp: Date.now()
-                };
-                root.smsHistory = [entry].concat(root.smsHistory).slice(0, 5);
-
-                if (root.speakerBeep)
-                    playBeep();
-                unreadRefreshDelay.start();
-            } else {
-                root.sendState = "error";
-                root.sendError = stderr || i18n("Failed to send SMS");
-            }
-            statusResetTimer.restart();
+        onSent: function(entry) {
+            root.smsHistory = [entry].concat(root.smsHistory).slice(0, 5);
+            if (root.speakerBeep)
+                playBeep();
+            unreadRefreshDelay.start();
         }
-    }
 
-    function sendSms(e164Phone, rawPhone, contactName, message) {
-        root.sendState = "sending";
-        root.sendError = "";
-
-        root._pendingPhone = rawPhone;
-        root._pendingContact = contactName;
-        root._pendingMessage = message;
-
-        var cmd = "kdeconnect-cli --send-sms " + Helpers.shellEscape(message)
-                + " --destination " + Helpers.shellEscape(e164Phone)
-                + " -d " + Helpers.shellEscape(root.deviceId);
-        smsExecutor.run(cmd);
-    }
-
-    // ── Status reset timer ──
-
-    Timer {
-        id: statusResetTimer
-        interval: 5000
-        onTriggered: {
-            if (root.sendState === "success") {
-                root.clearAfterSend();
-                root.sendState = "idle";
-            } else if (root.sendState === "error") {
-                root.sendState = "idle";
-            }
-        }
+        onClearRequested: root.clearAfterSend()
     }
 
     // ── Beep sound (still uses shell command) ──
