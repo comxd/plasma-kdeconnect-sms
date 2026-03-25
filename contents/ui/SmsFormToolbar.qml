@@ -124,15 +124,36 @@ PlasmaExtras.PlasmoidHeading {
         }
 
         Controls.Button {
-            icon.name: toolbar.sendState === "sending" ? "process-working" : "mail-send"
-            icon.width: Kirigami.Units.iconSizes.smallMedium
-            icon.height: Kirigami.Units.iconSizes.smallMedium
-            text: i18n("Send SMS")
+            id: sendButton
+            Accessible.name: i18n("Send SMS")
             enabled: toolbar.sendState !== "sending"
                      && toolbar.smsPluginAvailable
                      && toolbar.isPhoneValid
                      && toolbar.messageText.length > 0
+            topPadding: Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.smallSpacing
+            leftPadding: Kirigami.Units.mediumSpacing
+            rightPadding: Kirigami.Units.mediumSpacing
             onClicked: toolbar.sendSms()
+
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+                Kirigami.Icon {
+                    visible: toolbar.sendState !== "sending"
+                    source: "mail-send"
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                }
+                Controls.BusyIndicator {
+                    visible: toolbar.sendState === "sending"
+                    running: visible
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                }
+                Controls.Label {
+                    text: i18n("Send SMS")
+                }
+            }
         }
     }
 }
