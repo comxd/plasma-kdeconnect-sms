@@ -538,19 +538,24 @@ PlasmoidItem {
 
     // ── Contacts sync (D-Bus trigger — no native QML API available) ──
 
+    Timer {
+        id: syncFeedbackTimer
+        interval: 2500
+        repeat: false
+        onTriggered: root.contactsLoading = false
+    }
+
     function syncContacts() {
         var cmd = Helpers.buildSyncContactsCommand(root.deviceId);
         if (cmd) {
             root.contactsLoading = true;
+            syncFeedbackTimer.restart();
             contactSyncExecutor.run(cmd);
         }
     }
 
     Lib.ExecuteCommand {
         id: contactSyncExecutor
-        onFinished: function(exitCode, stdout, stderr) {
-            root.contactsLoading = false;
-        }
     }
 
     // ── Device switcher menu ──
