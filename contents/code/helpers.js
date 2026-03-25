@@ -221,6 +221,28 @@ function detectCountry(input, defaultCountry) {
     return defaultCountry || "";
 }
 
+// ── Phone deduplication (KPeople multi-source contacts) ──
+
+function canonicalizePhone(phone, defaultCountry) {
+    if (!phone) return "";
+    var raw = String(phone);
+    try {
+        var parsed = LP.libphonenumber.parsePhoneNumber(raw, defaultCountry || undefined);
+        if (parsed && parsed.number) return parsed.number;
+    } catch (e) { /* fall through */ }
+    return raw.replace(/\D/g, "");
+}
+
+function phonesMatch(key1, key2) {
+    if (!key1 || !key2) return false;
+    if (key1 === key2) return true;
+    if (key1.charAt(0) === "+" || key2.charAt(0) === "+") return false;
+    if (key1.length <= 6 || key2.length <= 6) return false;
+    var longer = key1.length >= key2.length ? key1 : key2;
+    var shorter = key1.length < key2.length ? key1 : key2;
+    return longer.endsWith(shorter);
+}
+
 // ── SMS segment counting ──
 
 // GSM-7 basic character set (single-byte) + extension table (double-byte)
