@@ -20,6 +20,7 @@ ColumnLayout {
     required property string deviceId
     required property int deviceCount
     required property bool smsPluginAvailable
+    required property bool pluginChecking
     required property string sendState
     required property string sendError
     required property int historyCount
@@ -90,12 +91,27 @@ ColumnLayout {
         Item { Layout.fillHeight: true }
     }
 
+    // ── SMS plugin check in progress ──
+
+    Item {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        visible: smsFormPage.deviceId.length > 0 && smsFormPage.pluginChecking && !smsFormPage.smsPluginAvailable
+
+        Controls.BusyIndicator {
+            anchors.centerIn: parent
+            width: Kirigami.Units.iconSizes.large
+            height: Kirigami.Units.iconSizes.large
+            running: visible
+        }
+    }
+
     // ── SMS plugin not available warning ──
 
     ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        visible: smsFormPage.deviceId.length > 0 && !smsFormPage.smsPluginAvailable
+        visible: smsFormPage.deviceId.length > 0 && !smsFormPage.smsPluginAvailable && !smsFormPage.pluginChecking
         spacing: Kirigami.Units.largeSpacing
 
         Item { Layout.fillHeight: true }

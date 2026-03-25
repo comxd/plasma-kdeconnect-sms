@@ -83,45 +83,51 @@ PlasmoidItem {
         }
     }
 
-    onDeviceIdChanged: {
-        _refreshDevice();
-        if (deviceId.length > 0) {
-            syncConversationThreads();
-            refreshUnreadCount();
-        }
-    }
+    onDeviceIdChanged: _refreshDevice()
 
     // ── KDE Connect: SMS plugin availability ──
-    // supportedPlugins is a D-Bus property (non-bindable, loaded async).
-    // Check imperatively after device changes, with a delayed retry.
 
-    property bool smsPluginAvailable: false
+    property bool _pluginChecking: false
 
-    function _checkSmsPlugin() {
-        if (!currentDevice || deviceId.length === 0) {
-            smsPluginAvailable = false;
-            return;
-        }
-        var plugins = currentDevice.supportedPlugins;
-        smsPluginAvailable = (plugins && plugins.indexOf("kdeconnect_sms") !== -1);
+    KDEConnect.PluginChecker {
+        id: smsPluginChecker
+        pluginName: "sms"
+        device: root.currentDevice
     }
+    readonly property bool smsPluginAvailable: smsPluginChecker.available
+    readonly property var smsPlugin: smsPluginAvailable
+        ? KDEConnect.SmsDbusInterfaceFactory.create(root.deviceId)
+        : null
 
-    onCurrentDeviceChanged: {
-        _checkSmsPlugin();
-        smsPluginCheckTimer.restart();
-    }
-
-    property int _pluginCheckCount: 0
-
+    // Startup fallback: PluginChecker's initial async hasPlugin() can miss
+    // the ready window if the D-Bus proxy is too fresh. Re-poke after 2s.
     Timer {
-        id: smsPluginCheckTimer
-        interval: 500
-        repeat: true
+        id: pluginCheckFallback
+        interval: 2000
+        repeat: false
         onTriggered: {
-            root._pluginCheckCount++;
-            root._checkSmsPlugin();
-            if (root.smsPluginAvailable || root._pluginCheckCount >= 5)
-                running = false;
+            root._pluginChecking = false;
+            if (!smsPluginChecker.available && root.currentDevice)
+                smsPluginChecker.pluginsChanged();
+        }
+    }
+
+    // Force PluginChecker re-check when device changes (upstream creates one
+    // PluginChecker per device; we share a mutable one, so we must re-trigger).
+    onCurrentDeviceChanged: {
+        root._pluginChecking = true;
+        smsPluginChecker.pluginsChanged();
+        pluginCheckFallback.restart();
+    }
+
+    // When plugin becomes available (async D-Bus), trigger the initial sync.
+    // This is the sole sync entry point — onDeviceIdChanged only refreshes
+    // the device object; sync waits until plugin availability is confirmed.
+    onSmsPluginAvailableChanged: {
+        root._pluginChecking = false;
+        if (smsPluginAvailable && deviceId.length > 0) {
+            syncConversationThreads();
+            refreshUnreadCount();
         }
     }
 
@@ -143,17 +149,12 @@ PlasmoidItem {
         if (cmd) unreadExecutor.run(cmd);
     }
 
-    Lib.ExecuteCommand {
-        id: conversationSyncExecutor
-        onFinished: function(exitCode, stdout, stderr) {
-            unreadRefreshDelay.start();
-        }
-    }
-
     function syncConversationThreads() {
         if (root.deviceId.length === 0) return;
-        var cmd = Helpers.buildRequestConversationThreadsCommand(root.deviceId);
-        if (cmd) conversationSyncExecutor.run(cmd);
+        if (root.smsPlugin) {
+            root.smsPlugin.requestAllConversations();
+            unreadRefreshDelay.restart();
+        }
     }
 
     Timer {
@@ -251,8 +252,8 @@ PlasmoidItem {
             isPhoneValid: smsFormPage.phoneInput.isPhoneValid
             messageText: smsFormPage.messageInput.messageText
 
-            onSyncContacts: root.syncContacts()
-            onOpenConversations: utilityExecutor.run("kdeconnect-sms")
+            onSyncContacts: { root.syncContacts(); root.syncConversationThreads(); }
+            onOpenConversations: { if (root.smsPlugin) root.smsPlugin.launchApp(); }
             onDeviceMenuRequested: function(anchor) {
                 deviceMenu.popup(anchor, 0, -deviceMenu.height);
             }
@@ -284,6 +285,7 @@ PlasmoidItem {
             deviceId: root.deviceId
             deviceCount: devicesModel.count
             smsPluginAvailable: root.smsPluginAvailable
+            pluginChecking: root._pluginChecking
             sendState: smsSender.sendState
             sendError: smsSender.sendError
             historyCount: root.smsHistory.length
@@ -359,7 +361,7 @@ PlasmoidItem {
             root.clearAfterSend();
             if (root.speakerBeep)
                 playBeep();
-            unreadRefreshDelay.start();
+            unreadRefreshDelay.restart();
         }
 
         onClearRequested: root.clearAfterSend()
