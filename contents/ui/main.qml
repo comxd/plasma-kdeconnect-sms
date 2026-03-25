@@ -485,26 +485,51 @@ PlasmoidItem {
         Component.onCompleted: sort(0)
     }
 
+    property var _seenPhones: ({})
+
     KItemModels.KSortFilterProxyModel {
         id: contactSearchProxy
         sourceModel: contactsWithPhones
         filterRoleName: "display"
 
+        onFilterStringChanged: root._seenPhones = ({})
+
         filterRowCallback: function(sourceRow, sourceParent) {
             if (filterString.length < 2)
                 return false;
             var q = filterString.toLowerCase();
-            var name = sourceModel.data(
-                sourceModel.index(sourceRow, 0, sourceParent), 0 /* Qt::DisplayRole */);
-            if (name && name.toString().toLowerCase().indexOf(q) !== -1)
-                return true;
-            var phone = sourceModel.data(
-                sourceModel.index(sourceRow, 0, sourceParent), root.kPeoplePhoneNumberRole);
-            if (phone && phone.toString().replace(/[\s\-()]/g, "").indexOf(
-                    q.replace(/[\s\-()]/g, "")) !== -1)
-                return true;
-            return false;
+            var idx = sourceModel.index(sourceRow, 0, sourceParent);
+
+            var name = sourceModel.data(idx, 0 /* Qt::DisplayRole */);
+            var nameMatch = name && name.toString().toLowerCase().indexOf(q) !== -1;
+
+            var phone = sourceModel.data(idx, root.kPeoplePhoneNumberRole);
+            var phoneStr = phone ? phone.toString() : "";
+            var phoneMatch = false;
+            if (phoneStr) {
+                var cleanPhone = phoneStr.replace(/[\s\-()]/g, "");
+                phoneMatch = cleanPhone.indexOf(q.replace(/[\s\-()]/g, "")) !== -1;
+            }
+            if (!nameMatch && !phoneMatch)
+                return false;
+
+            var canonKey = Helpers.canonicalizePhone(phoneStr, root.activeCountry);
+            if (canonKey) {
+                for (var seen in root._seenPhones) {
+                    if (Helpers.phonesMatch(canonKey, seen))
+                        return false;
+                }
+                root._seenPhones[canonKey] = true;
+            }
+            return true;
         }
+    }
+
+    Connections {
+        target: contactsWithPhones
+        function onRowsInserted() { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onRowsRemoved()  { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onModelReset()   { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
     }
 
     // ── Contacts sync (D-Bus trigger — no native QML API available) ──
