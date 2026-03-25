@@ -201,8 +201,8 @@ msgstr[4] "سجل الرسائل القصيرة (%1)"
 msgstr[5] "سجل الرسائل القصيرة (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "مزامنة جهات الاتصال من الهاتف"
+msgid "Sync contacts and messages from phone"
+msgstr "مزامنة جهات الاتصال والرسائل من الهاتف"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"

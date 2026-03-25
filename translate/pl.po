@@ -192,8 +192,8 @@ msgstr[1] "Historia SMS (%1)"
 msgstr[2] "Historia SMS (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "Synchronizuj kontakty z telefonu"
+msgid "Sync contacts and messages from phone"
+msgstr "Synchronizuj kontakty i wiadomości z telefonu"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"

@@ -181,7 +181,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
+msgid "Sync contacts and messages from phone"
 msgstr ""
 
 #: contents/ui/SmsFormToolbar.qml

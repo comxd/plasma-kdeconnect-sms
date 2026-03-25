@@ -188,8 +188,8 @@ msgid_plural "SMS History (%1)"
 msgstr[0] "SMS履歴 (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "スマートフォンから連絡先を同期"
+msgid "Sync contacts and messages from phone"
+msgstr "スマートフォンから連絡先とメッセージを同期"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"
