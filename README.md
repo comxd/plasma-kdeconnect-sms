@@ -21,8 +21,8 @@
 - **KDE Connect integration** — uses your paired Android phone as the SMS gateway
 - **Contact autocomplete** — search contacts via KPeople integration
 - **Phone number formatting** — automatic country detection and as-you-type formatting via libphonenumber-js
-- **SMS history** — view sent message history per contact, collapsible with smooth animations
-- **Unread notification badge** — shows unread message count on the panel icon
+- **SMS history** — view sent message history per contact, full-page history view with back navigation
+- **Unread notification badge** — dot indicator on the panel icon for unread messages
 - **Configurable device** — select your KDE Connect paired device, multi-device support
 - **Audible feedback** — optional beep sound after sending
 - **15 languages** — fr, de, es, pt_BR, ru, zh_CN, ja, ko, it, nl, pl, tr, ar, uk, cs

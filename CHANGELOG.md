@@ -4,6 +4,32 @@ All notable changes to KDE Connect SMS will be documented in this file.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.3.0] — 2026-03-25
+
+### Changed
+
+- Unread SMS badge replaced with dot indicator (count was unreliable due to upstream KDE Connect daemon cache bug)
+- Plugin check uses native `PluginChecker` (signal-driven) instead of manual polling timer
+- SMS app launch and conversation sync use native `SmsDbusInterfaceFactory` instead of shell commands
+- Sync button now refreshes both contacts and SMS conversations
+- Plugin check shows a loading spinner instead of a false error during async D-Bus resolution
+
+### Fixed
+
+- Stale plugin state on device switch (sync deferred until plugin availability confirmed)
+- Timer `start()` replaced with `restart()` for correct behavior on overlapping events
+- Contact autocomplete deduplication for multi-source KPeople contacts (Google, local, NextCloud)
+- Phone type labels (Mobile, Work, Home, Fax) in contact autocomplete via PersonData vCard access
+- Defensive signal handlers (dataChanged, layoutChanged) in contact dedup to prevent stale filter state
+- Refresh button now shows spinning icon with minimum 2.5s visual feedback
+- Send SMS button shows inline loading indicator during send
+- Replaced standalone toolbar spinner with per-button inline feedback
+
+### Docs
+
+- FAQ updated for dot indicator
+- 15 translations updated
+
 ## [2.2.0] — 2026-03-19
 
 ### Added
@@ -84,6 +110,7 @@ Complete rewrite for KDE Plasma 6 (Qt 6 / QML).
 
 - Complete rewrite from Plasma 5 to Plasma 6
 
+[2.3.0]: https://github.com/comxd/plasma-kdeconnect-sms/releases/tag/v2.3.0
 [2.2.0]: https://github.com/comxd/plasma-kdeconnect-sms/releases/tag/v2.2.0
 [2.1.1]: https://github.com/comxd/plasma-kdeconnect-sms/releases/tag/v2.1.1
 [2.1.0]: https://github.com/comxd/plasma-kdeconnect-sms/releases/tag/v2.1.0
