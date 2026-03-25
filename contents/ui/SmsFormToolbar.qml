@@ -38,13 +38,28 @@ PlasmaExtras.PlasmoidHeading {
         spacing: Kirigami.Units.smallSpacing
 
         Controls.ToolButton {
-            icon.name: "view-refresh"
-            icon.width: Kirigami.Units.iconSizes.smallMedium
-            icon.height: Kirigami.Units.iconSizes.smallMedium
+            id: refreshButton
             enabled: !toolbar.contactsLoading
             Controls.ToolTip.text: i18n("Sync contacts and messages from phone")
             Controls.ToolTip.visible: hovered
             onClicked: toolbar.syncContacts()
+
+            contentItem: Kirigami.Icon {
+                id: refreshIcon
+                source: "view-refresh"
+                implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                implicitHeight: Kirigami.Units.iconSizes.smallMedium
+            }
+
+            RotationAnimator {
+                target: refreshIcon
+                from: 0
+                to: 360
+                duration: 1000
+                loops: Animation.Infinite
+                running: toolbar.contactsLoading
+                alwaysRunToEnd: true
+            }
         }
 
         Controls.ToolButton {
@@ -108,15 +123,8 @@ PlasmaExtras.PlasmoidHeading {
             onClicked: toolbar.newSms()
         }
 
-        Controls.BusyIndicator {
-            visible: toolbar.sendState === "sending" || toolbar.contactsLoading
-            running: visible
-            Layout.preferredWidth: Kirigami.Units.iconSizes.small
-            Layout.preferredHeight: Kirigami.Units.iconSizes.small
-        }
-
         Controls.Button {
-            icon.name: "mail-send"
+            icon.name: toolbar.sendState === "sending" ? "process-working" : "mail-send"
             icon.width: Kirigami.Units.iconSizes.smallMedium
             icon.height: Kirigami.Units.iconSizes.smallMedium
             text: i18n("Send SMS")
