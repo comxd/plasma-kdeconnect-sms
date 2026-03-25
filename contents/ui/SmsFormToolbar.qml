@@ -42,7 +42,7 @@ PlasmaExtras.PlasmoidHeading {
             icon.width: Kirigami.Units.iconSizes.smallMedium
             icon.height: Kirigami.Units.iconSizes.smallMedium
             enabled: !toolbar.contactsLoading
-            Controls.ToolTip.text: i18n("Sync contacts from phone")
+            Controls.ToolTip.text: i18n("Sync contacts and messages from phone")
             Controls.ToolTip.visible: hovered
             onClicked: toolbar.syncContacts()
         }
@@ -62,19 +62,10 @@ PlasmaExtras.PlasmoidHeading {
                 anchors.right: parent.right
                 anchors.topMargin: -Math.round(height / 4)
                 anchors.rightMargin: -Math.round(width / 4)
-                width: Math.max(conversationBadgeLabel.implicitWidth + Kirigami.Units.smallSpacing * 2, height)
-                height: conversationBadgeLabel.implicitHeight + Kirigami.Units.smallSpacing
-                radius: height / 2
+                width: Kirigami.Units.smallSpacing * 2
+                height: width
+                radius: width / 2
                 color: Kirigami.Theme.highlightColor
-
-                Controls.Label {
-                    id: conversationBadgeLabel
-                    anchors.centerIn: parent
-                    text: toolbar.unreadCount > 99 ? "99+" : String(toolbar.unreadCount)
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    font.bold: true
-                    color: Kirigami.Theme.highlightedTextColor
-                }
             }
         }
 

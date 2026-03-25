@@ -185,8 +185,8 @@ msgid_plural "SMS History (%1)"
 msgstr[0] "短信记录 (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "从手机同步联系人"
+msgid "Sync contacts and messages from phone"
+msgstr "从手机同步联系人和消息"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"

@@ -185,8 +185,8 @@ msgid_plural "SMS History (%1)"
 msgstr[0] "SMS 기록 (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "휴대전화에서 연락처 동기화"
+msgid "Sync contacts and messages from phone"
+msgstr "휴대전화에서 연락처 및 메시지 동기화"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"

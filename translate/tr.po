@@ -190,8 +190,8 @@ msgstr[0] "SMS Geçmişi (%1)"
 msgstr[1] "SMS Geçmişi (%1)"
 
 #: contents/ui/SmsFormToolbar.qml
-msgid "Sync contacts from phone"
-msgstr "Kişileri telefondan eşitle"
+msgid "Sync contacts and messages from phone"
+msgstr "Kişileri ve mesajları telefondan eşitle"
 
 #: contents/ui/SmsFormToolbar.qml
 msgid "Open conversations"
