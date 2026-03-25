@@ -97,8 +97,8 @@ KCM.SimpleKCM {
     }
 
     FaqItem {
-        question: i18n("The unread message badge doesn't appear. Why?")
-        answer: i18n("The unread badge counts unread SMS conversations from your phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates every 60 seconds and refreshes when you open the widget.")
+        question: i18n("The unread message indicator doesn't appear. Why?")
+        answer: i18n("The indicator dot shows when you have unread SMS conversations on your phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The indicator refreshes when you open the widget.")
     }
 
     FaqItem {

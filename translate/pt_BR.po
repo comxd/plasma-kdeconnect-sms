@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-19 01:49+0100\n"
+"POT-Creation-Date: 2026-03-24 01:10+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
@@ -349,18 +349,18 @@ msgstr ""
 "Connect para o seu dispositivo emparelhado."
 
 #: contents/ui/configHelp.qml
-msgid "The unread message badge doesn't appear. Why?"
+msgid "The unread message indicator doesn't appear. Why?"
 msgstr "O indicador de mensagens não lidas não aparece. Por quê?"
 
 #: contents/ui/configHelp.qml
 msgid ""
-"The unread badge counts unread SMS conversations from your phone. The "
-"<b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates "
-"every 60 seconds and refreshes when you open the widget."
+"The indicator dot shows when you have unread SMS conversations on your "
+"phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The "
+"indicator refreshes when you open the widget."
 msgstr ""
-"O emblema de não lidas conta as conversas SMS não lidas do seu telefone. O "
-"plugin <b>SMS</b> deve estar ativado nas configurações do KDE Connect. O "
-"contador atualiza a cada 60 segundos e é atualizado ao abrir o widget."
+"O ponto indicador é exibido quando você tem conversas SMS não lidas no seu "
+"telefone. O plugin <b>SMS</b> deve estar ativado nas configurações do KDE "
+"Connect. O indicador é atualizado quando você abre o widget."
 
 #: contents/ui/configHelp.qml
 msgid "No contacts appear when I type a name. How do I fix this?"
@@ -465,6 +465,18 @@ msgstr "Sobre o KDE Connect SMS"
 #: contents/ui/main.qml
 msgid "Help && FAQ"
 msgstr "Ajuda e FAQ"
+
+#~ msgid "The unread message badge doesn't appear. Why?"
+#~ msgstr "O indicador de mensagens não lidas não aparece. Por quê?"
+
+#~ msgid ""
+#~ "The unread badge counts unread SMS conversations from your phone. The "
+#~ "<b>SMS</b> plugin must be enabled in KDE Connect settings. The count "
+#~ "updates every 60 seconds and refreshes when you open the widget."
+#~ msgstr ""
+#~ "O emblema de não lidas conta as conversas SMS não lidas do seu telefone. "
+#~ "O plugin <b>SMS</b> deve estar ativado nas configurações do KDE Connect. "
+#~ "O contador atualiza a cada 60 segundos e é atualizado ao abrir o widget."
 
 #~ msgid "Configure Keyboard Shortcut…"
 #~ msgstr "Configurar atalho de teclado…"

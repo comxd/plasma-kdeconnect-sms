@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-19 01:49+0100\n"
+"POT-Creation-Date: 2026-03-24 01:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,11 +323,11 @@ msgid "Make sure the <b>SMS</b> plugin is enabled in KDE Connect settings for yo
 msgstr ""
 
 #: contents/ui/configHelp.qml
-msgid "The unread message badge doesn't appear. Why?"
+msgid "The unread message indicator doesn't appear. Why?"
 msgstr ""
 
 #: contents/ui/configHelp.qml
-msgid "The unread badge counts unread SMS conversations from your phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates every 60 seconds and refreshes when you open the widget."
+msgid "The indicator dot shows when you have unread SMS conversations on your phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The indicator refreshes when you open the widget."
 msgstr ""
 
 #: contents/ui/configHelp.qml

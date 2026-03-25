@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeconnectsms\n"
 "Report-Msgid-Bugs-To: https://www.comexpertise.com\n"
-"POT-Creation-Date: 2026-03-19 01:49+0100\n"
+"POT-Creation-Date: 2026-03-24 01:10+0100\n"
 "PO-Revision-Date: 2026-03-11 00:24+0000\n"
 "Last-Translator: David DIVERRES <david@comexpertise.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -333,17 +333,17 @@ msgid ""
 msgstr "请确保在 KDE Connect 设置中为您的已配对设备启用了<b>短信</b>插件。"
 
 #: contents/ui/configHelp.qml
-msgid "The unread message badge doesn't appear. Why?"
-msgstr "未读消息徽标没有显示。为什么？"
+msgid "The unread message indicator doesn't appear. Why?"
+msgstr "未读消息指示点没有出现。为什么？"
 
 #: contents/ui/configHelp.qml
 msgid ""
-"The unread badge counts unread SMS conversations from your phone. The "
-"<b>SMS</b> plugin must be enabled in KDE Connect settings. The count updates "
-"every 60 seconds and refreshes when you open the widget."
+"The indicator dot shows when you have unread SMS conversations on your "
+"phone. The <b>SMS</b> plugin must be enabled in KDE Connect settings. The "
+"indicator refreshes when you open the widget."
 msgstr ""
-"未读徽章统计手机上未读的短信对话数量。需要在 KDE Connect 设置中启用<b>短信</"
-"b>插件。计数器每 60 秒更新一次，打开小部件时也会刷新。"
+"当您的手机上有未读 SMS 对话时，指示点将显示。必须在 KDE Connect 设置中启用 "
+"<b>SMS</b> 插件。打开小部件时，指示点将刷新。"
 
 #: contents/ui/configHelp.qml
 msgid "No contacts appear when I type a name. How do I fix this?"
@@ -443,6 +443,17 @@ msgstr "关于 KDE Connect 短信"
 #: contents/ui/main.qml
 msgid "Help && FAQ"
 msgstr "帮助与常见问题"
+
+#~ msgid "The unread message badge doesn't appear. Why?"
+#~ msgstr "未读消息徽标没有显示。为什么？"
+
+#~ msgid ""
+#~ "The unread badge counts unread SMS conversations from your phone. The "
+#~ "<b>SMS</b> plugin must be enabled in KDE Connect settings. The count "
+#~ "updates every 60 seconds and refreshes when you open the widget."
+#~ msgstr ""
+#~ "未读徽章统计手机上未读的短信对话数量。需要在 KDE Connect 设置中启用<b>短信"
+#~ "</b>插件。计数器每 60 秒更新一次，打开小部件时也会刷新。"
 
 #~ msgid "Configure Keyboard Shortcut…"
 #~ msgstr "配置键盘快捷键…"
