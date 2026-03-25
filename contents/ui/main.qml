@@ -472,7 +472,9 @@ PlasmoidItem {
     }
 
     // ── Contacts: KPeople model chain ──
-    // PersonsModel → PersonsSortFilterProxyModel (phones only) → KSortFilterProxyModel (user search)
+    // PersonsModel → PersonsSortFilterProxyModel (phones only) → KSortFilterProxyModel (user search + dedup)
+    // Dedup workaround: KPeople doesn't always merge contacts from multiple sources (Google, local,
+    // NextCloud), causing duplicate entries with the same phone number. Monitor upstream for a fix.
 
     KPeople.PersonsModel {
         id: personsModel
