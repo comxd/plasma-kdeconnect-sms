@@ -527,9 +527,11 @@ PlasmoidItem {
 
     Connections {
         target: contactsWithPhones
-        function onRowsInserted() { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
-        function onRowsRemoved()  { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
-        function onModelReset()   { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onRowsInserted()  { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onRowsRemoved()   { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onModelReset()    { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onDataChanged()   { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
+        function onLayoutChanged() { root._seenPhones = ({}); contactSearchProxy.invalidateFilter(); }
     }
 
     // ── Contacts sync (D-Bus trigger — no native QML API available) ──
