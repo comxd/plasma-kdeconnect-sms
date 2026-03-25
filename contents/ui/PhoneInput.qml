@@ -10,6 +10,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.primitives as KirigamiPrimitives
+import org.kde.people as KPeople
 
 import "../code/helpers.js" as Helpers
 
@@ -19,8 +20,8 @@ ColumnLayout {
 
     // ── KPeople role constants ──
 
+    readonly property int kPeoplePersonUriRole: 256
     readonly property int kPeoplePhoneNumberRole: 260
-    readonly property int kPeoplePersonVCardRole: 257
     readonly property int kPeoplePhotoImageProviderUriRole: 261
 
     // ── Required properties ──
@@ -290,8 +291,30 @@ ColumnLayout {
             highlightMoveDuration: 0
 
             delegate: Controls.ItemDelegate {
+                id: contactDelegate
                 width: contactAutocomplete.width
                 highlighted: contactAutocomplete.currentIndex === index
+
+                // PersonData fetches the raw vCard text for phone type detection
+                readonly property string _personUri: {
+                    var uri = phoneInput.contactSearchModel.data(
+                        phoneInput.contactSearchModel.index(index, 0),
+                        phoneInput.kPeoplePersonUriRole);
+                    return uri ? String(uri) : "";
+                }
+
+                KPeople.PersonData {
+                    id: personData
+                    personUri: contactDelegate._personUri
+                }
+
+                readonly property string _vcardText: {
+                    if (!personData.person)
+                        return "";
+                    var v = personData.person.contactCustomProperty("vcard");
+                    return v ? String(v) : "";
+                }
+
                 background: Rectangle {
                     color: index % 2 === 1 ? Kirigami.Theme.alternateBackgroundColor : "transparent"
                 }
@@ -340,11 +363,8 @@ ColumnLayout {
                                 Layout.fillWidth: true
                             }
                             Controls.Label {
-                                property string typeKey: {
-                                    var vcard = phoneInput.contactSearchModel.data(
-                                        phoneInput.contactSearchModel.index(index, 0), phoneInput.kPeoplePersonVCardRole);
-                                    return Helpers.phoneTypeLabel(vcard, model.phoneNumber);
-                                }
+                                property string typeKey: Helpers.phoneTypeLabel(
+                                    contactDelegate._vcardText, model.phoneNumber)
                                 visible: typeKey.length > 0
                                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                                 color: Kirigami.Theme.disabledTextColor
