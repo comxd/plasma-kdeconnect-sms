@@ -35,13 +35,30 @@ Item {
     property string _pendingPhone: ""
     property string _pendingContact: ""
     property string _pendingMessage: ""
+    property string _pendingResult: ""
+    property string _pendingError: ""
 
     Lib.ExecuteCommand {
         id: executor
         onFinished: function(exitCode, stdout, stderr) {
+            if (smsSender.sendState !== "sending") return;
             if (exitCode === 0) {
-                smsSender.sendState = "success";
+                smsSender._pendingResult = "success";
+            } else {
+                smsSender._pendingResult = "error";
+                smsSender._pendingError = stderr || i18n("Failed to send SMS");
+            }
+            sendFeedbackTimer.restart();
+        }
+    }
 
+    Timer {
+        id: sendFeedbackTimer
+        interval: 2500
+        repeat: false
+        onTriggered: {
+            if (smsSender._pendingResult === "success") {
+                smsSender.sendState = "success";
                 var preview = smsSender._pendingMessage;
                 if (preview.length > 30)
                     preview = preview.substring(0, 30) + "\u2026";
@@ -54,8 +71,8 @@ Item {
                 smsSender.sent(entry);
             } else {
                 smsSender.sendState = "error";
-                smsSender.sendError = stderr || i18n("Failed to send SMS");
-                smsSender.failed(smsSender.sendError);
+                smsSender.sendError = smsSender._pendingError;
+                smsSender.failed(smsSender._pendingError);
             }
             statusResetTimer.restart();
         }
@@ -77,9 +94,12 @@ Item {
     // ── Public API ──
 
     function reset() {
+        sendFeedbackTimer.stop();
         statusResetTimer.stop();
         sendState = "idle";
         sendError = "";
+        _pendingResult = "";
+        _pendingError = "";
     }
 
     function send(e164Phone, rawPhone, contactName, message) {
